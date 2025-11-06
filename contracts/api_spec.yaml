@@ -1,0 +1,630 @@
+openapi: 3.0.0
+info:
+  title: StartSmart Location Intelligence API
+  version: 1.0.0
+  description: |
+    MVP API for location-based business opportunity recommendations.
+    
+    **StartSmart** analyzes grid cells within pilot neighborhoods to identify
+    high-opportunity locations for new businesses by combining:
+    - Real business data (Google Places API)
+    - Social media signals (simulated for MVP)
+    - Gap Opportunity Score (GOS) algorithm
+    
+    **Current Coverage**: 5 neighborhoods in Karachi, Pakistan
+    **Supported Categories**: Gym, Cafe
+    
+  contact:
+    name: StartSmart Development Team
+    email: dev@startsmart.local
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:8000/api/v1
+    description: Local development server
+  - url: https://startsmart-api.onrender.com/api/v1
+    description: Production server (Render)
+
+tags:
+  - name: neighborhoods
+    description: Operations for browsing available neighborhoods
+  - name: grids
+    description: Grid-level data and opportunity scores
+  - name: recommendations
+    description: Top-N location recommendations
+  - name: feedback
+    description: User feedback collection
+
+paths:
+  /neighborhoods:
+    get:
+      tags:
+        - neighborhoods
+      summary: List all available neighborhoods
+      description: |
+        Returns all neighborhoods currently supported by the platform.
+        Each neighborhood is subdivided into ~0.5 km² grid cells.
+      operationId: listNeighborhoods
+      responses:
+        '200':
+          description: Successfully retrieved neighborhood list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Neighborhood'
+              example:
+                - id: "DHA-Phase2"
+                  name: "DHA Phase 2"
+                  grid_count: 12
+                - id: "Clifton-Block5"
+                  name: "Clifton Block 5"
+                  grid_count: 10
+                - id: "Gulshan-e-Iqbal"
+                  name: "Gulshan-e-Iqbal"
+                  grid_count: 15
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /grids:
+    get:
+      tags:
+        - grids
+      summary: Get all grids for neighborhood + category
+      description: |
+        Returns all grid cells within a neighborhood along with their
+        Gap Opportunity Scores (GOS) for the specified category.
+        
+        Use this endpoint to power heatmap visualizations.
+      operationId: getGrids
+      parameters:
+        - name: neighborhood
+          in: query
+          required: true
+          description: Neighborhood ID (e.g., "DHA-Phase2")
+          schema:
+            type: string
+            example: "DHA-Phase2"
+        - name: category
+          in: query
+          required: true
+          description: Business category
+          schema:
+            type: string
+            enum: [Gym, Cafe]
+            example: "Gym"
+      responses:
+        '200':
+          description: Successfully retrieved grid data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GridSummary'
+              example:
+                - grid_id: "DHA-Phase2-Cell-01"
+                  lat_center: 24.8278
+                  lon_center: 67.0595
+                  gos: 0.820
+                  confidence: 0.750
+                - grid_id: "DHA-Phase2-Cell-02"
+                  lat_center: 24.8290
+                  lon_center: 67.0610
+                  gos: 0.450
+                  confidence: 0.620
+        '400':
+          description: Invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Neighborhood not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /recommendations:
+    get:
+      tags:
+        - recommendations
+      summary: Get top-N recommendations
+      description: |
+        Returns the top-ranked location recommendations for a given
+        neighborhood and category, sorted by Gap Opportunity Score (GOS).
+        
+        Each recommendation includes:
+        - GOS score (0.0 - 1.0)
+        - Confidence score (0.0 - 1.0)
+        - Human-readable rationale explaining the score
+      operationId: getRecommendations
+      parameters:
+        - name: neighborhood
+          in: query
+          required: true
+          description: Neighborhood ID
+          schema:
+            type: string
+            example: "DHA-Phase2"
+        - name: category
+          in: query
+          required: true
+          description: Business category
+          schema:
+            type: string
+            enum: [Gym, Cafe]
+            example: "Gym"
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of recommendations to return
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10
+            default: 3
+            example: 3
+      responses:
+        '200':
+          description: Successfully retrieved recommendations
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecommendationsResponse'
+              example:
+                neighborhood: "DHA-Phase2"
+                category: "Gym"
+                recommendations:
+                  - grid_id: "DHA-Phase2-Cell-07"
+                    gos: 0.820
+                    confidence: 0.750
+                    rationale: "High demand (48 Instagram posts, 7 Reddit mentions), low competition (2 gyms)"
+                    lat_center: 24.8290
+                    lon_center: 67.0610
+                  - grid_id: "DHA-Phase2-Cell-03"
+                    gos: 0.710
+                    confidence: 0.680
+                    rationale: "Moderate demand (32 posts), minimal competition (1 gym)"
+                    lat_center: 24.8265
+                    lon_center: 67.0580
+                  - grid_id: "DHA-Phase2-Cell-11"
+                    gos: 0.650
+                    confidence: 0.620
+                    rationale: "Growing demand (28 posts), no existing gyms"
+                    lat_center: 24.8320
+                    lon_center: 67.0640
+        '400':
+          description: Invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: No recommendations found for this neighborhood/category
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /grid/{grid_id}:
+    get:
+      tags:
+        - grids
+      summary: Detailed view of single grid
+      description: |
+        Returns comprehensive details for a specific grid cell, including:
+        - Computed metrics (business count, social volume, GOS, confidence)
+        - Top social media posts that influenced the score
+        - List of competing businesses in the area
+      operationId: getGridDetail
+      parameters:
+        - name: grid_id
+          in: path
+          required: true
+          description: Grid cell identifier
+          schema:
+            type: string
+            example: "DHA-Phase2-Cell-07"
+        - name: category
+          in: query
+          required: true
+          description: Business category for context
+          schema:
+            type: string
+            enum: [Gym, Cafe]
+            example: "Gym"
+      responses:
+        '200':
+          description: Successfully retrieved grid details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GridDetail'
+              example:
+                grid_id: "DHA-Phase2-Cell-07"
+                gos: 0.820
+                confidence: 0.750
+                metrics:
+                  business_count: 2
+                  instagram_volume: 48
+                  reddit_mentions: 7
+                top_posts:
+                  - source: "reddit"
+                    text: "We need a proper gym in Phase 2, all we have is tiny PT places"
+                    timestamp: "2025-10-15T14:30:00Z"
+                    link: "https://reddit.com/r/Karachi/comments/abc123"
+                  - source: "instagram"
+                    text: "Looking for a good gym in DHA Phase 2. Any recommendations? #DHAPhase2 #KarachiGyms"
+                    timestamp: "2025-10-20T09:15:00Z"
+                    link: null
+                  - source: "instagram"
+                    text: "#Phase2gym #workout #fitness goals"
+                    timestamp: "2025-10-22T18:45:00Z"
+                    link: null
+                competitors:
+                  - name: "FitZone Personal Training"
+                    distance_km: 0.3
+                    rating: 3.8
+                  - name: "Body Builders Gym"
+                    distance_km: 0.5
+                    rating: 4.1
+        '404':
+          description: Grid not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /feedback:
+    post:
+      tags:
+        - feedback
+      summary: Submit user feedback
+      description: |
+        Allows users to provide feedback on recommendation quality.
+        
+        **Rating values**:
+        - `1`: Thumbs up (good recommendation)
+        - `-1`: Thumbs down (poor recommendation)
+        
+        Feedback is used to refine the scoring algorithm in future phases.
+      operationId: submitFeedback
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeedbackRequest'
+            example:
+              grid_id: "DHA-Phase2-Cell-07"
+              category: "Gym"
+              rating: 1
+              comment: "This area is indeed underserved. I'm planning to open a gym here!"
+              user_email: "entrepreneur@example.com"
+      responses:
+        '201':
+          description: Feedback successfully saved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Feedback received. Thank you!"
+                  feedback_id:
+                    type: integer
+                    example: 42
+        '400':
+          description: Invalid feedback data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Neighborhood:
+      type: object
+      required:
+        - id
+        - name
+        - grid_count
+      properties:
+        id:
+          type: string
+          description: Unique neighborhood identifier
+          example: "DHA-Phase2"
+        name:
+          type: string
+          description: Human-readable neighborhood name
+          example: "DHA Phase 2"
+        grid_count:
+          type: integer
+          description: Number of grid cells in this neighborhood
+          example: 12
+
+    GridSummary:
+      type: object
+      required:
+        - grid_id
+        - lat_center
+        - lon_center
+        - gos
+        - confidence
+      properties:
+        grid_id:
+          type: string
+          description: Unique grid cell identifier
+          example: "DHA-Phase2-Cell-07"
+        lat_center:
+          type: number
+          format: double
+          description: Latitude of grid center point
+          example: 24.8290
+        lon_center:
+          type: number
+          format: double
+          description: Longitude of grid center point
+          example: 67.0610
+        gos:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Gap Opportunity Score (0.0 = low, 1.0 = high)
+          example: 0.820
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence in the score based on data volume
+          example: 0.750
+
+    Recommendation:
+      type: object
+      required:
+        - grid_id
+        - gos
+        - confidence
+        - rationale
+        - lat_center
+        - lon_center
+      properties:
+        grid_id:
+          type: string
+          description: Grid cell identifier
+          example: "DHA-Phase2-Cell-07"
+        gos:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Gap Opportunity Score
+          example: 0.820
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence score
+          example: 0.750
+        rationale:
+          type: string
+          description: Human-readable explanation of the score
+          example: "High demand (48 posts), low competition (2 gyms)"
+        lat_center:
+          type: number
+          format: double
+          description: Latitude coordinate
+          example: 24.8290
+        lon_center:
+          type: number
+          format: double
+          description: Longitude coordinate
+          example: 67.0610
+
+    RecommendationsResponse:
+      type: object
+      required:
+        - neighborhood
+        - category
+        - recommendations
+      properties:
+        neighborhood:
+          type: string
+          description: Neighborhood ID
+          example: "DHA-Phase2"
+        category:
+          type: string
+          description: Business category
+          enum: [Gym, Cafe]
+          example: "Gym"
+        recommendations:
+          type: array
+          description: Ordered list of recommendations (highest GOS first)
+          items:
+            $ref: '#/components/schemas/Recommendation'
+
+    TopPostDetail:
+      type: object
+      required:
+        - source
+        - text
+        - timestamp
+      properties:
+        source:
+          type: string
+          description: Data source identifier
+          enum: [instagram, reddit, simulated]
+          example: "reddit"
+        text:
+          type: string
+          description: Post content or excerpt
+          example: "We need a proper gym in Phase 2"
+        timestamp:
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp
+          example: "2025-10-15T14:30:00Z"
+        link:
+          type: string
+          format: uri
+          nullable: true
+          description: URL to original post (if available)
+          example: "https://reddit.com/r/Karachi/comments/abc123"
+
+    CompetitorDetail:
+      type: object
+      required:
+        - name
+        - distance_km
+      properties:
+        name:
+          type: string
+          description: Business name
+          example: "FitZone Personal Training"
+        distance_km:
+          type: number
+          format: float
+          description: Distance from grid center in kilometers
+          example: 0.3
+        rating:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 5.0
+          nullable: true
+          description: Google Places rating (if available)
+          example: 3.8
+
+    GridDetail:
+      type: object
+      required:
+        - grid_id
+        - gos
+        - confidence
+        - metrics
+        - top_posts
+        - competitors
+      properties:
+        grid_id:
+          type: string
+          description: Grid cell identifier
+          example: "DHA-Phase2-Cell-07"
+        gos:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Gap Opportunity Score
+          example: 0.820
+        confidence:
+          type: number
+          format: float
+          minimum: 0.0
+          maximum: 1.0
+          description: Confidence score
+          example: 0.750
+        metrics:
+          type: object
+          description: Raw metrics used to compute GOS
+          properties:
+            business_count:
+              type: integer
+              description: Number of competing businesses in grid
+              example: 2
+            instagram_volume:
+              type: integer
+              description: Instagram posts in last 90 days
+              example: 48
+            reddit_mentions:
+              type: integer
+              description: Reddit mentions (demand + complaints)
+              example: 7
+        top_posts:
+          type: array
+          description: Top 3 social posts that influenced score
+          items:
+            $ref: '#/components/schemas/TopPostDetail'
+        competitors:
+          type: array
+          description: List of competing businesses in area
+          items:
+            $ref: '#/components/schemas/CompetitorDetail'
+
+    FeedbackRequest:
+      type: object
+      required:
+        - grid_id
+        - category
+        - rating
+      properties:
+        grid_id:
+          type: string
+          description: Grid cell being rated
+          example: "DHA-Phase2-Cell-07"
+        category:
+          type: string
+          description: Business category context
+          enum: [Gym, Cafe]
+          example: "Gym"
+        rating:
+          type: integer
+          description: User rating
+          enum: [-1, 1]
+          example: 1
+        comment:
+          type: string
+          maxLength: 1000
+          nullable: true
+          description: Optional text feedback
+          example: "This area is indeed underserved. I'm planning to open a gym here!"
+        user_email:
+          type: string
+          format: email
+          nullable: true
+          description: Optional email for follow-up
+          example: "entrepreneur@example.com"
+
+    Error:
+      type: object
+      required:
+        - error
+        - message
+      properties:
+        error:
+          type: string
+          description: Error type identifier
+          example: "NOT_FOUND"
+        message:
+          type: string
+          description: Human-readable error message
+          example: "Neighborhood 'InvalidID' not found"
+        details:
+          type: object
+          nullable: true
+          description: Additional error context
+          additionalProperties: true
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: |
+        Optional Firebase JWT token for authenticated requests.
+        Not required for MVP demo.
+
+# Security is optional for MVP
+# Future phases will enforce authentication for write operations
+security: []
