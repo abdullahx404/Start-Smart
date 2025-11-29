@@ -1,0 +1,80 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T09:53:42.494326",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.8345,
+      "lat_south": 24.83,
+      "lon_east": 67.062,
+      "lon_west": 67.057
+    },
+    "center": {
+      "lat": 24.83225,
+      "lon": 67.0595
+    },
+    "radius_meters": 500,
+    "total_results": 1,
+    "statistics": {
+      "places_with_ratings": 1,
+      "places_without_ratings": 0,
+      "average_rating": 3.4,
+      "total_reviews": 14
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8301837,
+          "lng": 67.0606081
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.83141318029151,
+            "lng": 67.0619908802915
+          },
+          "southwest": {
+            "lat": 24.8287152197085,
+            "lng": 67.0592929197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 21 35388123",
+      "name": "Sunset Club gym",
+      "photos": [
+        {
+          "height": 3456,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109189734088926278549\">Syed Bilal Abbas</a>"
+          ],
+          "photo_reference": "AWn5SU7lw11NrzrUdnpJI1RNhZBM-kcRyhfEZKP-S21HOCQeoTEwpfYF8EHNMwvzaGnV4HQ8GwIgIM7ZRWZC5BMjAlKIjYYldbI4P4spVNOB6CLN4aGHlz21wHnDNCYj_tZmNZ1G_I8qASs_ctZ3xGpN2NtzRcWRXOFkaEAKhxpVo2uLEAxkSTo0JlXsHKeBt45uGV3PU9IVxPJJ3dDU84IbNic9Q3byCWFTSo-EgcBZdQgiizpynwNb9lKgEafbn0YYl7Q7OsLrADrUHcDP-qEzCJNqsGCD9N9zUKAwymhaatmBihciHY_JJHoZvVAi2KpQDYEvw_W1XZLUGxH4DVAuxDciltIp8TjbMdpD9tnpYLCJMC8UU2AKyJ1e7W1CTFkJJJIVUN4kkMYWT0AxN5Fs5wSGv_wNT9EmV0bbEHOPdFsaLKHkY3x5HzIfnSO3vygHRq-o5bYfikYD0HaoOQ5vECHs6jvWbOTASczFr-MXe-eKFQUimnMI3VK--bW97mSMM9e6p4cVByLBKAzw1bjK0IVuNJORjAWnwhYVr9KBnVXrF6TgU-yLlJdkrX-VFemibtyDE_cQFMV-JjqlO8WRdD-rmpO7xW3rkykxBAG4dzVEiozrBCTAgq5LpU0IaLRRnLtATw",
+          "width": 4608
+        }
+      ],
+      "place_id": "ChIJ5VJ78EY8sz4Ry7zdOkUyrxA",
+      "plus_code": {
+        "compound_code": "R3J6+36 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3J6+36"
+      },
+      "rating": 3.4,
+      "reference": "ChIJ5VJ78EY8sz4Ry7zdOkUyrxA",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 14,
+      "vicinity": "Phase 2 Ext Defence Housing Authority, Karachi"
+    }
+  ]
+}

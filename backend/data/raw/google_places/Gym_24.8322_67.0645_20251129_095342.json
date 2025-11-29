@@ -1,0 +1,740 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T09:53:42.845295",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.8345,
+      "lat_south": 24.83,
+      "lon_east": 67.067,
+      "lon_west": 67.062
+    },
+    "center": {
+      "lat": 24.83225,
+      "lon": 67.0645
+    },
+    "radius_meters": 500,
+    "total_results": 14,
+    "statistics": {
+      "places_with_ratings": 14,
+      "places_without_ratings": 0,
+      "average_rating": 4.56,
+      "total_reviews": 701
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8314934,
+          "lng": 67.065708
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8328444802915,
+            "lng": 67.06706013029151
+          },
+          "southwest": {
+            "lat": 24.83014651970849,
+            "lng": 67.06436216970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 335 1225538",
+      "name": "MK Muscle",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 2448,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/100198933675831376676\">Adnan Taqi</a>"
+          ],
+          "photo_reference": "AWn5SU45tCABy3Am4-D06TDne2R7RrzRmx0d8m-2cW8u5m5G6ZxwcwEmRZ1wxbeDIVDnBEulLU8AMzX9mJ7Y6h0M5SkaDhrk_5thhCmKz43F7k_gTvPJbiEf-jiJ51yXmGN5lsSsVhK63dme9FQBsoS04SnGdIohhccXutYiIdPcVrBVnwVrLOc1bgS8K0MgWmFZbidBo2eAzfCChZhP1H3rC3bxlDOO2yMas0rA23ivMEI-iQIYioCDPfj9H6ItdIhBmvhQXuUGr1qgdAqddlQCXMubEwdT1nUnt4FBDEsUklUEkAdv67BEB4nsMwlA_u92SIZQPF9da5NEkprSmIKCpy2rtDIKUdheHGTwqUugR5v3gUioE_t1NO9pJJ5e2iRTFFB-3Qzakwy7u6FjR_zpSnXZkOZMw5uZHiKWG_Sv_eemXk7fYQhdQur7QPn6fTuaYpkkfNXq3v0Jq_2Z7OAApvEu8RdMrshZc4oWEqq01LR0tQZ8hFCkdbND-CgD8CaxpRB-NsOJ-mFVuLwCAHgeyB0HESs7Jpm0g7CoutADkepV4jpR4jfgmpUKrXSCtMjxd2Cu3M4XzPk2yOiuJL7Z-eKGeLyo7xNhfj4fSvpDSm_LX1fyIYHAFZWTpTT0jCDymTNKcw",
+          "width": 3264
+        }
+      ],
+      "place_id": "ChIJTx80HqM9sz4REEIAtczbYjo",
+      "plus_code": {
+        "compound_code": "R3J8+H7 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3J8+H7"
+      },
+      "rating": 5,
+      "reference": "ChIJTx80HqM9sz4REEIAtczbYjo",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 138,
+      "vicinity": "Plot No. 18-C, 05 Sunset Lane, Phase 02 Extension DHA Karachi, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8328071,
+          "lng": 67.06583549999999
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8342335302915,
+            "lng": 67.0671116802915
+          },
+          "southwest": {
+            "lat": 24.8315355697085,
+            "lng": 67.0644137197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 323 2944403",
+      "name": "Body Solid Gym",
+      "opening_hours": {
+        "open_now": false
+      },
+      "photos": [
+        {
+          "height": 3024,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109669909006674026866\">Saad Razak Khan</a>"
+          ],
+          "photo_reference": "AWn5SU7Lln92pI9DJgICxSOguppNYN-p2I9PCgTEsr6uyjvyi88WbnuAuZEF46qi26rSxgSBxLqLWS2ztMoAaifRHpqrfvVzSOlv4fCHixhTxYSyp3VFm_wrgaB8CSaJBj895ISfrUHLNwoJ3q_oscoC8VFVBU1epSanq56_LgDUTiGDUZiAcy3xcIE6C7uc8W7-SxS73_utImlkFUWHZyTJ0p6YoWvMqp6sBzJqKcKm-Dmm9iMC9QNBIb1Y8VWsim23io2sj26PY05Y8K1_Q2B4rJDOl-W-YA7QEjcFPYbhoVIGi7DFscwi_9vMqNXQfhhG7B7Ql1U2z_inWSW8Fj7qoojFFP2Jr2OcHbgAwjp5SumM8r-qJoxzrvztEbGX3U4alQfK_ZRQz_iqNEKuXWQMJJom5nMpTlQkUCLuyH0J_elQZGy1M6SDbzLCehc2ThEMRRKdXiYtFpZ4oFoNz75Ta3tpUcfiaIn4IGt2MRGsmpYMJa5U1ikXjkb8rZ8Lof2k5oEY0EInzFHx262qWwIgw11YivrFNxjP8tYO66ZUGuKWFqyWEVrWsDFi8IvhLBpw9dGcpFxALWAIg99QyTCRMoa-u_bsDg0k25FdtO12oqjRwyfxccwpLzAzKhJYW-qqixe24Q",
+          "width": 4032
+        }
+      ],
+      "place_id": "ChIJAYsstTg9sz4RSsBU24VEF74",
+      "plus_code": {
+        "compound_code": "R3M8+48 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3M8+48"
+      },
+      "rating": 4.6,
+      "reference": "ChIJAYsstTg9sz4RSsBU24VEF74",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 16,
+      "vicinity": "Dua Terrace, 5c Sunset Lane, 6 phase 2 Phase 2 Ext Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.83025019999999,
+          "lng": 67.065918
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8316107802915,
+            "lng": 67.06728598029152
+          },
+          "southwest": {
+            "lat": 24.8289128197085,
+            "lng": 67.0645880197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Da Gym",
+      "opening_hours": {
+        "open_now": true
+      },
+      "place_id": "ChIJIV57TL49sz4RJoopMJJf8-Y",
+      "rating": 5,
+      "reference": "ChIJIV57TL49sz4RJoopMJJf8-Y",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 1,
+      "vicinity": "R3J8+493, 8th Sunset Street, Phase 2 Ext Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8328749,
+          "lng": 67.06709540000001
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8342244802915,
+            "lng": 67.06844508029151
+          },
+          "southwest": {
+            "lat": 24.8315265197085,
+            "lng": 67.0657471197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Slim N Fitness First Gym",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3646,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/107972873145267229801\">Syedirfan Shah</a>"
+          ],
+          "photo_reference": "AWn5SU4XeV5wws-iDwl6yVIr__7IKfgLiEoB9kPhoMY4Q0b8jOcqH_2mTEm_BjpZQkF5gltYHaocIQ3h4guGO-D5ay4h2D380jDGFZ4ltXk2zZTn-wRmKwh_w2b--tTxGz-rnUbb90fR1tB_TOyr7NJv2iSXNJJ_McmFFHxO3mzmtUDWMXk6YyyA0ueKk5jfraHFrtj3raVew3SyGFWyeArVdapXX-JZcbLugt-1ZBe2O0sDf_mJUlitv0gDbcmGOrxa5kWNnqLlEAjojX7uq5FtHlidWS62kDNfGc0Nd32ozsLeQTNRRojQ0B3UTp3rwYCEkOL55jc91EqM5LpfvDeydLQVJQxQFuC8X_IzpbNUWWaTs65d6b955uT_gaUoeHPnU6x4DwfIZhhuGC4B_-O-VfPyYnFZ490iNl5kQvhgX4tGQhTV2yDwJsow15vClSek_BUPr44NauQj2IBQzNg56YHePrhG3H2J60r3iLxz4kxr5FlerOyZ1nC9SRwVkZ9_zLghtf-8ve14YXs8eTOHBAd55O1XcK7A6twyVi4OCGAQ_pnfugqi-vmPIRfdf7Lyw79X6-Vf7Tor29ICWnT_bObtP8d3dSceohu4TO5IdFrEZOFCoiVYlK6C7BU5thWgOfLuabdMFGwMm5Q8y9idVw",
+          "width": 3456
+        }
+      ],
+      "place_id": "ChIJRywcKso9sz4R8-H5__aFuVM",
+      "plus_code": {
+        "compound_code": "R3M8+4R Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3M8+4R"
+      },
+      "rating": 4.5,
+      "reference": "ChIJRywcKso9sz4R8-H5__aFuVM",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 6,
+      "vicinity": "11C (Basement South Park Avenue, D.H.A Phase II Extension Phase 2 Commercial Area Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8332139,
+          "lng": 67.06703569999999
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8345989802915,
+            "lng": 67.06843928029151
+          },
+          "southwest": {
+            "lat": 24.8319010197085,
+            "lng": 67.0657413197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Get Your Dreams Gym",
+      "opening_hours": {
+        "open_now": false
+      },
+      "photos": [
+        {
+          "height": 1844,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/106446723139431865482\">The Hidden One</a>"
+          ],
+          "photo_reference": "AWn5SU65HGdafXXFklqiXGK-fl8pQrYqje3-8t3M8DWi9WQTi0_1jj-V7x6SghOek1VPcZEJtVhxMMbgxQcbgNQysEDWAvpj_IoErYV_5sn6zzyV2-o4nu5evIPVA8i9l7K6krhCItJsns81ALAPUKcL4ZFRrLu7Qzy2Q_nICVj0jZUOZmrmDPWlDkMR4UCDcPFOBTHoK1UndBnCJJ8bv4TywpS6QcLWSvlHnBm6XPirhAD0hZPMtGd5EEYZ7vbK_cx0AxXC7sYvx_6coYpg6EWUfxuhm0Ori4_FrIYzKyPHxKgzYVyCVq4ueSJI3XD-oSSfRvDtxXnQip3OiI_-qYkhTzPz-PZYetXkbHxIf8l8ZVn3pIPiXVcgq3jOzbbrHL0k0IOEBTsoQv8yQ4-Xgj3hJKqGce-hTJrgjtBKwe0i1JFkJ9yZh3ROooROqlVlNvimt4j_TpwJnRxgfDCyWFTAou4BCgcrlVUuzr6KDmp0MASgug5Hqv01itD6RcbgjXjYQdGTpi1VF-WLsP7FQrDWvhuw9AznBgxB5TsDOJtY4gNBVA6zbvFABy7gxT00YtAGHsZRwlWYbXnQA1opblScs-LGt1-OALk9JzMq-lKEUAmMk1TX72S1KLJNggAwa2GgAnOSeWRZ",
+          "width": 4000
+        }
+      ],
+      "place_id": "ChIJnac7ujI9sz4RoM3nMNMKYRI",
+      "plus_code": {
+        "compound_code": "R3M8+7R Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3M8+7R"
+      },
+      "rating": 5,
+      "reference": "ChIJnac7ujI9sz4RoM3nMNMKYRI",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 1,
+      "vicinity": "building 12, 12c South Park Avenue, D.H.A Phase II Extension Phase 2 Commercial Area Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.83304459999999,
+          "lng": 67.0671799
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8344278302915,
+            "lng": 67.0685807802915
+          },
+          "southwest": {
+            "lat": 24.8317298697085,
+            "lng": 67.06588281970848
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 317 2605173",
+      "name": "Treadmill repairing Karachi ~Vision swipe",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1134,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/111751696742951584513\">Treadmill repairing Karachi ~Vision swipe</a>"
+          ],
+          "photo_reference": "AWn5SU6IBDv3NQSXgTnvWs1p4Cts_kwQWS1nD56iNshZAZErPuyOjU-F2RBkbscasypiIfu0H4I2pmakGv-_PfzEOEO99V9epfPp2B_9XNuSjirllpzLYLj5J19XiC0fPfBhxMzZNFetu5X6N9G2NQOTrMBRzLr2VhVM5AInnDw1EOVvyeF2fGLfxF_pzpKCy7OGjmQ03FjThqeDWaBE1JpRtWNHAFdJqxxjHU4Pfh_DBqYeoGAVBC7v1PD4M9u56WNo-mBZz0QDjkAvYpOaI9SwKTKdCJjf9vURxdrJW0MOdPkqqhvM0d7nAj7g9A5vznetH_VW0aa2uSM",
+          "width": 1141
+        }
+      ],
+      "place_id": "ChIJK1sBjbY9sz4RR1cIrt3-9MY",
+      "plus_code": {
+        "compound_code": "R3M8+6V Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3M8+6V"
+      },
+      "rating": 5,
+      "reference": "ChIJK1sBjbY9sz4RR1cIrt3-9MY",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 278,
+      "vicinity": "DHA Plot No 9-C, Shop 3 South Park Ave, Phase II Ext. Road, Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8328238,
+          "lng": 67.067415
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8341963802915,
+            "lng": 67.0687976302915
+          },
+          "southwest": {
+            "lat": 24.8314984197085,
+            "lng": 67.06609966970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "U Fit Fitness gym",
+      "photos": [
+        {
+          "height": 3646,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/107972873145267229801\">Syedirfan Shah</a>"
+          ],
+          "photo_reference": "AWn5SU4MgvUdwEMqtqxW1Sife5iiUGT6lDLf0HiZXSIHOJLOnDoNm5lDghpNzfK-6E0plYgNDvddJ6EeXqXj5hwBM7HQMDwfvWEd1hVvAZShNQPOq2uPSeXKmV5QSq0q5B4zDBbe8MEdtnHAEvcFsQ3DtUrH42DJsmyQIsq67hq4uKjkWMnUwk9Ude94mst9vf2Dk9F34Jsuh7uNQteyvHOycIqtHb0aENvlTu_7c8cCdzoYKHe0jqJCEf70fS2WONoh_D5t7oDUYs85NFKXepJeTawersHMJvivppLGWBPI-8Upo5eVpSW-icNQ-F1Q_19fdIEF9qmBRwqeMF7iZh7HHn-BnDM3O1WCZj4fYvtRLEIE9EGFC1C-eMqj0DKsI4gdMMHRsSgvIp5EHeDkuJUKybGGFHLE45GpcT9vE7GWv00WDjWynkyGyF8gRuEjDLB2d2EIYNslp3mv-ValkAs6RsqtxX4VEDktE-jZOPkC2FmF4_om9wuETNkt2MZlgpUbqqk9d0UK_zH3jHmvjh2BH3KoYZe7iDqe0_60gNCiKIGt3XrnelaXw6gJaibx9C6V48ftqRUUvu1kfi-H0gPvYC0g3_ED_meKvHSEPjuOacPuKjq4x_UgsKWXETjLTlSahZpGGjTwd1syZM4Et0SGzUUttKY",
+          "width": 3456
+        }
+      ],
+      "place_id": "ChIJTRUCLgA9sz4R4Eii-h_XG7U",
+      "plus_code": {
+        "compound_code": "R3M8+4X Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3M8+4X"
+      },
+      "rating": 4,
+      "reference": "ChIJTRUCLgA9sz4R4Eii-h_XG7U",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 2,
+      "vicinity": "Rahat Milk Corner, D.H.A Phase II Extension Phase 2 Commercial Area Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8331344,
+          "lng": 67.0674367
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8344714802915,
+            "lng": 67.06876848029151
+          },
+          "southwest": {
+            "lat": 24.8317735197085,
+            "lng": 67.06607051970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 333 8800337",
+      "name": "B Smart Gym DHA Branch",
+      "opening_hours": {
+        "open_now": false
+      },
+      "photos": [
+        {
+          "height": 5000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/103258568657311270044\">B Smart Gym DHA Branch</a>"
+          ],
+          "photo_reference": "AWn5SU5F2wib2jL1l3MipGxo-69VxzHJ5-BJKunxFsNgqUj8N2wkEop4UP6SgPbzk-ShyXrGWkeYtHDGIB08rFOWFgeJaHLOXYZlxCpCNnmmLS-VxdAFbN4JdbSDgNcYlQx6SrNOSerJX11ngY_n2w195r26FUQBh9JCYfuu5WfSOb9AUChmO2EqCZfYIyzYrAKtLtfVu25cBMbcgb4emUZvoStlOZZVnWlkFNBoUkLfebCaofIwXVeGgn5gawexyUoF-L2xC_igsqAa8j1v2UVSohdQZV8gtbKNoWmeSRH8sZ9s0OPQOU0KHvfNAPy2zfyS9OKN91Z04_U",
+          "width": 5000
+        }
+      ],
+      "place_id": "ChIJAdunjkw9sz4RZj-eaFh5dew",
+      "plus_code": {
+        "compound_code": "R3M8+7X Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3M8+7X"
+      },
+      "rating": 5,
+      "reference": "ChIJAdunjkw9sz4RZj-eaFh5dew",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 1,
+      "vicinity": "Basement , 14-C South Park Avenue, D.H.A Phase II Extension Phase 2 Commercial Area Defence Housing Authority, Karachi, 75500, Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.83116090000001,
+          "lng": 67.0674775
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8325685802915,
+            "lng": 67.06880368029151
+          },
+          "southwest": {
+            "lat": 24.8298706197085,
+            "lng": 67.0661057197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 300 9293948",
+      "name": "Fitness Extreme",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/111706974887896217923\">abid ismail</a>"
+          ],
+          "photo_reference": "AWn5SU5icyzrQWSPdcNpDR7O4AULQbA92-GglEi0PBFs1cANSm-CuNW0Dmo_IvBX8fhjWHOc4XLIl2CQpdzFfJudyiSu7xUHwWa59UF6_odCl9o3cs8Lk4JcEA_lLfG-x-WeRbdpbr9Up5NNPTCnOP5glheHJuL4CWFk8iXYGmr7GkK3u5geB_oWGjl-KfXLHlpIci6NlEutx0eDp-WC2cm5buOtTVJIkou2KDRzJLlsZGFvu27RB578Lgeb1CvWqH9GNoZYkDnuC_I2lOQH9qQRwGjdBYa-pA51u7btCqQ601IyEJZnRi7V2ZYuk2_uczSsZVRshl7zmDctgTeLgBt40nvzaVlZXiNrnkUCBEMQ59yu5oBqQpKPo5daEtG6S6wrE9ZtxURiLqLWfRSRLYmkldAd4vCSclxaWjQ_gmmrpseNlObY9BsjPnXTIAWyMXSKdQNK70e9fdhz9pqMsspXuvqop6_EPon-diSIW97pGYQfQgR5EPYjwW-FT3yMCVYGibQX6ykfbz3cp7zTM4ld3pmnuUTz_hNZ1CGHMEPkUntRB8mIMNQisyeA508WMI0mg2VyyAP8j5xXHHSiMdFuMZV0d5C0Bt52ohBHsoUmUvbUA9hyCKzjEvifOPiC9l-Rj0JmjuZc",
+          "width": 4000
+        }
+      ],
+      "place_id": "ChIJpaDgy2o8sz4RtN79dCPq0Uk",
+      "plus_code": {
+        "compound_code": "R3J8+FX D.H.A. Phase 2 Phase 2 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3J8+FX"
+      },
+      "rating": 4.5,
+      "reference": "ChIJpaDgy2o8sz4RtN79dCPq0Uk",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 95,
+      "vicinity": "12/c sunset lane 09 dha phase 2 ext 12/C Sunset Lane, 09 ext, D.H.A. Phase 2, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.83016649999999,
+          "lng": 67.0668055
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8316022302915,
+            "lng": 67.0681280302915
+          },
+          "southwest": {
+            "lat": 24.82890426970849,
+            "lng": 67.0654300697085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 345 2219923",
+      "name": "Body Muscle Studio",
+      "opening_hours": {
+        "open_now": false
+      },
+      "photos": [
+        {
+          "height": 608,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/114188374905221020502\">Body Muscle Studio</a>"
+          ],
+          "photo_reference": "AWn5SU5sql-9eO3twsKDjigt3HBNoe2dcKX0TjVHUQl1ITyKWG_mWJgSt5ltKdsnxIAI2pTe0tWU0opdPY_FdPECtVB2Psg4EVKXd-7hXLAUdCkz1lb5Ei1SJTok45TiXWJ7_RZLorLVhwdAcFP2atPopPDXQEUIbvgnDyRrwRtGILt21o2D6Pd7A4_SeWQ9ZNKcb8Z-u2HGE9cqFMLdBfd0nwjousjqlrFVj3eAGPv-SonMVoT5PhjVt3nZ9mf_IB5YnDetm7eq8if3QzBhK8OoEvEGtftg_UXHuXRzLa3XeNTYE-xad5h5c97TmQlHV4uvUC2oStfLFgg",
+          "width": 1080
+        }
+      ],
+      "place_id": "ChIJNV7EFYA9sz4Rz6rVX0Uk8LA",
+      "plus_code": {
+        "compound_code": "R3J8+3P Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3J8+3P"
+      },
+      "rating": 4.8,
+      "reference": "ChIJNV7EFYA9sz4Rz6rVX0Uk8LA",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 33,
+      "vicinity": "7-C 24th Commercial Street, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8328606,
+          "lng": 67.0684389
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8341893802915,
+            "lng": 67.06977553029151
+          },
+          "southwest": {
+            "lat": 24.8314914197085,
+            "lng": 67.06707756970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 347 4081669",
+      "name": "Weider Gym",
+      "photos": [
+        {
+          "height": 810,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/102330578962002853202\">Moazzam Nawaz</a>"
+          ],
+          "photo_reference": "AWn5SU6OweS5DOLJrmydUEu40EAmJ70QvQB2jaNAzoFKiG94dUdTzJvzHRiFf91rHyenniAP9R_LGYAZpC6i5U00h4aDTcAyhchAJsqQlD2UmuDZv6aDE0EuBKbrSHSw7inN5lKU2S5fvM8hhhES8UUmJzZhItGbkMrvdb7WATUFrv3_ozxnpsr1wrnoYXJQroeGPJ_sUzqhvu7ZDDSIxZJDclLkN0b0HClxFZKPOBvf3XODZa4GbO28Y3ggFizUQyaLQsEM3cAc0DXyaHizUK_grmfT0bdDgDjmS7Fw-dIWr5w2kf3KFS10u0gBK8VzNrwmNoYbh0d_p3gl31qHiFw4AxHeokfiBe1pbcaoMDmh-Y1Zu2nDrH63cGTMED4uzKd81rMD53qU9kX1lavGq9kcgK9XYaHPfX322hLP4_VqHF2yUYIBLRhfRY_E1hLM4lgn0bIJkpjlebg0ALXsfYJdfX5L0mZJfyIo17vK8nw5AVRd5T9pNKKvW1Eyp0N7UQ8Y8SzlXt-kvVqDb78uY_Fm19ABHJcMLVZh-jhq0PdCBXFJ8NlCVb20IX2OZRuQAK1Xf2cohfPf8QJhzblZb2BhQkU8gVrCWpL0w75yR4BnQmaMQif63KqHsJ4w4Oy75fAl",
+          "width": 1080
+        }
+      ],
+      "place_id": "ChIJ9acBckA8sz4R7BC8VW429uY",
+      "rating": 3.9,
+      "reference": "ChIJ9acBckA8sz4R7BC8VW429uY",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 36,
+      "vicinity": "R3M9+49W, Phase 2 Commercial Area Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8312119,
+          "lng": 67.0684133
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8325337302915,
+            "lng": 67.0697253802915
+          },
+          "southwest": {
+            "lat": 24.8298357697085,
+            "lng": 67.0670274197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "SOUTHSIDE Boxing & Fitness Club",
+      "opening_hours": {
+        "open_now": false
+      },
+      "photos": [
+        {
+          "height": 1280,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/115192992111273606078\">SOUTHSIDE Boxing &amp; Fitness Club</a>"
+          ],
+          "photo_reference": "AWn5SU58-wRvxEVoDtOKxj6dai1aqJLG9WSSM8P9pvJOUbPFkq2F-EjKTvYgKUk6YKScWXaNBmBZZ9EMKBcQVMTx8OcuhjNxFBEXjKMJk79mwLhEDaNxrvRNc1oSiqxYP4OYwp1GwtWXgv0Y1-Paq3wdBzRxasUWT8fv1CUZWb0-T-sjrfzJfy0Abr0i5qXicnbO48D_qro0fiZ7BtAU7wkrbxyxdP9Az65Kgj2Ri_S6NpcwxNuUkYOKv9-GeIN9LW_5Z41jNOFlcgVI3pStmXHmZLzGmRc3EiI1FqvbKbzVW3dALt0YC3yNPAfBt9NKLUBnzc7BUqhntSU",
+          "width": 905
+        }
+      ],
+      "place_id": "ChIJgeeN-vA9sz4Rt8lhT3uxr6Y",
+      "plus_code": {
+        "compound_code": "R3J9+F9 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3J9+F9"
+      },
+      "rating": 5,
+      "reference": "ChIJgeeN-vA9sz4Rt8lhT3uxr6Y",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 10,
+      "vicinity": "36c Sunset Lane 1, D.H.A Phase II Extension Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8301837,
+          "lng": 67.0606081
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.83141318029151,
+            "lng": 67.0619908802915
+          },
+          "southwest": {
+            "lat": 24.8287152197085,
+            "lng": 67.0592929197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 21 35388123",
+      "name": "Sunset Club gym",
+      "photos": [
+        {
+          "height": 3456,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109189734088926278549\">Syed Bilal Abbas</a>"
+          ],
+          "photo_reference": "AWn5SU6rsI6CPvZf3RYqd_shotaU--nDK84d3ZIu0E_25SvdfQhW1kg8EmPll5-ZbHi5TwiGxbn5Pp99WQNtlfUK4WRMgJNu_JjSSwNr5RlMyxLf5y_NoyNoEXJTwI3A40OaqiEhS9pYWnMqGtpUlxxkwSgp6yQlyJeWYtArRJS7kgttasWIuE_fmYgCv7uAH3k68ulg1L85BL0B7y_S5sy5Buzcp6P5oJaIsicm3UiWygaz5bjn91pQlGgOZtAaltl6qzRG6M-OWJ-ReWm0B2ijwrLiV86H-kq5AQ33y4fqNyM8ETKzqmJ9Kjg0vs-tSoaB-5xSz4NhLAm4YoaJqq19ybO_cN_suQHvhOPeHX6yOlMOKfiNc3IOKNnzJ8PQP8Sfq2Z1p9RJGiTXNRVrdSE4f3gMLoqGGV5EoI8EXgIukyUGHgkWVhBUSRC4bzO8tPGOPHsIyWAvu6KQcAglEp9n3rFjonXoFEQYwmgz1HmqfXr93ubGVgv8lpUSteFiVwaiok05Dcpz2S8w61hkRz3RakuHW5lRIUq2RinqDISHlgT4FrK2AkXkrmR8JrxChlWDwUow2q_AtwNxHaaG309sSVdQ__WQiJsCWwNrv2KA7Q-g0VIwQg1ne35E73AUY-FAEeTJRA",
+          "width": 4608
+        }
+      ],
+      "place_id": "ChIJ5VJ78EY8sz4Ry7zdOkUyrxA",
+      "plus_code": {
+        "compound_code": "R3J6+36 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3J6+36"
+      },
+      "rating": 3.4,
+      "reference": "ChIJ5VJ78EY8sz4Ry7zdOkUyrxA",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 14,
+      "vicinity": "Phase 2 Ext Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8338178,
+          "lng": 67.0687256
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8351714802915,
+            "lng": 67.0700665302915
+          },
+          "southwest": {
+            "lat": 24.8324735197085,
+            "lng": 67.06736856970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 21 35318366",
+      "name": "Ceragem (DHA Centre)",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1080,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/116486624203928044558\">Khursheed Rahil</a>"
+          ],
+          "photo_reference": "AWn5SU534xNX4c8ruFzs-ErOteaOeSq0YFNeWhSjUvPWyFfY4r9mVX-kqNc7DVQhuaP9pvF-NP40V-oEyWIFaY26_RlnweS5fJEpKwBBbxMetOpuH5BAvCZ4uYUBQ4yqbIR68zXVOpsnM5BfA8fcn-yeZMvMFokLA2iayuFRy-QeP2gG9VuCTmyYmWSqnNT67ZT5OVD0gvagOo_djzkknOVLgZ4GK4ESyorIT1VGmMX0SpofKxO-9b72IWsmsdD8sxplwG-jTBL7kGyZNQk3LJ1fRVSJbnL94hOJKoUqKFYYGq-GZEtmoljfJS6IFEOGbpjZRLaa41yyI51tGi19SHbNr8o5Pv8d9nr-ggqlvbjagG6cGpEwDVQ4vZJjzRITvtLjs6nkU-V2IJu5Waa5Elv006CIFqREzCByF5m9idrL23bVBreQhQwGfihrpaTWgac1U90EmPkCeYfb7n5dVocRFbMsdq8ZQ6C-9PTShk7y2DbD7z7Tz1q6FIwgGmwjcKlk793xF1VRM-4aYMhseKwXd7aA8C8vHIz0v3AG2LbaJae5IkFShI8XYOtfq0ID-fuBBEdeNeVfE6AQkKKIYFqZ9Wws3UD-mFZNqDAfon7Zq6ZjcJ6jKJU7qvbZLqNgfZkl",
+          "width": 1920
+        }
+      ],
+      "place_id": "ChIJ1wRK8T88sz4RWA83H8iXTDY",
+      "plus_code": {
+        "compound_code": "R3M9+GF Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3M9+GF"
+      },
+      "rating": 4.1,
+      "reference": "ChIJ1wRK8T88sz4RWA83H8iXTDY",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 70,
+      "vicinity": "09-C 18th Commercial Street, D.H.A Phase II Extension Phase 2 Ext Defence Housing Authority, Karachi"
+    }
+  ]
+}

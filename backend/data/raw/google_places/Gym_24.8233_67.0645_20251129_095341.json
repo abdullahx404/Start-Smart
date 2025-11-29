@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T09:53:41.251185",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.8255,
+      "lat_south": 24.821,
+      "lon_east": 67.067,
+      "lon_west": 67.062
+    },
+    "center": {
+      "lat": 24.82325,
+      "lon": 67.0645
+    },
+    "radius_meters": 500,
+    "total_results": 4,
+    "statistics": {
+      "places_with_ratings": 3,
+      "places_without_ratings": 1,
+      "average_rating": 4.43,
+      "total_reviews": 94
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8235416,
+          "lng": 67.0665933
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8249461802915,
+            "lng": 67.0679956802915
+          },
+          "southwest": {
+            "lat": 24.8222482197085,
+            "lng": 67.06529771970848
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 300 2374292",
+      "name": "Glow.MartGM",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 500,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/111527686373344824582\">Glow.MartGM</a>"
+          ],
+          "photo_reference": "AWn5SU7tYVe2dP4znaQyTWS6UPLlnfyaeRPehQBWJesKlvkTCyZ93ebcVDrDiWlUHf0_ARaAlC5bitS-afK4r9ixSXfr7FrkW3xmXvla9H0CDxPpy8VXgOE1wYP8lmdfeKz695c46r2O7pHiS4fO6cIwtqldCQz0MW-nQuOpeiPBqC9ZaqOgdJ4QgFaA08JKccSh42cvBNYkoPSeKG4Sv5OrW6po0-Td-MjgfJ2SlUIzd2tOZViqYa2byxnecwBSZroTqTJ2ysj-sDLk75A2rn09T9ZbkvEf0NqMp8GIfa69je7d4fuh2_tTbJdQ_2WhqEHTiWa7TKqjOXE",
+          "width": 500
+        }
+      ],
+      "place_id": "ChIJfb8uHvk9sz4RoyrjWM72EKM",
+      "plus_code": {
+        "compound_code": "R3F8+CJ Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3F8+CJ"
+      },
+      "reference": "ChIJfb8uHvk9sz4RoyrjWM72EKM",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "vicinity": "102/11 Karachi, 5-F North, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8211948,
+          "lng": 67.0650852
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8225807302915,
+            "lng": 67.0664763802915
+          },
+          "southwest": {
+            "lat": 24.8198827697085,
+            "lng": 67.0637784197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 333 2379613",
+      "name": "Pulse Gym",
+      "place_id": "ChIJOw_PsVw8sz4RFngTxfVWn3c",
+      "plus_code": {
+        "compound_code": "R3C8+F2 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3C8+F2"
+      },
+      "rating": 4,
+      "reference": "ChIJOw_PsVw8sz4RFngTxfVWn3c",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 29,
+      "vicinity": "110 10th Commercial Street, Phase 4 Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8210844,
+          "lng": 67.0647733
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8223982302915,
+            "lng": 67.0660839302915
+          },
+          "southwest": {
+            "lat": 24.8197002697085,
+            "lng": 67.06338596970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 315 5561686",
+      "name": "Fc²",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 481,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/117058480083035911369\">She&#39;s care fitness club ladie&#39;s &amp; gent&#39;s gym</a>"
+          ],
+          "photo_reference": "AWn5SU4biNtemMFya1VOvobIv69gRrGw9pSYcIyO6RCRnASfiUkD1Kp9jiyGvyUI7lcyjDX_rTu4UPFvbs8vS6KvxOYZy_v-8927-DqB9PCF7SRKYxTnl0lF2lrnhYb8_iEiIgQgTVzlr6n4msnLcRwi3fBRayAD-3mAhY8BSJtBabbkwmFveAoeKDqaf4q88C81ey5yTWhnK3fiwD-NPeiMbl74za2f72151LyhSSF-Be-P3n0E0gZFpcjfvdDc27EwBvb4ji9r-5l7oX0sEd9lB7So9R5AridZ6LYy7UllzGps1CDp4h7pHw9bvCjug09XJdC1vfOMPWM",
+          "width": 856
+        }
+      ],
+      "place_id": "ChIJfQoXRq09sz4RR7tHB8BOQrE",
+      "plus_code": {
+        "compound_code": "R3C7+CW Phase 4 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3C7+CW"
+      },
+      "rating": 4.6,
+      "reference": "ChIJfQoXRq09sz4RR7tHB8BOQrE",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 58,
+      "vicinity": "106-E, 9th Commercial Street, Phase 4 defence, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8211495,
+          "lng": 67.0651955
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8225224802915,
+            "lng": 67.0665701302915
+          },
+          "southwest": {
+            "lat": 24.8198245197085,
+            "lng": 67.06387216970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 321 2888041",
+      "name": "Fitness Zone",
+      "place_id": "ChIJE6M9sFw8sz4Rth5PMaziy_M",
+      "plus_code": {
+        "compound_code": "R3C8+F3 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3C8+F3"
+      },
+      "rating": 4.7,
+      "reference": "ChIJE6M9sFw8sz4Rth5PMaziy_M",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 7,
+      "vicinity": "Plot 110 10th Commercial Street, D.H.A. Phase 4 Phase 4 Defence Housing Authority, Karachi"
+    }
+  ]
+}

@@ -18,7 +18,8 @@ First, please read PHASE_LOG.md Phase 1 handoff to understand:
 
 Then run these verification queries to understand the data:
 
-```powershell
+```
+powershell
 # Total businesses per grid
 psql startsmart_dev -c "SELECT grid_id, category, COUNT(*) as business_count FROM businesses GROUP BY grid_id, category ORDER BY grid_id;"
 

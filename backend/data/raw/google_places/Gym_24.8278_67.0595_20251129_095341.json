@@ -1,0 +1,128 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T09:53:41.788413",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.83,
+      "lat_south": 24.8255,
+      "lon_east": 67.062,
+      "lon_west": 67.057
+    },
+    "center": {
+      "lat": 24.82775,
+      "lon": 67.0595
+    },
+    "radius_meters": 500,
+    "total_results": 2,
+    "statistics": {
+      "places_with_ratings": 2,
+      "places_without_ratings": 0,
+      "average_rating": 2.55,
+      "total_reviews": 17
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8270166,
+          "lng": 67.06079
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8284078802915,
+            "lng": 67.0617569802915
+          },
+          "southwest": {
+            "lat": 24.8257099197085,
+            "lng": 67.0590590197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Nisar Shaheed Park open air gym",
+      "opening_hours": {
+        "open_now": false
+      },
+      "photos": [
+        {
+          "height": 4000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/106022698164379124121\">Amir Rafiq</a>"
+          ],
+          "photo_reference": "AWn5SU5gDeRu4BTol2IBbTdDQAKwmgFXzErEMYCjHlFGV-MUBoboxMWiwVQtcD3sJyGvEomr4U31q7ZG_m24F10_BSmVRXtwuVyyIizbDjLT08g2gaJ0LJ_2MKXlDumlWm8JfgppqpiXFdJn3991HzMd_oYgn4qP4IJF7W0cbvm10vhkdLHh3NvTZj_edBUCpHMtnrg5Db2-9-2yzq337Sg-WF243l2Zp5MbcV6q6H28MTTVPjQCuWCWQbTHYiv-VYWR3XcG4uXdleGXUpT-9Kj3BXxMzvLCC2e8PzCBy04aM_QdOUe8prMcmSYOaVSHM7Zl6W-PgnlbWj0CKGaTWp0ESDBx55VmWqvr_ygVEZfSDYhTf4UFyaIgNGr99ZFA5rm5vmja037ddP8RzNPWSk4lyXhMa5Z4pz9M2rUqUfKFzNZvPXEtWe7b7KzEZNPrs6WbHyjmgCUVzlP995O7rqF0e-51ltHDaqSpoaTLolj0SvjKldHkQM9LuLUFt_675T08X6Nea9Y7cH5P15rD3B1yxTRwPVPqqIjxqLvQQT-VQX_aQu7JKw_PXiO3cMkR4U2Fyno9-JiY_3Bw2HMt1ZSUpBbKNjJGXrrAkflt7Y0MkId8gluGNTxtLlUsuHtb6kTVGRoE7Qd9",
+          "width": 3000
+        }
+      ],
+      "place_id": "ChIJZcicsrw9sz4RQzV5Re4pBKI",
+      "rating": 1.7,
+      "reference": "ChIJZcicsrw9sz4RQzV5Re4pBKI",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 3,
+      "vicinity": "R3G6+R83, Nisar Shaheed Park Road, D.H.A. Phase 4 Phase 4 Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8301837,
+          "lng": 67.0606081
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.83141318029151,
+            "lng": 67.0619908802915
+          },
+          "southwest": {
+            "lat": 24.8287152197085,
+            "lng": 67.0592929197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 21 35388123",
+      "name": "Sunset Club gym",
+      "photos": [
+        {
+          "height": 3456,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109189734088926278549\">Syed Bilal Abbas</a>"
+          ],
+          "photo_reference": "AWn5SU70ozgVY5oVW_5VAuLrpJe4ElAFN14CuD3s1w2mz5RY3rlrRjXIix2OIsqFZEtwDTrmxOfnDOhJmRpb9iYQP5iNvkE2atUryjIFT1A7et9sVGpIFoWLiDVdu17quyYFhsCpcL1QuES1E0bpIkoqBvt-9OOaJD7ULfTEMg4qBb0jesN_nsvgoCd8SlpvT7l1LhG2-FN9QGCsVp-jRZxcgtYVYerifRUuUaIp3zs6o8Bo4UCSbUOVjpVjMvor9f03do4nN0TvgUlXuS13_O91jiC32z2SlgOfbtLddqP-9msmNfkg9ihIB3GVRb0OIOOrcXmmg8-vrK9hWFLmlyEKE1RdundJD0IcY8-pF5LWQWVDPoPLxQcewMUEMIhv9DFD0pZx8N3RaoULom52io-IRFeb5z9VNbt72ENw_HxPl44mfZVfbDh58xIyQsvX5hkjvkXoTwqFTtDi7f1ZQ3IVbQpcW-CAOsnjLRCk4iKj60rl4S9I8vqeD2r1ufwY8JzfXI8c-SMG6FrzJGmKk_bkF8cGHK96SAoY_frtpelPU1tBF5mLCU06ptd6QX-H-47xHWqCkyzIvGOPv_aauea1DYeYzwPRHHA6ulefalQT50pQAU1JbyQZ0YivoD98rHtdcesm-g",
+          "width": 4608
+        }
+      ],
+      "place_id": "ChIJ5VJ78EY8sz4Ry7zdOkUyrxA",
+      "plus_code": {
+        "compound_code": "R3J6+36 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R3J6+36"
+      },
+      "rating": 3.4,
+      "reference": "ChIJ5VJ78EY8sz4Ry7zdOkUyrxA",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 14,
+      "vicinity": "Phase 2 Ext Defence Housing Authority, Karachi"
+    }
+  ]
+}

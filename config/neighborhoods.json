@@ -1,6 +1,19 @@
 {
   "neighborhoods": [
     {
+      "id": "Clifton-Block2",
+      "name": "Clifton Block 2",
+      "bounds": {
+        "lat_north": 24.8180,
+        "lat_south": 24.8045,
+        "lon_east": 67.0360,
+        "lon_west": 67.0210
+      },
+      "grid_size_km": 0.5,
+      "grid_count": 9,
+      "description": "Clifton Block 2, Karachi - High-density commercial area with gyms, cafes (3×3 grid layout)"
+    },
+    {
       "id": "DHA-Phase2",
       "name": "DHA Phase 2",
       "bounds": {
@@ -21,8 +34,10 @@
   "metadata": {
     "version": "1.0.0",
     "created_at": "2025-11-05",
-    "mvp_scope": "Single neighborhood, 2 categories",
-    "total_grids": 9,
-    "grid_area_km2": 0.5
+    "updated_at": "2025-11-29",
+    "mvp_scope": "Two neighborhoods, 2 categories",
+    "total_grids": 18,
+    "grid_area_km2": 0.5,
+    "note": "Clifton Block 2 added for testing with real business density"
   }
 }

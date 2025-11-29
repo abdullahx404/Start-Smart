@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T16:28:37.811384",
+    "category": "Cafe",
+    "google_type": "cafe",
+    "bounds": {
+      "lat_north": 24.8135,
+      "lat_south": 24.809,
+      "lon_east": 67.031,
+      "lon_west": 67.026
+    },
+    "center": {
+      "lat": 24.81125,
+      "lon": 67.02850000000001
+    },
+    "radius_meters": 500,
+    "total_results": 2,
+    "statistics": {
+      "places_with_ratings": 2,
+      "places_without_ratings": 0,
+      "average_rating": 4.3,
+      "total_reviews": 1035
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8085386,
+          "lng": 67.0288144
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8099600802915,
+            "lng": 67.0302061802915
+          },
+          "southwest": {
+            "lat": 24.80726211970849,
+            "lng": 67.0275082197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+      "international_phone_number": "+92 321 8251133",
+      "name": "Retro House (MTR)",
+      "photos": [
+        {
+          "height": 493,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109071178445297543377\">Retro House (MTR)</a>"
+          ],
+          "photo_reference": "AWn5SU4tPIjAMBPGwgnjF5xEAfnu2AZ10Z1h4WpFsc5aUBIBPK43Fs5RUv1F5eA8xL8tCMFb_IV9YPUJh79YvfMZd9HL6DbKwL6QEV8naKUhPeg4vdb11sTSamEac9m1qaqHpCboc-jWeVTBrAO7SoYSY7eFXNGoFCcj0GW8UnoueGtL6l-X8t8J_y0deUCOJOFd0PcEblXSRJoE-teeCfOiuDinV8JN-NnmoRNrjP-98yzBfUF8LNmv6scDlNzfCLVyOPciwkjxSNtFiVs5BLbs26VTxS6kTWjU3AjEZfnAYnrobiaPUXwMctPJnBEzPfEpGUtUIo-P",
+          "width": 1290
+        }
+      ],
+      "place_id": "ChIJO_bF5II9sz4RtUwJlOwMmKw",
+      "plus_code": {
+        "compound_code": "R25H+CG Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R25H+CG"
+      },
+      "rating": 4.8,
+      "reference": "ChIJO_bF5II9sz4RtUwJlOwMmKw",
+      "scope": "GOOGLE",
+      "types": [
+        "restaurant",
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 5,
+      "vicinity": "D95, Block 4 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8087593,
+          "lng": 67.031438
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8101599802915,
+            "lng": 67.0326856802915
+          },
+          "southwest": {
+            "lat": 24.80746201970849,
+            "lng": 67.02998771970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+      "international_phone_number": "+92 311 0044441",
+      "name": "Alaska Restaurant",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 958,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/117560182367699933311\">Alaska Restaurant</a>"
+          ],
+          "photo_reference": "AWn5SU4UlajUf2FwENSFjY1tKbzeuJ0cI7qjGQ7MiahNnssd1BAxKElAK3C6H06cdiCP7jS_yksnKc4VwLY655flrjQ4tE2bG7JmhIRmF8VBYbc7zTX7llOG9tR9kmJEnbkvMRN4tJPg4I0tZdsbpdyas5M4PmZdw086OjH0eZd_kITB_DTYdLLaAoFf-oI5GmQkpURmaieTXHpvzi34Q_jFAvGDp9JuqE4iy_xrZn-MOveyDZLUuiNKGk2ET1EvdkvMKnEtE8VbFYKOptiLMFfkS3BArYlAbca8pxPq3_v03mLE5cw4ewSQksjV89CH0yNUx3XuoeyObRc",
+          "width": 1280
+        }
+      ],
+      "place_id": "ChIJ9--PQAc9sz4RoYG1Rliamd8",
+      "plus_code": {
+        "compound_code": "R25J+GH Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R25J+GH"
+      },
+      "rating": 3.8,
+      "reference": "ChIJ9--PQAc9sz4RoYG1Rliamd8",
+      "scope": "GOOGLE",
+      "types": [
+        "restaurant",
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 1030,
+      "vicinity": "Bungalow No. F-65, K.D.A. Scheme, 5, Clifton, Block 4 Clifton, Karachi"
+    }
+  ]
+}
