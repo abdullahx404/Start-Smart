@@ -1,11 +1,25 @@
 /// Application-wide constants for StartSmart
 library;
 
+/// Environment configuration
+/// Set to true for production deployment, false for local development
+const bool kIsProduction = false;
+
 /// API Configuration
 class ApiConstants {
-  static const String baseUrl = 'http://localhost:8000/api/v1';
-  static const String productionUrl =
+  // Local development URL
+  static const String _localUrl = 'http://localhost:8000/api/v1';
+
+  // Production URL (Render deployment)
+  // Update this with your actual Render URL after deployment
+  static const String _productionUrl =
       'https://startsmart-api.onrender.com/api/v1';
+
+  /// Get the active base URL based on environment
+  static String get baseUrl => kIsProduction ? _productionUrl : _localUrl;
+
+  // Legacy aliases for compatibility
+  static const String productionUrl = _productionUrl;
 
   // Endpoints
   static const String neighborhoods = '/neighborhoods';
@@ -13,6 +27,15 @@ class ApiConstants {
   static const String recommendations = '/recommendations';
   static const String gridDetail = '/grid';
   static const String feedback = '/feedback';
+  static const String health = '/health';
+
+  // Full URL helpers
+  static String get neighborhoodsUrl => '$baseUrl$neighborhoods';
+  static String get gridsUrl => '$baseUrl$grids';
+  static String get recommendationsUrl => '$baseUrl$recommendations';
+  static String gridDetailUrl(String gridId) => '$baseUrl$gridDetail/$gridId';
+  static String get feedbackUrl => '$baseUrl$feedback';
+  static String get healthUrl => '$baseUrl$health';
 
   // Timeouts
   static const Duration connectionTimeout = Duration(seconds: 30);
