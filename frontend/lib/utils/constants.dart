@@ -29,6 +29,11 @@ class ApiConstants {
   static const String feedback = '/feedback';
   static const String health = '/health';
 
+  // Enhanced MVP Endpoints (LLM-powered)
+  static const String recommendationFast = '/recommendation_fast';
+  static const String recommendationLLM = '/recommendation_llm';
+  static const String recommendationDebug = '/recommendation_debug';
+
   // Full URL helpers
   static String get neighborhoodsUrl => '$baseUrl$neighborhoods';
   static String get gridsUrl => '$baseUrl$grids';
@@ -36,6 +41,11 @@ class ApiConstants {
   static String gridDetailUrl(String gridId) => '$baseUrl$gridDetail/$gridId';
   static String get feedbackUrl => '$baseUrl$feedback';
   static String get healthUrl => '$baseUrl$health';
+
+  // Enhanced MVP URL helpers
+  static String get recommendationFastUrl => '$baseUrl$recommendationFast';
+  static String get recommendationLLMUrl => '$baseUrl$recommendationLLM';
+  static String get recommendationDebugUrl => '$baseUrl$recommendationDebug';
 
   // Timeouts
   static const Duration connectionTimeout = Duration(seconds: 30);
@@ -115,6 +125,57 @@ class GOSThresholds {
     if (gos >= high) return 'High';
     if (gos >= medium) return 'Medium';
     return 'Low';
+  }
+}
+
+/// Enhanced MVP Suitability Thresholds
+class SuitabilityThresholds {
+  static const double excellent = 0.80;
+  static const double good = 0.65;
+  static const double moderate = 0.45;
+  static const double poor = 0.25;
+  // Below poor is "not_recommended"
+
+  static String getSuitabilityLevel(double score) {
+    if (score >= excellent) return 'excellent';
+    if (score >= good) return 'good';
+    if (score >= moderate) return 'moderate';
+    if (score >= poor) return 'poor';
+    return 'not_recommended';
+  }
+
+  static String getDisplayLabel(String suitability) {
+    switch (suitability) {
+      case 'excellent':
+        return 'Excellent';
+      case 'good':
+        return 'Good';
+      case 'moderate':
+        return 'Moderate';
+      case 'poor':
+        return 'Poor';
+      case 'not_recommended':
+        return 'Not Recommended';
+      default:
+        return suitability;
+    }
+  }
+
+  static String getEmoji(String suitability) {
+    switch (suitability) {
+      case 'excellent':
+        return '🌟';
+      case 'good':
+        return '✅';
+      case 'moderate':
+        return '⚠️';
+      case 'poor':
+        return '❌';
+      case 'not_recommended':
+        return '🚫';
+      default:
+        return '❓';
+    }
   }
 }
 

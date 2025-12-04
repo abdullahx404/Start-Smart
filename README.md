@@ -105,6 +105,7 @@ cp .env.example .env
 # Edit .env with your settings
 # DATABASE_URL=postgresql://postgres:your_password@localhost:5432/startsmart_dev
 # GOOGLE_PLACES_API_KEY=your_key_here (for Phase 1)
+# GROQ_API_KEY=your_groq_key_here (for LLM recommendations)
 ```
 
 ### 3. Install Python Dependencies
@@ -149,7 +150,8 @@ Start-Smart/
 │   ├── seed_grids.py                # Grid cell seeder
 │   └── seed_synthetic_posts.py      # Social posts seeder
 ├── docs/
-│   └── phase0_validation.md         # Validation methodology
+│   ├── phase0_validation.md         # Validation methodology
+│   └── RECOMMENDATION_ENGINE.md     # LLM Recommendation Engine docs
 ├── data/
 │   └── synthetic/
 │       └── social_posts_v1.json     # 460 synthetic posts (163 KB)

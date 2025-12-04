@@ -3,6 +3,7 @@ import 'package:http/http.dart' as http;
 import '../models/grid.dart';
 import '../models/recommendation.dart';
 import '../models/grid_detail.dart';
+import '../models/enhanced_recommendation.dart';
 import '../utils/constants.dart';
 
 /// Service for making API calls to the StartSmart backend
@@ -156,6 +157,114 @@ class ApiService {
       if (response.statusCode != 201 && response.statusCode != 200) {
         throw ApiException(
           'Failed to submit feedback',
+          statusCode: response.statusCode,
+        );
+      }
+    } catch (e) {
+      if (e is ApiException) rethrow;
+      throw ApiException('Network error: $e');
+    }
+  }
+
+  // ============================================================
+  // ENHANCED MVP ENDPOINTS (LLM-Powered Recommendations)
+  // ============================================================
+
+  /// Get fast recommendation (rule-based only, ~200ms)
+  /// Use this for quick estimates without LLM processing
+  Future<EnhancedRecommendation> getFastRecommendation({
+    required double lat,
+    required double lon,
+    int radius = 500,
+  }) async {
+    try {
+      final uri = Uri.parse(ApiConstants.recommendationFastUrl).replace(
+        queryParameters: {
+          'lat': lat.toString(),
+          'lon': lon.toString(),
+          'radius': radius.toString(),
+        },
+      );
+
+      final response = await _client
+          .get(uri)
+          .timeout(ApiConstants.connectionTimeout);
+
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> data = json.decode(response.body);
+        return EnhancedRecommendation.fromJson(data);
+      } else {
+        throw ApiException(
+          'Failed to fetch fast recommendation',
+          statusCode: response.statusCode,
+        );
+      }
+    } catch (e) {
+      if (e is ApiException) rethrow;
+      throw ApiException('Network error: $e');
+    }
+  }
+
+  /// Get LLM-powered recommendation (full analysis, ~2-3s)
+  /// Use this for detailed AI-powered insights and reasoning
+  Future<EnhancedRecommendation> getLLMRecommendation({
+    required double lat,
+    required double lon,
+    int radius = 500,
+  }) async {
+    try {
+      final uri = Uri.parse(ApiConstants.recommendationLLMUrl).replace(
+        queryParameters: {
+          'lat': lat.toString(),
+          'lon': lon.toString(),
+          'radius': radius.toString(),
+        },
+      );
+
+      // LLM requests take longer, so extend timeout
+      final response = await _client
+          .get(uri)
+          .timeout(const Duration(seconds: 60));
+
+      if (response.statusCode == 200) {
+        final Map<String, dynamic> data = json.decode(response.body);
+        return EnhancedRecommendation.fromJson(data);
+      } else {
+        throw ApiException(
+          'Failed to fetch LLM recommendation',
+          statusCode: response.statusCode,
+        );
+      }
+    } catch (e) {
+      if (e is ApiException) rethrow;
+      throw ApiException('Network error: $e');
+    }
+  }
+
+  /// Get debug recommendation with full pipeline details
+  Future<Map<String, dynamic>> getDebugRecommendation({
+    required double lat,
+    required double lon,
+    int radius = 500,
+  }) async {
+    try {
+      final uri = Uri.parse(ApiConstants.recommendationDebugUrl).replace(
+        queryParameters: {
+          'lat': lat.toString(),
+          'lon': lon.toString(),
+          'radius': radius.toString(),
+        },
+      );
+
+      final response = await _client
+          .get(uri)
+          .timeout(const Duration(seconds: 60));
+
+      if (response.statusCode == 200) {
+        return json.decode(response.body) as Map<String, dynamic>;
+      } else {
+        throw ApiException(
+          'Failed to fetch debug recommendation',
           statusCode: response.statusCode,
         );
       }

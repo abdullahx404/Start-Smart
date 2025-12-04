@@ -19,11 +19,19 @@ Access docs:
     http://localhost:8000/redoc (ReDoc)
 """
 
+import os
 import time
 import logging
 from datetime import datetime
 from contextlib import asynccontextmanager
 from typing import Callable
+from pathlib import Path
+
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+env_path = Path(__file__).parent.parent.parent / ".env"
+load_dotenv(env_path)
 
 from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
@@ -38,6 +46,7 @@ from api.routers import (
     grid_detail_router,
     feedback_router,
 )
+from api.routers.recommendation_llm import router as recommendation_llm_router
 
 # Import database connection for startup check
 from src.database.connection import get_session, engine
@@ -252,6 +261,12 @@ app.include_router(
     feedback_router,
     prefix="/api/v1",
     tags=["feedback"],
+)
+
+app.include_router(
+    recommendation_llm_router,
+    prefix="/api/v1",
+    tags=["recommendation-llm"],
 )
 
 

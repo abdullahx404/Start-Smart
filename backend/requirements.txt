@@ -16,6 +16,12 @@ python-dotenv==1.0.0
 # Geospatial Operations
 shapely==2.0.2
 
+# Google Maps API
+googlemaps>=4.10.0
+
+# LLM (Groq)
+groq>=0.4.0
+
 # HTTP Client (for testing)
 httpx>=0.24.0
 

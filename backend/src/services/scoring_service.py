@@ -4,6 +4,10 @@ Gap Opportunity Score (GOS) Calculation Service
 This module implements the core scoring algorithm for identifying business opportunities
 in grid cells based on supply-demand dynamics from Phase 2 Analytics & Scoring Engine.
 
+PHASE MODES:
+- PHASE_1_MODE = True: Use only real Google Places data (no synthetic social data)
+- PHASE_1_MODE = False: Use full formula with Instagram/Reddit signals
+
 The GOS formula balances three factors:
 1. Low competition (1 - supply_norm): Higher score when fewer businesses exist
 2. Instagram demand (demand_instagram_norm): Social media engagement signals
@@ -13,13 +17,43 @@ Phase 2 - Analytics & Scoring Engine
 """
 
 import math
+import json
+from pathlib import Path
 from typing import Dict, List, Optional
 from datetime import datetime
 
-# Scoring weights (configurable later via config file)
+# ============================================================================
+# Phase Configuration - IMPORTANT
+# ============================================================================
+# Set to True for Phase 1 (real data only), False for full formula with synthetic data
+
+def _load_phase_config() -> bool:
+    """Load PHASE_1_MODE from config file if available."""
+    config_path = Path(__file__).parent.parent.parent.parent / "config" / "neighborhoods.json"
+    try:
+        if config_path.exists():
+            with open(config_path, "r") as f:
+                config = json.load(f)
+                scoring_config = config.get("scoring_config", {})
+                return scoring_config.get("mode", "real_data_only") == "real_data_only"
+    except Exception:
+        pass
+    return True  # Default to Phase 1 (real data only)
+
+PHASE_1_MODE = _load_phase_config()
+
+# ============================================================================
+# Scoring weights
+# ============================================================================
+
+# Phase 2 weights (full formula with synthetic data)
 WEIGHT_SUPPLY = 0.4      # Weight for competition/supply factor
 WEIGHT_INSTAGRAM = 0.25  # Weight for Instagram social demand
 WEIGHT_REDDIT = 0.35     # Weight for Reddit demand signals
+
+# Phase 1 weights (real data only)
+WEIGHT_DENSITY = 0.6           # Weight for business density (inverse)
+WEIGHT_COMPETITION = 0.4       # Weight for competition strength
 
 # Confidence calculation constants
 CONFIDENCE_K1 = 5.0      # Instagram volume scaling factor
@@ -31,71 +65,60 @@ def calculate_gos(normalized_metrics: Dict) -> float:
     """
     Calculate Gap Opportunity Score (GOS) from normalized metrics.
     
-    The GOS formula identifies high-opportunity areas by combining:
-    - Low competition (high score when supply_norm is low)
-    - High social demand (high scores from Instagram and Reddit signals)
+    BEHAVIOR CHANGES BY PHASE:
+    - PHASE_1_MODE = True: Uses only supply_norm and competition_strength_norm
+    - PHASE_1_MODE = False: Uses full formula with Instagram/Reddit signals
     
-    Formula:
-        GOS = (1 - supply_norm) * WEIGHT_SUPPLY + 
-              demand_instagram_norm * WEIGHT_INSTAGRAM + 
-              demand_reddit_norm * WEIGHT_REDDIT
+    Phase 1 Formula (real data only):
+        GOS = (1 - supply_norm) * 0.6 + (1 - competition_strength_norm) * 0.4
     
-    Where:
-        - supply_norm: Normalized business count (0.0 = no competition, 1.0 = saturated)
-        - demand_instagram_norm: Normalized Instagram mentions (0.0 to 1.0)
-        - demand_reddit_norm: Normalized Reddit demand signals (0.0 to 1.0)
-    
-    Weights:
-        - Supply: 0.4 (40%) - Primary factor; low competition is critical
-        - Instagram: 0.25 (25%) - Social media engagement signals
-        - Reddit: 0.35 (35%) - Direct demand/complaint signals (higher weight than Instagram)
+    Phase 2 Formula (with synthetic data):
+        GOS = (1 - supply_norm) * 0.4 + 
+              demand_instagram_norm * 0.25 + 
+              demand_reddit_norm * 0.35
     
     Args:
-        normalized_metrics: Dictionary with normalized values (from normalize_metrics):
+        normalized_metrics: Dictionary with normalized values:
             {
                 "supply_norm": float (0.0 to 1.0),
-                "demand_instagram_norm": float (0.0 to 1.0),
-                "demand_reddit_norm": float (0.0 to 1.0)
+                "demand_instagram_norm": float (0.0 to 1.0) - Phase 2 only,
+                "demand_reddit_norm": float (0.0 to 1.0) - Phase 2 only,
+                "competition_strength_norm": float (0.0 to 1.0) - Phase 1 only
             }
     
     Returns:
         GOS score (0.0 to 1.0), rounded to 3 decimal places.
-        - 0.8-1.0: High opportunity (low competition + high demand)
-        - 0.5-0.8: Medium opportunity
-        - 0.0-0.5: Low opportunity (high competition or low demand)
-    
-    Example:
-        >>> normalized = {
-        ...     "supply_norm": 0.0,          # Zero competitors
-        ...     "demand_instagram_norm": 0.74,  # High Instagram activity
-        ...     "demand_reddit_norm": 0.94     # Very high Reddit demand
-        ... }
-        >>> gos = calculate_gos(normalized)
-        >>> print(f"GOS: {gos}")
-        GOS: 0.913
-        >>> # Interpretation: VERY HIGH opportunity (empty market + strong demand)
-    
-    Edge Cases:
-        - All metrics 0.0 → GOS = 0.4 (only supply component contributes)
-        - supply_norm = 1.0, demands = 0.0 → GOS = 0.0 (saturated market, no demand)
-        - supply_norm = 0.0, demands = 1.0 → GOS = 1.0 (perfect opportunity)
     """
     supply_norm = normalized_metrics.get("supply_norm", 0.0)
-    demand_instagram_norm = normalized_metrics.get("demand_instagram_norm", 0.0)
-    demand_reddit_norm = normalized_metrics.get("demand_reddit_norm", 0.0)
     
-    # GOS formula: weighted combination of supply gap and demand signals
-    gos = (
-        (1 - supply_norm) * WEIGHT_SUPPLY +
-        demand_instagram_norm * WEIGHT_INSTAGRAM +
-        demand_reddit_norm * WEIGHT_REDDIT
-    )
+    if PHASE_1_MODE:
+        # Phase 1: Real data only
+        # Use competition strength instead of synthetic social data
+        competition_norm = normalized_metrics.get("competition_strength_norm", 0.0)
+        
+        # GOS formula: low density + weak competition = high opportunity
+        gos = (
+            (1 - supply_norm) * WEIGHT_DENSITY +
+            (1 - competition_norm) * WEIGHT_COMPETITION
+        )
+    else:
+        # Phase 2: Full formula with synthetic data
+        demand_instagram_norm = normalized_metrics.get("demand_instagram_norm", 0.0)
+        demand_reddit_norm = normalized_metrics.get("demand_reddit_norm", 0.0)
+        
+        # Original GOS formula
+        gos = (
+            (1 - supply_norm) * WEIGHT_SUPPLY +
+            demand_instagram_norm * WEIGHT_INSTAGRAM +
+            demand_reddit_norm * WEIGHT_REDDIT
+        )
     
     # Ensure result is in valid range [0.0, 1.0]
     gos = max(0.0, min(1.0, gos))
     
     # Round to 3 decimal places for consistency
     return round(gos, 3)
+
 
 
 def calculate_confidence(raw_metrics: Dict) -> float:

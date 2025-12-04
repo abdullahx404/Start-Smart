@@ -1,0 +1,1538 @@
+{
+  "category": "Gym",
+  "extracted_at": "2025-12-02T19:35:12.674745",
+  "total_businesses": 77,
+  "businesses": [
+    {
+      "place_id": "ChIJCZFPnr09sz4Rr45KBG-n6_Y",
+      "name": "Karachi Ladies Club",
+      "lat": 24.816044,
+      "lon": 67.0246344,
+      "address": "Plot D, 134 Jalbani Street, Block 5 Block 5 Clifton, Karachi",
+      "rating": 4.2,
+      "total_ratings": 74,
+      "price_level": null,
+      "types": [
+        "spa",
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "CLOSED_TEMPORARILY",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:16:26.650376"
+    },
+    {
+      "place_id": "ChIJy2cpJYg9sz4RQo2k6G-7GKM",
+      "name": "Transfit Gym And Fitness",
+      "lat": 24.8103824,
+      "lon": 67.0177827,
+      "address": "COM 7, 8, Block 2 Clifton, Karachi",
+      "rating": 4.4,
+      "total_ratings": 89,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:27.153102"
+    },
+    {
+      "place_id": "ChIJTdraKl09sz4R6K2MnUOrpSs",
+      "name": "Bodylab",
+      "lat": 24.8095166,
+      "lon": 67.0287834,
+      "address": "D18, 4 بلاک block 4 scheme 5 کلفٹن، کراچی, کراچی",
+      "rating": 4.6,
+      "total_ratings": 34,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:28.599960"
+    },
+    {
+      "place_id": "ChIJHzh9TwA9sz4R-EUDEPs_msE",
+      "name": "Park fitness @rayyananananaa",
+      "lat": 24.8092287,
+      "lon": 67.0287724,
+      "address": "R25H+MGR, Block 4 Clifton, Karachi",
+      "rating": 5,
+      "total_ratings": 1,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:28.600010"
+    },
+    {
+      "place_id": "ChIJqfjrHSo9sz4R83tg3azOs54",
+      "name": "Mama Noushad Snooker Club",
+      "lat": 24.8106875,
+      "lon": 67.0353125,
+      "address": "Karachi",
+      "rating": 5,
+      "total_ratings": 5,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:28.955211"
+    },
+    {
+      "place_id": "ChIJo2p9SKA9sz4R-_R7n62XWEo",
+      "name": "C3 FITNESS",
+      "lat": 24.8144657,
+      "lon": 67.0196113,
+      "address": "Address BS, Gw tower building, 3, Block 2 Clifton, Karachi",
+      "rating": 4.6,
+      "total_ratings": 86,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:29.306515"
+    },
+    {
+      "place_id": "ChIJqUhLRCE9sz4RxWlgOL-XZsY",
+      "name": "TRIFIT FITNESS CLUB (COM 1)",
+      "lat": 24.8146329,
+      "lon": 67.0206383,
+      "address": "COM 1, Block 3 Clifton, Karachi",
+      "rating": 4.9,
+      "total_ratings": 1833,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:29.306567"
+    },
+    {
+      "place_id": "ChIJeYbxFZc9sz4R9pcHqzn7RzE",
+      "name": "Retreat Gym",
+      "lat": 24.8159074,
+      "lon": 67.018233,
+      "address": "D-2, Block 2 Block 2 Clifton, Karachi",
+      "rating": 4.3,
+      "total_ratings": 23,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:29.306596"
+    },
+    {
+      "place_id": "ChIJWyZpuIc9sz4RgP9WHcagFQ0",
+      "name": "Voltupwithsumera",
+      "lat": 24.8154357,
+      "lon": 67.022775,
+      "address": "D 148 Astrik Street, Block 5 Clifton, Karachi",
+      "rating": 5,
+      "total_ratings": 4,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:29.670458"
+    },
+    {
+      "place_id": "ChIJY6ru_aI9sz4R8iHIDw-IO4Q",
+      "name": "Al Naadil Burhani Community Centre",
+      "lat": 24.8140539,
+      "lon": 67.0329385,
+      "address": "R27M+J5G, Old Clifton, Karachi",
+      "rating": 3.7,
+      "total_ratings": 3,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:30.199608"
+    },
+    {
+      "place_id": "ChIJKSnQ2vg9sz4RlxJKgP5Ld4M",
+      "name": "Dynamik Training Systems",
+      "lat": 24.820308,
+      "lon": 67.02922769999999,
+      "address": "F, 78, Kehkashan Block 5 Clifton, Karachi",
+      "rating": 4.8,
+      "total_ratings": 50,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:32.032309"
+    },
+    {
+      "place_id": "ChIJq6o6BLo9sz4RMgqML3puOHk",
+      "name": "Platinum Fitness پلاٹینیم فٹنس",
+      "lat": 24.8218773,
+      "lon": 67.03402489999999,
+      "address": "4th Floor, Emerald Tower, Block 5 Clifton, Karachi",
+      "rating": 4.5,
+      "total_ratings": 228,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:17:32.392367"
+    },
+    {
+      "place_id": "ChIJ6724l909sz4RSF_XVGdddZE",
+      "name": "ABF Boxing & Fitness",
+      "lat": 24.8143125,
+      "lon": 67.0306875,
+      "address": "R27J+P7X, Block 5 Old Clifton, Karachi, 75600, Pakistan",
+      "rating": 5,
+      "total_ratings": 21,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "gym",
+      "extracted_at": "2025-12-02T19:17:39.316973"
+    },
+    {
+      "place_id": "ChIJiaM2G7o9sz4Ro757nP7ibLc",
+      "name": "Emerald Tower & Mall",
+      "lat": 24.8218871,
+      "lon": 67.0339444,
+      "address": "Emerald Tower, Block 5 Clifton, Karachi, 75600, Pakistan",
+      "rating": 4.1,
+      "total_ratings": 3018,
+      "price_level": null,
+      "types": [
+        "shopping_mall",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "gym",
+      "extracted_at": "2025-12-02T19:17:39.317698"
+    },
+    {
+      "place_id": "ChIJOYl5-x89sz4RFzsJ0JiFImw",
+      "name": "PF Institute",
+      "lat": 24.8219768,
+      "lon": 67.03388199999999,
+      "address": "4th Floor Emerald Tower Do Talwar, Block 5 Clifton, Karachi, 75500, Pakistan",
+      "rating": 4.9,
+      "total_ratings": 16,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "fitness studio",
+      "extracted_at": "2025-12-02T19:17:54.688344"
+    },
+    {
+      "place_id": "ChIJE4W6YwA9sz4RUA6zAs_7sPU",
+      "name": "Sport On",
+      "lat": 24.8111142,
+      "lon": 67.0233116,
+      "address": "R26F+C8, Block 3 Clifton, Karachi, 75600, Pakistan",
+      "rating": 4.6,
+      "total_ratings": 52,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "health club",
+      "extracted_at": "2025-12-02T19:18:01.666577"
+    },
+    {
+      "place_id": "ChIJM-xpIwA9sz4Rc-yQVmz3P14",
+      "name": "Clifton Dolphin Sports Club",
+      "lat": 24.8132592,
+      "lon": 67.0232159,
+      "address": "Plot ST 13, Block 3 Clifton, Karachi, 75600, Pakistan",
+      "rating": 5,
+      "total_ratings": 16,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "health club",
+      "extracted_at": "2025-12-02T19:18:01.666589"
+    },
+    {
+      "place_id": "ChIJoexxWEs9sz4RYrvbzGTM7CA",
+      "name": "NBP Sports",
+      "lat": 24.8111094,
+      "lon": 67.0328107,
+      "address": "R26M+C4V, Block 5 Old Clifton, Karachi, 75600, Pakistan",
+      "rating": 4.4,
+      "total_ratings": 258,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "health club",
+      "extracted_at": "2025-12-02T19:18:01.666613"
+    },
+    {
+      "place_id": "ChIJE1PXLQA9sz4RAICIJld_964",
+      "name": "IGNITE Sports Pavilion",
+      "lat": 24.813153,
+      "lon": 67.0234167,
+      "address": "ST 13, Block 3 Clifton, Karachi, Pakistan",
+      "rating": 4.5,
+      "total_ratings": 32,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "health club",
+      "extracted_at": "2025-12-02T19:18:01.666631"
+    },
+    {
+      "place_id": "ChIJtxRGmcE9sz4R2DHm2-CxhG4",
+      "name": "Mazhar Fitness Den",
+      "lat": 24.808073,
+      "lon": 67.03713979999999,
+      "address": "37th Street, Tauheed Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 4.4,
+      "total_ratings": 37,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:18:28.392457"
+    },
+    {
+      "place_id": "ChIJLyLCjKg9sz4Ro7dQbQ9Hmvc",
+      "name": "Wieder Gym",
+      "lat": 24.8091733,
+      "lon": 67.0359546,
+      "address": "R25P+M98, Tauheed Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 3.8,
+      "total_ratings": 34,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:18:28.392473"
+    },
+    {
+      "place_id": "ChIJ3x1-R1o5sz4R7FAy8d7KcGk",
+      "name": "ABR Fitness",
+      "lat": 24.8145738,
+      "lon": 67.0376871,
+      "address": "Khayaban-e-Shujaat, DHA Phase 5 Defence V Defence Housing Authority, Karachi",
+      "rating": 4.8,
+      "total_ratings": 31,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:18:30.764657"
+    },
+    {
+      "place_id": "ChIJ0ULXd3s9sz4RgHTwaGqxUz0",
+      "name": "Zamzama Park Gym (Open Air)",
+      "lat": 24.8142681,
+      "lon": 67.03858919999999,
+      "address": "R27Q+PC4, Khayaban-e-Shujaat, DHA Phase 5 Defence V Defence Housing Authority, Karachi",
+      "rating": 3.5,
+      "total_ratings": 4,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:18:30.764672"
+    },
+    {
+      "place_id": "ChIJd732-K09sz4RsIfvMh8vRFA",
+      "name": "Lords Sports",
+      "lat": 24.8179651,
+      "lon": 67.0410419,
+      "address": "Zamzama, 3c 6th Zamzama Street, Karachi",
+      "rating": 4.3,
+      "total_ratings": 129,
+      "price_level": null,
+      "types": [
+        "bicycle_store",
+        "gym",
+        "point_of_interest",
+        "health",
+        "store",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:18:31.100024"
+    },
+    {
+      "place_id": "ChIJrfT_vyA9sz4Rfj1pAEGPM48",
+      "name": "TREADMILL REPAIR SERVICES MAINTENANCE BY (IQRA FITNESS) Clifton Branch..",
+      "lat": 24.8175279,
+      "lon": 67.0418759,
+      "address": "95a Smchs Society",
+      "rating": 4.7,
+      "total_ratings": 59,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:18:31.100052"
+    },
+    {
+      "place_id": "ChIJb6D_f4k9sz4ReD2hIrL4z5w",
+      "name": "SR Fitness Studio",
+      "lat": 24.8179791,
+      "lon": 67.0407522,
+      "address": "Building 6E, 7th Commercial Lane, Zamzama Commercial Area Zamzama Commercial Area Defence V, Karachi",
+      "rating": 4.3,
+      "total_ratings": 9,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:18:31.100059"
+    },
+    {
+      "place_id": "ChIJL6od_hg9sz4RSU1Q8zPpZSU",
+      "name": "BENEFIT THE BOUTIQUE GYM By GENESIS",
+      "lat": 24.8191303,
+      "lon": 67.0393678,
+      "address": "Building No.6-C,10th Zamzama Commercial Lane, Phase 5, Karachi, Pakistan Basement Hall, Basement, DHA Karachi, Karachi",
+      "rating": 4.6,
+      "total_ratings": 5,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:18:32.133581"
+    },
+    {
+      "place_id": "ChIJLxhoc889sz4Rogi34DV0sc8",
+      "name": "Better Bodies Gym",
+      "lat": 24.8173773,
+      "lon": 67.042592,
+      "address": "1-C 2nd Zamzama Commercial Lane, Zamzama Commercial, DHA, Phase 5, Commercial Zamzama, Karachi, 75500, Pakistan",
+      "rating": 5,
+      "total_ratings": 7,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "gym",
+      "extracted_at": "2025-12-02T19:18:39.634144"
+    },
+    {
+      "place_id": "ChIJ2_YEAbI9sz4RVYasToY5zII",
+      "name": "CrossFIT IN 5",
+      "lat": 24.8180704,
+      "lon": 67.0407592,
+      "address": "R29R+68C, 7th Commercial Ln, Zamzama Commercial Area Defence V Karachi, 75600, Pakistan",
+      "rating": 4.6,
+      "total_ratings": 8,
+      "price_level": null,
+      "types": [
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "gym",
+      "extracted_at": "2025-12-02T19:18:39.634254"
+    },
+    {
+      "place_id": "ChIJFWeU8q09sz4RrTsQXsrLjsc",
+      "name": "Fitness Factory",
+      "lat": 24.8172835,
+      "lon": 67.0419166,
+      "address": "Address: Shop #3, 6-C 4th Commercial Lane, Zamzama Commercial Area Defence V Karachi, 75500, Pakistan",
+      "rating": 4.4,
+      "total_ratings": 8,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "workout",
+      "extracted_at": "2025-12-02T19:19:07.780927"
+    },
+    {
+      "place_id": "ChIJG38D5LE9sz4RYSx8MACJlpQ",
+      "name": "Jacked Nutrition Karachi",
+      "lat": 24.8179699,
+      "lon": 67.039418,
+      "address": "Plot number 16 C, Shop # 1 and 2, Lane # 10, DHA Phase 5 Zamzama Commercial Area Karachi, 75500, Pakistan",
+      "rating": 4.8,
+      "total_ratings": 395,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "health",
+        "store",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "bodybuilding gym",
+      "extracted_at": "2025-12-02T19:19:18.939320"
+    },
+    {
+      "place_id": "ChIJEzviIlU9sz4RJmcNuK_bBT8",
+      "name": "N4 NUTRITION Zamzama",
+      "lat": 24.8180127,
+      "lon": 67.03973309999999,
+      "address": "Shop # 3 # Plot # 17C, 9 3rd Zamzama Commercial Lane, DHA Phase 5 Karachi, Pakistan",
+      "rating": 5,
+      "total_ratings": 99,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "health",
+        "store",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "bodybuilding gym",
+      "extracted_at": "2025-12-02T19:19:18.939362"
+    },
+    {
+      "place_id": "ChIJKUgkX089sz4RjbTidaKgKDM",
+      "name": "The Relief Time Salon & Gym",
+      "lat": 24.8092662,
+      "lon": 67.032408,
+      "address": "Block 4 Clifton, Karachi, 75500, Pakistan",
+      "rating": 4.5,
+      "total_ratings": 12,
+      "price_level": null,
+      "types": [
+        "beauty_salon",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "gym",
+      "extracted_at": "2025-12-02T19:19:41.134126"
+    },
+    {
+      "place_id": "ChIJvREfOyc9sz4Rz1YpGSsaWfA",
+      "name": "SMF STUDIO",
+      "lat": 24.8019074,
+      "lon": 67.0374452,
+      "address": "2c Saba Avenue, DHA Phase 5, Karachi",
+      "rating": 5,
+      "total_ratings": 7,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:20:30.647913"
+    },
+    {
+      "place_id": "ChIJMbh2ZgA9sz4RBHIK9OLW1PI",
+      "name": "Gym khana rough",
+      "lat": 24.8025107,
+      "lon": 67.0375777,
+      "address": "34/2 Khayaban-e-Shamsheer, DHA Phase 5 Stadium Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": null,
+      "total_ratings": 0,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:20:30.647931"
+    },
+    {
+      "place_id": "ChIJQfMmpIQ9sz4RVAkxqsJuKsE",
+      "name": "Fitness Company GYM",
+      "lat": 24.8006011,
+      "lon": 67.0457066,
+      "address": "corner building back of Agha khan Lab, Building # 2-C,7th Badar Commercial Street, Street 1, DHA Phase 5, Karachi",
+      "rating": 5,
+      "total_ratings": 6,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:21:36.166706"
+    },
+    {
+      "place_id": "ChIJaTjs0OA9sz4RZHeBXFedwag",
+      "name": "Fitness Company Gym",
+      "lat": 24.8000389,
+      "lon": 67.0471049,
+      "address": "2C, Mezzanine Floor, 07th Lane 26th Street, DHA Phase 5 Badar Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": null,
+      "total_ratings": 0,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:21:36.166721"
+    },
+    {
+      "place_id": "ChIJI4Lg4_U9sz4RnjLQHfqbf1s",
+      "name": "Fit MMA with Team Godai",
+      "lat": 24.7995361,
+      "lon": 67.046476,
+      "address": "2 Badar Commercial Street 10, Badar Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 5,
+      "total_ratings": 1,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:21:36.166728"
+    },
+    {
+      "place_id": "ChIJsy3wlK89sz4RFl5-gmbHNMU",
+      "name": "FITNESS GOALS GYM",
+      "lat": 24.80848160000001,
+      "lon": 67.0470599,
+      "address": "Khadda market, near hot n spicy, DHA Phase 5 Defence V Defence Housing Authority, Karachi",
+      "rating": null,
+      "total_ratings": 0,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:21:37.131115"
+    },
+    {
+      "place_id": "ChIJeaWfX1Q8sz4Rqggs2wDDAOs",
+      "name": "Fitness n Herbs",
+      "lat": 24.81215379999999,
+      "lon": 67.0495454,
+      "address": "Flat No. 4, Building, 24c 14th Street, Stadium Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 4.3,
+      "total_ratings": 3,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:21:37.819300"
+    },
+    {
+      "place_id": "ChIJNfrGiFQ8sz4RxwY1muLfRb8",
+      "name": "Reflex Fitness Center (MushAttack) ریفلیکس فٹنس سینٹر",
+      "lat": 24.8132898,
+      "lon": 67.0491253,
+      "address": "Phase V, 19 Stadium Lane 3, DHA Phase 5 Stadium Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 4.1,
+      "total_ratings": 10,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:21:38.686003"
+    },
+    {
+      "place_id": "ChIJGyhdm1M8sz4ROnvwP7ViYJY",
+      "name": "Get Smart Gym Ph5",
+      "lat": 24.8145268,
+      "lon": 67.0498692,
+      "address": "Plot # C-12, First Floor, Stadium Lane 1, Khayaban-e-Shamsheer, DHA Phase 5 Stadium Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 4.2,
+      "total_ratings": 64,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:21:39.025088"
+    },
+    {
+      "place_id": "ChIJD6zNez89sz4RvXzBpV8KXcU",
+      "name": "FlipsArena.pk",
+      "lat": 24.8135677,
+      "lon": 67.0504491,
+      "address": "Flips arena, DHA Phase 5, Karachi",
+      "rating": 5,
+      "total_ratings": 5,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:21:39.025114"
+    },
+    {
+      "place_id": "ChIJLQ2D-CM9sz4RUdp2A8LNEYI",
+      "name": "The Oxygen Fitness Gym",
+      "lat": 24.81246749999999,
+      "lon": 67.0506078,
+      "address": "42C, 1st Floor, Stadium Lane, 03 Khayaban-e-Mujahid, Stadium Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 4.7,
+      "total_ratings": 51,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:21:39.025123"
+    },
+    {
+      "place_id": "ChIJl3TTDso9sz4R14K8xRsEDNA",
+      "name": "Legends Fitness & Wellness",
+      "lat": 24.813464,
+      "lon": 67.050376,
+      "address": "Stadium Lane 3, Khayaban-e-Mujahid, DHA Phase 5 Defence Housing Authority, Karachi, 75500, Pakistan",
+      "rating": 3.4,
+      "total_ratings": 5,
+      "price_level": null,
+      "types": [
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "bodybuilding gym",
+      "extracted_at": "2025-12-02T19:22:28.827642"
+    },
+    {
+      "place_id": "ChIJxaNJtO89sz4RYIIsez7VGCo",
+      "name": "EVOLVE THE GYM",
+      "lat": 24.7996926,
+      "lon": 67.0581576,
+      "address": "34-c,nishat, Lane 12, D.H.A Phase 6 Nishat Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": 4.4,
+      "total_ratings": 15,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:22:38.781929"
+    },
+    {
+      "place_id": "ChIJg-p8msw9sz4RG9y4jqOw-v0",
+      "name": "V taper by Aasif Rehmaan Chapter II",
+      "lat": 24.7996649,
+      "lon": 67.0581724,
+      "address": "34-C Lane 12, D.H.A Phase 6 Nishat Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": 5,
+      "total_ratings": 1,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:22:38.781944"
+    },
+    {
+      "place_id": "ChIJDbKblvo8sz4RTsDB2Ylak4E",
+      "name": "Fitness Edge",
+      "lat": 24.7997851,
+      "lon": 67.0572802,
+      "address": "7c Service Lane - Nishat Commercial, D.H.A Phase 6 Nishat Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": 4.3,
+      "total_ratings": 85,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:22:38.781951"
+    },
+    {
+      "place_id": "ChIJLYMNi_o9sz4RXGy50iU_lZY",
+      "name": "Sohaila Makeup And Hair",
+      "lat": 24.7988921,
+      "lon": 67.0591895,
+      "address": "71/2 18th street, Khayaban-e-Rahat, Phase 6 Defence Housing Authority, Karachi",
+      "rating": 5,
+      "total_ratings": 2,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:22:38.781960"
+    },
+    {
+      "place_id": "ChIJyb7Dtvo8sz4Rs1uew6scICg",
+      "name": "Grace Gym",
+      "lat": 24.79859399999999,
+      "lon": 67.05718,
+      "address": "Q3X4+CVM, Lane 12, Nishat Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": 4.5,
+      "total_ratings": 69,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:22:38.781966"
+    },
+    {
+      "place_id": "ChIJNfZMXs09sz4RVYYbB_HKrqk",
+      "name": "Fit and Fabulous",
+      "lat": 24.8046832,
+      "lon": 67.0602141,
+      "address": "12 13th Street, Karachi",
+      "rating": null,
+      "total_ratings": 0,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:22:40.482653"
+    },
+    {
+      "place_id": "ChIJqYp7UA89sz4RW67a50riO3Q",
+      "name": "M Y traders",
+      "lat": 24.81185779999999,
+      "lon": 67.0540716,
+      "address": "B/828, Karachi",
+      "rating": null,
+      "total_ratings": 0,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:22:42.731103"
+    },
+    {
+      "place_id": "ChIJYaE8hgY9sz4RclccpR9IXpg",
+      "name": "My rule fitness",
+      "lat": 24.8024556,
+      "lon": 67.0637752,
+      "address": "big nishad yo commercial area, Defance phace 6 big nisn, near orange game, line 12, D.H.A Phase 6 Nishat Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": 5,
+      "total_ratings": 1,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:23:39.338721"
+    },
+    {
+      "place_id": "ChIJ8Wyzn2A8sz4RN55btUCnkVQ",
+      "name": "Fitinn Studio",
+      "lat": 24.8005174,
+      "lon": 67.0687367,
+      "address": "plot#3chota, Nishat commercial, Lane 3, D.H.A Phase 6, Karachi",
+      "rating": 4.1,
+      "total_ratings": 117,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:23:39.673077"
+    },
+    {
+      "place_id": "ChIJweesWM89sz4RC6oMQz6_Elc",
+      "name": "MatrixFit",
+      "lat": 24.8003818,
+      "lon": 67.0682161,
+      "address": "27C, Lane 1 Khayaban-e-Nishat, D.H.A Phase 6, Karachi",
+      "rating": 4.3,
+      "total_ratings": 3,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:23:39.673095"
+    },
+    {
+      "place_id": "ChIJbdEhXfE9sz4RpexVqQ9RUvA",
+      "name": "Transfit Gym D.H.A",
+      "lat": 24.809701,
+      "lon": 67.0630035,
+      "address": "KFC Building, 2-C Khayaban-e-Shahbaz, D.H.A Phase 6 DHA Karachi, Karachi",
+      "rating": 4.4,
+      "total_ratings": 27,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:23:42.027569"
+    },
+    {
+      "place_id": "ChIJP0NaZwA9sz4RsXcEW6vL4VU",
+      "name": "Endeavor fitness",
+      "lat": 24.8088336,
+      "lon": 67.0629344,
+      "address": "Ground Floor 14C, lane 1 khayaban e, Shahbaz Commercial Street, D.H.A Phase 6 Shahbaz Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": 5,
+      "total_ratings": 6,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:23:42.027602"
+    },
+    {
+      "place_id": "ChIJsw6xGAA9sz4R32N8KFTN6eU",
+      "name": "Build",
+      "lat": 24.8091236,
+      "lon": 67.0633859,
+      "address": "R357+J9R, Khayaban-e-Seher, D.H.A Phase 6 Shahbaz Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": 4.3,
+      "total_ratings": 4,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:23:42.027620"
+    },
+    {
+      "place_id": "ChIJGXTrpA89sz4R6sQTsQvatjA",
+      "name": "Fly Fitness",
+      "lat": 24.8092058,
+      "lon": 67.0699976,
+      "address": "Basement, 15-c, Rahat Commercial Lane 2, D.H.A Phase 6 Rahat Commercial Area Phase 6 Defence Housing Authority, Karachi, 75500, Pakistan",
+      "rating": 5,
+      "total_ratings": 18,
+      "price_level": null,
+      "types": [
+        "gym",
+        "school",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "text",
+      "search_keyword": "gym",
+      "extracted_at": "2025-12-02T19:23:52.728800"
+    },
+    {
+      "place_id": "ChIJ8wtKCuI8sz4RwJaWLa6_yPA",
+      "name": "The Royal Rodale",
+      "lat": 24.791952,
+      "lon": 67.0465411,
+      "address": "TC-V 34th Street, Off Khayaban - e - Seher Phase V, Karachi",
+      "rating": 4,
+      "total_ratings": 1876,
+      "price_level": null,
+      "types": [
+        "bowling_alley",
+        "gym",
+        "library",
+        "health",
+        "restaurant",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:40.741254"
+    },
+    {
+      "place_id": "ChIJFwrPlQI9sz4Re8-MeCZ-RZQ",
+      "name": "The Strength Project",
+      "lat": 24.7942585,
+      "lon": 67.0487617,
+      "address": "3rd Floor, Tower, 47-C Lane 4, Shahbaz Commercial Area, Karachi",
+      "rating": 4.7,
+      "total_ratings": 27,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:40.741304"
+    },
+    {
+      "place_id": "ChIJg__6j4Y9sz4RuxxuhfzhYHI",
+      "name": "gymnossfitnesspk",
+      "lat": 24.7897783,
+      "lon": 67.0490303,
+      "address": "2-C, 34TH SHAD, DOHS, PHASE 6, KARACHITREET, KHAYABAN E ITTE DOHS, Karachi",
+      "rating": 4,
+      "total_ratings": 3,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:40.741332"
+    },
+    {
+      "place_id": "ChIJg2OWBQM9sz4Rf-On9WS2N9s",
+      "name": "Weightloss Pakistan",
+      "lat": 24.7981501,
+      "lon": 67.0428185,
+      "address": "Q2XV+748, Badar Commercial Street 7A, Badar Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 4.2,
+      "total_ratings": 9,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:41.685457"
+    },
+    {
+      "place_id": "ChIJX_oF2yM9sz4REL9Qtk_51lw",
+      "name": "The Fitness Crew",
+      "lat": 24.7965216,
+      "lon": 67.0447849,
+      "address": "ph-5, 30-C, 4th Floor, near pizza Hut, Saba Avenue, Badar Commercial Area, Karachi",
+      "rating": 4.9,
+      "total_ratings": 48,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:41.685509"
+    },
+    {
+      "place_id": "ChIJHTuuHJg9sz4R8fNom9rwATU",
+      "name": "Barbell Studioz",
+      "lat": 24.7965218,
+      "lon": 67.04478759999999,
+      "address": "Barbell Studioz, 3rd Floor Plot 30-C, Street 6, Main Saba Avenue, Khayban-e-Badar Commercial, DHA Phase 5 Defence Housing Authority, Karachi",
+      "rating": 4.2,
+      "total_ratings": 39,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:41.685535"
+    },
+    {
+      "place_id": "ChIJGb-PDgA9sz4RZmPu5nmVutQ",
+      "name": "Tribefitness",
+      "lat": 24.7974038,
+      "lon": 67.0437086,
+      "address": "12 C Saba Avenue ,Badar commercial, Street 6, DHA Phase 5, Karachi",
+      "rating": 4.9,
+      "total_ratings": 46,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:41.685558"
+    },
+    {
+      "place_id": "ChIJaQWX4AI9sz4R-ehlKMr9etU",
+      "name": "Zumba with Nasrullah Michel Ansari",
+      "lat": 24.7974145,
+      "lon": 67.0437455,
+      "address": "Zumba® with Nasrullah Michel Ansari 12 C Badar Commercial, Street No. 6, Tel: +922135245430, Saba Avenue, Badar Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 2.9,
+      "total_ratings": 8,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:41.685579"
+    },
+    {
+      "place_id": "ChIJP6EaVFY9sz4Rs1gz7ZBc_gc",
+      "name": "The Yard Fitness Gym",
+      "lat": 24.7946089,
+      "lon": 67.0488809,
+      "address": "4th Floor, 43-C Lane 4, D.H.A Phase 6 Shahbaz Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": 3,
+      "total_ratings": 2,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:42.521736"
+    },
+    {
+      "place_id": "ChIJ9Y-A3Ns9sz4Rgba5VqpuqVg",
+      "name": "Sunshine Fitness",
+      "lat": 24.794661,
+      "lon": 67.04895,
+      "address": "Q2VX+RJJ, D.H.A Phase 6 Shahbaz Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": 5,
+      "total_ratings": 4,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:42.521751"
+    },
+    {
+      "place_id": "ChIJ5b_rkro9sz4Ro5W3OAUTeSo",
+      "name": "HealthBingeFitnessStudio",
+      "lat": 24.7952414,
+      "lon": 67.04932819999999,
+      "address": "4th floor, Plot 45-C, Khayaban-e-Shahbaz, D.H.A Phase 6 Defence Housing Authority, Karachi",
+      "rating": null,
+      "total_ratings": 0,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:42.521758"
+    },
+    {
+      "place_id": "ChIJnSC_2CY9sz4R9aYJQITbUA8",
+      "name": "Club Infinity",
+      "lat": 24.7974764,
+      "lon": 67.0466682,
+      "address": "1st and 2nd floor, 31-C, Khayaban-e-Badar, D.H.A Phase 6, Badar Commercial Area Badar Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 4.6,
+      "total_ratings": 19,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:42.521764"
+    },
+    {
+      "place_id": "ChIJe5AOy3w9sz4RwjcvigFhKlo",
+      "name": "Fitness & Herbs gotogether",
+      "lat": 24.7975249,
+      "lon": 67.0466896,
+      "address": "Mezzanine floor, 27 C/II Khayaban-e-Badar, Karachi",
+      "rating": 1,
+      "total_ratings": 1,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:42.521770"
+    },
+    {
+      "place_id": "ChIJeXTo_Bw9sz4RguD4FJUrsd8",
+      "name": "TAURUS MIXED MARTIAL ARTS & FITNESS",
+      "lat": 24.7979658,
+      "lon": 67.047068,
+      "address": "21-C third floor, Khayaban-e-Badar, DHA Phase 5, Karachi",
+      "rating": 4.4,
+      "total_ratings": 50,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:42.521781"
+    },
+    {
+      "place_id": "ChIJQ4ZEW8Y9sz4Rx76-uMUE7uo",
+      "name": "Function",
+      "lat": 24.7943302,
+      "lon": 67.04937939999999,
+      "address": "Plot 41C, near chota shahbaz, next to Evergreen, Khayaban-e-Seher, D.H.A Phase 6, Karachi",
+      "rating": 4.9,
+      "total_ratings": 47,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:42.521787"
+    },
+    {
+      "place_id": "ChIJHRN_AAA9sz4RlMz0B4CSEOU",
+      "name": "Base Fitness Studio",
+      "lat": 24.7943623,
+      "lon": 67.0494724,
+      "address": "Plot No, Khayaban-e-Seher, D.H.A Phase 6 Shahbaz Commercial Area Phase 6 Defence Housing Authority, Karachi",
+      "rating": null,
+      "total_ratings": 0,
+      "price_level": null,
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:42.521792"
+    },
+    {
+      "place_id": "ChIJdUyBvwI9sz4Rqc3gBZ-8Rn0",
+      "name": "Wider Gym Superier",
+      "lat": 24.798074,
+      "lon": 67.0450789,
+      "address": "Building no, 11C Badar Commercial Street 10, DHA Phase 5 Badar Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 4.5,
+      "total_ratings": 4,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:43.559210"
+    },
+    {
+      "place_id": "ChIJnc16kz89sz4RR5_qlybnUOg",
+      "name": "Weight Studio",
+      "lat": 24.7989189,
+      "lon": 67.04569529999999,
+      "address": "10th steet bader commercial, khi, DHA Phase 5 Badar Commercial Area Defence V Defence Housing Authority, Karachi",
+      "rating": 4.6,
+      "total_ratings": 53,
+      "price_level": null,
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "business_status": "OPERATIONAL",
+      "extracted_from": "nearby",
+      "search_keyword": null,
+      "extracted_at": "2025-12-02T19:24:43.559231"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import '../providers/selection_provider.dart';
 import '../utils/colors.dart';
 import '../utils/constants.dart';
 import 'map_screen.dart';
+import 'enhanced_recommendation_screen.dart';
 
 /// Landing screen - Entry point for the app
 class LandingScreen extends ConsumerStatefulWidget {
@@ -201,49 +202,109 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
   Widget _buildFindButton() {
     final isEnabled = _selectedNeighborhood != null;
 
-    return ElevatedButton(
-      onPressed: isEnabled
-          ? () {
-              // Update providers
-              ref.read(selectedCategoryProvider.notifier).state =
-                  _selectedCategory;
-              ref.read(selectedNeighborhoodProvider.notifier).state =
-                  _selectedNeighborhood;
+    return Column(
+      children: [
+        // Original Find Locations button
+        ElevatedButton(
+          onPressed: isEnabled
+              ? () {
+                  // Update providers
+                  ref.read(selectedCategoryProvider.notifier).state =
+                      _selectedCategory;
+                  ref.read(selectedNeighborhoodProvider.notifier).state =
+                      _selectedNeighborhood;
 
-              // Navigate to map screen
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MapScreen()),
-              );
-            }
-          : null,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.surface,
-        foregroundColor: AppColors.primary,
-        disabledBackgroundColor: AppColors.surface.withValues(alpha: 0.5),
-        disabledForegroundColor: AppColors.textHint,
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-        elevation: isEnabled ? 4 : 0,
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Icon(
-            Icons.search,
-            color: isEnabled ? AppColors.primary : AppColors.textHint,
+                  // Navigate to map screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const MapScreen()),
+                  );
+                }
+              : null,
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.surface,
+            foregroundColor: AppColors.primary,
+            disabledBackgroundColor: AppColors.surface.withValues(alpha: 0.5),
+            disabledForegroundColor: AppColors.textHint,
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            elevation: isEnabled ? 4 : 0,
           ),
-          const SizedBox(width: 8),
-          Text(
-            'Find Locations',
-            style: TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-              color: isEnabled ? AppColors.primary : AppColors.textHint,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.search,
+                color: isEnabled ? AppColors.primary : AppColors.textHint,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                'Find Locations',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: isEnabled ? AppColors.primary : AppColors.textHint,
+                ),
+              ),
+            ],
+          ),
+        ),
+
+        const SizedBox(height: 16),
+
+        // NEW: AI-Powered Analysis button
+        OutlinedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const EnhancedRecommendationScreen(),
+              ),
+            );
+          },
+          style: OutlinedButton.styleFrom(
+            foregroundColor: AppColors.surface,
+            side: const BorderSide(color: AppColors.surface, width: 2),
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
             ),
           ),
-        ],
-      ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.psychology, color: AppColors.surface),
+              const SizedBox(width: 8),
+              const Text(
+                'AI-Powered Analysis',
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.surface,
+                ),
+              ),
+              const SizedBox(width: 8),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const Text(
+                  'NEW',
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
@@ -251,21 +312,27 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
     return Column(
       children: [
         _buildFeatureItem(
+          icon: Icons.psychology,
+          title: 'AI-Powered Analysis',
+          description: 'LLM-driven insights with detailed reasoning',
+        ),
+        const SizedBox(height: 16),
+        _buildFeatureItem(
           icon: Icons.analytics,
           title: 'Data-Driven Insights',
-          description: 'Powered by real business data and social signals',
+          description: 'Powered by real Google Places data',
         ),
         const SizedBox(height: 16),
         _buildFeatureItem(
           icon: Icons.map,
-          title: 'Interactive Heatmaps',
-          description: 'Visualize opportunities across neighborhoods',
+          title: '100m Micro-Grids',
+          description: 'High-resolution location analysis',
         ),
         const SizedBox(height: 16),
         _buildFeatureItem(
           icon: Icons.lightbulb,
           title: 'Smart Recommendations',
-          description: 'Get top locations with explainable rationale',
+          description: 'Explainable factors and risk analysis',
         ),
       ],
     );
