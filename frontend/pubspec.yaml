@@ -14,9 +14,13 @@ dependencies:
   # UI Components
   cupertino_icons: ^1.0.8
   
-  # Maps & Geospatial
-  flutter_map: ^6.1.0
-  latlong2: ^0.9.0
+  # Maps & Geospatial - Google Maps
+  google_maps_flutter: ^2.5.0
+  google_maps_flutter_web: ^0.5.4+2
+  geolocator: ^10.1.0
+  # Old flutter_map kept for reference (commented out)
+  # flutter_map: ^6.1.0
+  # latlong2: ^0.9.0
   
   # Networking
   http: ^1.1.0

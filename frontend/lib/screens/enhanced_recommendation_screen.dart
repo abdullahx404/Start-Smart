@@ -1,570 +1,660 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
-import 'package:latlong2/latlong.dart';
-import '../models/enhanced_recommendation.dart';
-import '../services/api_service.dart';
-import '../utils/colors.dart';
-import '../utils/constants.dart';
-import '../widgets/enhanced_recommendation_widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'analysis_results_screen.dart';
 
-/// Screen for getting AI-powered location recommendations
-class EnhancedRecommendationScreen extends StatefulWidget {
+class EnhancedRecommendationScreen extends ConsumerStatefulWidget {
   const EnhancedRecommendationScreen({super.key});
 
   @override
-  State<EnhancedRecommendationScreen> createState() =>
+  ConsumerState<EnhancedRecommendationScreen> createState() =>
       _EnhancedRecommendationScreenState();
 }
 
 class _EnhancedRecommendationScreenState
-    extends State<EnhancedRecommendationScreen> {
-  final ApiService _apiService = ApiService();
-  final MapController _mapController = MapController();
-  final TextEditingController _latController = TextEditingController();
-  final TextEditingController _lonController = TextEditingController();
+    extends ConsumerState<EnhancedRecommendationScreen> {
+  // Clifton, Karachi as default center
+  static const LatLng _cliftonCenter = LatLng(24.8093, 67.0311);
+  
+  // Available business types
+  static const List<String> _availableBusinessTypes = ['Gym', 'Cafe'];
+  
+  LatLng _selectedLocation = _cliftonCenter;
+  double _selectedRadius = 500.0;
+  bool _useAIMode = true;
+  String? _selectedBusinessType;
+  
+  // Search controller
+  final TextEditingController _searchController = TextEditingController();
+  final FocusNode _searchFocusNode = FocusNode();
+  List<String> _filteredBusinessTypes = [];
+  bool _showSuggestions = false;
+  
+  GoogleMapController? _mapController;
+  final Completer<GoogleMapController> _controllerCompleter = Completer();
 
-  // Default to Clifton, Karachi
-  LatLng _selectedLocation = const LatLng(24.8185, 67.0295);
-  int _radius = 500;
-  bool _isLLMMode = true;
-  bool _isLoading = false;
-  EnhancedRecommendation? _recommendation;
-  String? _error;
+  // Radius options
+  final List<double> _radiusOptions = [300, 500, 750, 1000];
 
   @override
   void initState() {
     super.initState();
-    _latController.text = _selectedLocation.latitude.toStringAsFixed(6);
-    _lonController.text = _selectedLocation.longitude.toStringAsFixed(6);
+    _filteredBusinessTypes = _availableBusinessTypes;
+    _searchController.addListener(_onSearchChanged);
+    _searchFocusNode.addListener(_onFocusChanged);
   }
 
   @override
   void dispose() {
-    _apiService.dispose();
-    _latController.dispose();
-    _lonController.dispose();
+    _searchController.removeListener(_onSearchChanged);
+    _searchController.dispose();
+    _searchFocusNode.removeListener(_onFocusChanged);
+    _searchFocusNode.dispose();
     super.dispose();
   }
 
-  Future<void> _getRecommendation() async {
+  void _onSearchChanged() {
+    final query = _searchController.text.toLowerCase();
     setState(() {
-      _isLoading = true;
-      _error = null;
+      if (query.isEmpty) {
+        _filteredBusinessTypes = _availableBusinessTypes;
+      } else {
+        _filteredBusinessTypes = _availableBusinessTypes
+            .where((type) => type.toLowerCase().contains(query))
+            .toList();
+      }
     });
+  }
 
-    try {
-      final recommendation = _isLLMMode
-          ? await _apiService.getLLMRecommendation(
-              lat: _selectedLocation.latitude,
-              lon: _selectedLocation.longitude,
-              radius: _radius,
-            )
-          : await _apiService.getFastRecommendation(
-              lat: _selectedLocation.latitude,
-              lon: _selectedLocation.longitude,
-              radius: _radius,
-            );
-
+  void _onFocusChanged() {
+    if (_searchFocusNode.hasFocus) {
       setState(() {
-        _recommendation = recommendation;
-        _isLoading = false;
-      });
-    } catch (e) {
-      setState(() {
-        _error = e.toString();
-        _isLoading = false;
+        _showSuggestions = true;
+        _filteredBusinessTypes = _availableBusinessTypes;
       });
     }
   }
 
-  void _onMapTap(TapPosition tapPosition, LatLng point) {
+  void _selectBusinessType(String type) {
     setState(() {
-      _selectedLocation = point;
-      _latController.text = point.latitude.toStringAsFixed(6);
-      _lonController.text = point.longitude.toStringAsFixed(6);
-      _recommendation = null;
+      _selectedBusinessType = type;
+      _searchController.text = type;
+      _showSuggestions = false;
+      _filteredBusinessTypes = [];
+    });
+    FocusScope.of(context).unfocus();
+  }
+
+  void _showSnackBar(String message) {
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(message),
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: const Color(0xFF1E40AF),
+        ),
+      );
+    }
+  }
+
+  void _onMapTap(LatLng position) {
+    // Allow user to select any location on the map
+    // Default is Clifton, but user can move anywhere
+    setState(() {
+      _selectedLocation = position;
     });
   }
 
-  void _updateLocationFromText() {
-    final lat = double.tryParse(_latController.text);
-    final lon = double.tryParse(_lonController.text);
-    if (lat != null && lon != null) {
-      setState(() {
-        _selectedLocation = LatLng(lat, lon);
-        _recommendation = null;
-      });
-      _mapController.move(_selectedLocation, _mapController.camera.zoom);
+  void _onAnalyzePressed() {
+    if (_selectedBusinessType == null) {
+      _showSnackBar('Please select a business type first');
+      return;
     }
+
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (context, animation, secondaryAnimation) => AnalysisResultsScreen(
+          latitude: _selectedLocation.latitude,
+          longitude: _selectedLocation.longitude,
+          radius: _selectedRadius.toInt(),
+          isLLMMode: _useAIMode,
+          businessType: _selectedBusinessType!,
+        ),
+        transitionsBuilder: (context, animation, secondaryAnimation, child) {
+          return FadeTransition(
+            opacity: animation,
+            child: SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(0, 0.1),
+                end: Offset.zero,
+              ).animate(CurvedAnimation(
+                parent: animation,
+                curve: Curves.easeOutCubic,
+              )),
+              child: child,
+            ),
+          );
+        },
+        transitionDuration: const Duration(milliseconds: 400),
+      ),
+    );
+  }
+
+  void _goToClifton() {
+    setState(() {
+      _selectedLocation = _cliftonCenter;
+    });
+    _mapController?.animateCamera(
+      CameraUpdate.newLatLngZoom(_cliftonCenter, 15),
+    );
+  }
+
+  Set<Marker> _buildMarkers() {
+    return {
+      Marker(
+        markerId: const MarkerId('selected_location'),
+        position: _selectedLocation,
+        icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueAzure),
+        infoWindow: InfoWindow(
+          title: 'Selected Location',
+          snippet: '${_selectedLocation.latitude.toStringAsFixed(4)}, ${_selectedLocation.longitude.toStringAsFixed(4)}',
+        ),
+      ),
+    };
+  }
+
+  Set<Circle> _buildCircles() {
+    return {
+      Circle(
+        circleId: const CircleId('analysis_radius'),
+        center: _selectedLocation,
+        radius: _selectedRadius,
+        fillColor: const Color(0xFF1E40AF).withOpacity(0.15),
+        strokeColor: const Color(0xFF1E40AF),
+        strokeWidth: 2,
+      ),
+    };
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Location Intelligence'),
-        backgroundColor: AppColors.primary,
-        foregroundColor: Colors.white,
-        elevation: 0,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.info_outline),
-            onPressed: _showInfoDialog,
-          ),
-        ],
-      ),
-      body: Column(
+      body: GestureDetector(
+        onTap: () {
+          // Close suggestions dropdown when tapping outside
+          if (_showSuggestions) {
+            setState(() {
+              _showSuggestions = false;
+            });
+            FocusScope.of(context).unfocus();
+          }
+        },
+        child: Stack(
         children: [
-          // Map section
-          Expanded(flex: 2, child: _buildMap()),
-
-          // Controls section
-          Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.1),
-                  blurRadius: 10,
-                  offset: const Offset(0, -2),
-                ),
-              ],
+          // Full-screen Google Map
+          GoogleMap(
+            initialCameraPosition: CameraPosition(
+              target: _cliftonCenter,
+              zoom: 15,
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [_buildLocationInput(), _buildControls()],
-            ),
-          ),
-
-          // Results section
-          Expanded(flex: 3, child: _buildResults()),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildMap() {
-    return Stack(
-      children: [
-        FlutterMap(
-          mapController: _mapController,
-          options: MapOptions(
-            initialCenter: _selectedLocation,
-            initialZoom: 15,
-            onTap: _onMapTap,
-          ),
-          children: [
-            TileLayer(
-              urlTemplate: MapConstants.tileUrlTemplate,
-              userAgentPackageName: MapConstants.tileUserAgent,
-            ),
-            // Radius circle
-            CircleLayer(
-              circles: [
-                CircleMarker(
-                  point: _selectedLocation,
-                  radius: _radius.toDouble(),
-                  useRadiusInMeter: true,
-                  color: AppColors.primary.withValues(alpha: 0.15),
-                  borderColor: AppColors.primary,
-                  borderStrokeWidth: 2,
-                ),
-              ],
-            ),
-            // Selected location marker
-            MarkerLayer(
-              markers: [
-                Marker(
-                  point: _selectedLocation,
-                  width: 50,
-                  height: 50,
-                  child: const Icon(
-                    Icons.location_pin,
-                    color: AppColors.primary,
-                    size: 50,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-        // Zoom controls
-        Positioned(
-          right: 16,
-          bottom: 16,
-          child: Column(
-            children: [
-              FloatingActionButton.small(
-                heroTag: 'zoomIn',
-                onPressed: () => _mapController.move(
-                  _mapController.camera.center,
-                  _mapController.camera.zoom + 1,
-                ),
-                child: const Icon(Icons.add),
-              ),
-              const SizedBox(height: 8),
-              FloatingActionButton.small(
-                heroTag: 'zoomOut',
-                onPressed: () => _mapController.move(
-                  _mapController.camera.center,
-                  _mapController.camera.zoom - 1,
-                ),
-                child: const Icon(Icons.remove),
-              ),
-            ],
-          ),
-        ),
-        // Instruction overlay
-        Positioned(
-          top: 8,
-          left: 8,
-          right: 8,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            decoration: BoxDecoration(
-              color: Colors.white.withValues(alpha: 0.9),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: const Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Icon(Icons.touch_app, size: 16, color: Colors.grey),
-                SizedBox(width: 8),
-                Text(
-                  'Tap on map to select location',
-                  style: TextStyle(fontSize: 12, color: Colors.grey),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildLocationInput() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
-      child: Row(
-        children: [
-          Expanded(
-            child: TextField(
-              controller: _latController,
-              decoration: const InputDecoration(
-                labelText: 'Latitude',
-                border: OutlineInputBorder(),
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 8,
-                ),
-                isDense: true,
-              ),
-              keyboardType: TextInputType.number,
-              onSubmitted: (_) => _updateLocationFromText(),
-            ),
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: TextField(
-              controller: _lonController,
-              decoration: const InputDecoration(
-                labelText: 'Longitude',
-                border: OutlineInputBorder(),
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 12,
-                  vertical: 8,
-                ),
-                isDense: true,
-              ),
-              keyboardType: TextInputType.number,
-              onSubmitted: (_) => _updateLocationFromText(),
-            ),
-          ),
-          const SizedBox(width: 12),
-          IconButton(
-            onPressed: _updateLocationFromText,
-            icon: const Icon(Icons.search),
-            style: IconButton.styleFrom(
-              backgroundColor: AppColors.primary.withValues(alpha: 0.1),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildControls() {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-      child: Row(
-        children: [
-          // Mode toggle
-          Expanded(
-            child: RecommendationModeToggle(
-              isLLMMode: _isLLMMode,
-              onChanged: (value) {
+            onMapCreated: (GoogleMapController controller) {
+              _mapController = controller;
+              if (!_controllerCompleter.isCompleted) {
+                _controllerCompleter.complete(controller);
+              }
+            },
+            onTap: (position) {
+              // Close suggestions if open
+              if (_showSuggestions) {
                 setState(() {
-                  _isLLMMode = value;
-                  _recommendation = null;
+                  _showSuggestions = false;
                 });
-              },
-              isLoading: _isLoading,
-            ),
+              }
+              _onMapTap(position);
+            },
+            markers: _buildMarkers(),
+            circles: _buildCircles(),
+            myLocationEnabled: false,
+            myLocationButtonEnabled: false,
+            zoomControlsEnabled: false,
+            mapToolbarEnabled: false,
           ),
-          const SizedBox(width: 16),
-          // Radius selector
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey[300]!),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: DropdownButton<int>(
-              value: _radius,
-              underline: const SizedBox(),
-              items: [300, 500, 750, 1000].map((r) {
-                return DropdownMenuItem(value: r, child: Text('${r}m'));
-              }).toList(),
-              onChanged: (value) {
-                if (value != null) {
-                  setState(() {
-                    _radius = value;
-                    _recommendation = null;
-                  });
-                }
-              },
-            ),
-          ),
-          const SizedBox(width: 16),
-          // Analyze button
-          ElevatedButton.icon(
-            onPressed: _isLoading ? null : _getRecommendation,
-            icon: _isLoading
-                ? const SizedBox(
-                    width: 16,
-                    height: 16,
-                    child: CircularProgressIndicator(
-                      strokeWidth: 2,
-                      color: Colors.white,
-                    ),
-                  )
-                : const Icon(Icons.analytics),
-            label: Text(_isLoading ? 'Analyzing...' : 'Analyze'),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: AppColors.primary,
-              foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildResults() {
-    if (_isLoading) {
-      return Center(
-        child: ProcessingIndicator(
-          message: _isLLMMode
-              ? 'AI is analyzing this location...'
-              : 'Quick analysis in progress...',
-        ),
-      );
-    }
-
-    if (_error != null) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.error_outline, size: 48, color: AppColors.error),
-            const SizedBox(height: 16),
-            Text('Error', style: Theme.of(context).textTheme.titleLarge),
-            const SizedBox(height: 8),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32),
-              child: Text(
-                _error!,
-                textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.grey[600]),
+          
+          // Top bar with back button, title and search
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).padding.top + 8,
+                left: 8,
+                right: 16,
+                bottom: 12,
               ),
-            ),
-            const SizedBox(height: 16),
-            ElevatedButton(
-              onPressed: _getRecommendation,
-              child: const Text('Retry'),
-            ),
-          ],
-        ),
-      );
-    }
-
-    if (_recommendation == null) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.map_outlined, size: 64, color: Colors.grey[400]),
-            const SizedBox(height: 16),
-            Text(
-              'Select a location and tap Analyze',
-              style: TextStyle(color: Colors.grey[600], fontSize: 16),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              _isLLMMode
-                  ? 'AI-powered analysis takes 2-3 seconds'
-                  : 'Fast analysis takes ~200ms',
-              style: TextStyle(color: Colors.grey[400], fontSize: 12),
-            ),
-          ],
-        ),
-      );
-    }
-
-    return _buildRecommendationResults(_recommendation!);
-  }
-
-  Widget _buildRecommendationResults(EnhancedRecommendation rec) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          // Summary card
-          Card(
-            color: AppColors.primary.withValues(alpha: 0.05),
-            child: Padding(
-              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    const Color(0xFF1E40AF).withOpacity(0.95),
+                    const Color(0xFF1E40AF).withOpacity(0.8),
+                    Colors.transparent,
+                  ],
+                  stops: const [0.0, 0.7, 1.0],
+                ),
+              ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(
-                        rec.recommendation.bestCategory == 'gym' ? '🏋️' : '☕',
-                        style: const TextStyle(fontSize: 32),
+                      IconButton(
+                        icon: const Icon(Icons.arrow_back, color: Colors.white),
+                        onPressed: () => Navigator.pop(context),
                       ),
-                      const SizedBox(width: 12),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Best for ${rec.recommendation.bestCategory.toUpperCase()}',
-                            style: const TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                      const SizedBox(width: 8),
+                      const Expanded(
+                        child: Text(
+                          'Location Intelligence',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      // Clifton button
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.2),
+                              blurRadius: 4,
+                              offset: const Offset(0, 2),
                             ),
-                          ),
-                          SuitabilityBadge(
-                            suitability: rec.recommendation.suitability,
-                            score: rec.recommendation.score,
-                            large: true,
-                          ),
-                        ],
+                          ],
+                        ),
+                        child: IconButton(
+                          icon: const Icon(Icons.location_city, color: Color(0xFF1E40AF)),
+                          onPressed: _goToClifton,
+                          tooltip: 'Go to Clifton',
+                        ),
                       ),
                     ],
                   ),
                   const SizedBox(height: 12),
-                  Text(
-                    rec.recommendation.message,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey[700], fontSize: 14),
+                  // Business type search bar
+                  _buildSearchBar(),
+                ],
+              ),
+            ),
+          ),
+          
+          // Suggestions dropdown
+          if (_showSuggestions && _filteredBusinessTypes.isNotEmpty)
+            Positioned(
+              top: MediaQuery.of(context).padding.top + 120,
+              left: 16,
+              right: 16,
+              child: Material(
+                elevation: 8,
+                borderRadius: BorderRadius.circular(12),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
                   ),
-                  const SizedBox(height: 8),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        rec.isLLMPowered ? Icons.psychology : Icons.bolt,
-                        size: 14,
-                        color: Colors.grey,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: _filteredBusinessTypes.map((type) {
+                      return ListTile(
+                        leading: Icon(
+                          type == 'Gym' ? Icons.fitness_center : Icons.coffee,
+                          color: const Color(0xFF1E40AF),
+                        ),
+                        title: Text(
+                          type,
+                          style: const TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                        subtitle: Text(
+                          type == 'Gym' 
+                              ? 'Fitness centers & gyms' 
+                              : 'Coffee shops & cafes',
+                          style: TextStyle(color: Colors.grey[600], fontSize: 12),
+                        ),
+                        onTap: () => _selectBusinessType(type),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+            ),
+          
+          // Bottom compact control bar
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              padding: EdgeInsets.only(
+                left: 16,
+                right: 16,
+                top: 16,
+                bottom: MediaQuery.of(context).padding.bottom + 16,
+              ),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xFF1E40AF).withOpacity(0.15),
+                    blurRadius: 20,
+                    offset: const Offset(0, -5),
+                  ),
+                ],
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  // Handle indicator
+                  Container(
+                    width: 40,
+                    height: 4,
+                    margin: const EdgeInsets.only(bottom: 16),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF1E40AF).withOpacity(0.3),
+                      borderRadius: BorderRadius.circular(2),
+                    ),
+                  ),
+                  
+                  // Selected business type display
+                  if (_selectedBusinessType != null) ...[
+                    Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: const Color(0xFF1E40AF).withOpacity(0.08),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: const Color(0xFF1E40AF).withOpacity(0.2),
+                        ),
                       ),
-                      const SizedBox(width: 4),
-                      Text(
-                        '${rec.mode.toUpperCase()} mode • ${rec.processingTimeMs}ms',
-                        style: TextStyle(color: Colors.grey[500], fontSize: 11),
+                      child: Row(
+                        children: [
+                          Icon(
+                            _selectedBusinessType == 'Gym' 
+                                ? Icons.fitness_center 
+                                : Icons.coffee,
+                            color: const Color(0xFF1E40AF),
+                            size: 20,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            'Analyzing for: $_selectedBusinessType',
+                            style: const TextStyle(
+                              color: Color(0xFF1E40AF),
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          const Spacer(),
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _selectedBusinessType = null;
+                                _searchController.clear();
+                              });
+                            },
+                            child: const Icon(
+                              Icons.close,
+                              color: Color(0xFF1E40AF),
+                              size: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                  ],
+                  
+                  // Mode toggle and radius in one row
+                  Row(
+                    children: [
+                      // Mode toggle
+                      Expanded(
+                        child: Container(
+                          padding: const EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFF1E40AF).withOpacity(0.08),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: GestureDetector(
+                                  onTap: () => setState(() => _useAIMode = false),
+                                  child: AnimatedContainer(
+                                    duration: const Duration(milliseconds: 200),
+                                    padding: const EdgeInsets.symmetric(vertical: 10),
+                                    decoration: BoxDecoration(
+                                      color: !_useAIMode ? const Color(0xFF1E40AF) : Colors.transparent,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.speed,
+                                          size: 16,
+                                          color: !_useAIMode ? Colors.white : const Color(0xFF1E40AF),
+                                        ),
+                                        const SizedBox(width: 4),
+                                        Text(
+                                          'Fast',
+                                          style: TextStyle(
+                                            color: !_useAIMode ? Colors.white : const Color(0xFF1E40AF),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: GestureDetector(
+                                  onTap: () => setState(() => _useAIMode = true),
+                                  child: AnimatedContainer(
+                                    duration: const Duration(milliseconds: 200),
+                                    padding: const EdgeInsets.symmetric(vertical: 10),
+                                    decoration: BoxDecoration(
+                                      color: _useAIMode ? const Color(0xFF1E40AF) : Colors.transparent,
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          Icons.auto_awesome,
+                                          size: 16,
+                                          color: _useAIMode ? Colors.white : const Color(0xFF1E40AF),
+                                        ),
+                                        const SizedBox(width: 4),
+                                        Text(
+                                          'AI',
+                                          style: TextStyle(
+                                            color: _useAIMode ? Colors.white : const Color(0xFF1E40AF),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      
+                      const SizedBox(width: 12),
+                      
+                      // Radius dropdown
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF1E40AF).withOpacity(0.08),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton<double>(
+                            value: _selectedRadius,
+                            icon: const Icon(Icons.keyboard_arrow_down, size: 20, color: Color(0xFF1E40AF)),
+                            isDense: true,
+                            items: _radiusOptions.map((radius) {
+                              return DropdownMenuItem(
+                                value: radius,
+                                child: Text(
+                                  '${radius.toInt()}m',
+                                  style: const TextStyle(
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 13,
+                                    color: Color(0xFF1E40AF),
+                                  ),
+                                ),
+                              );
+                            }).toList(),
+                            onChanged: (value) {
+                              if (value != null) {
+                                setState(() => _selectedRadius = value);
+                              }
+                            },
+                          ),
+                        ),
                       ),
                     ],
+                  ),
+                  
+                  const SizedBox(height: 16),
+                  
+                  // Analyze button - full width
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: _selectedBusinessType != null ? _onAnalyzePressed : null,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF1E40AF),
+                        foregroundColor: Colors.white,
+                        disabledBackgroundColor: Colors.grey[300],
+                        disabledForegroundColor: Colors.grey[500],
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        elevation: _selectedBusinessType != null ? 4 : 0,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            _useAIMode ? Icons.auto_awesome : Icons.analytics,
+                            size: 20,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            _selectedBusinessType != null
+                                ? (_useAIMode ? 'Analyze with AI' : 'Quick Analysis')
+                                : 'Select a business type first',
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
           ),
-
-          const SizedBox(height: 16),
-
-          // Score comparison
-          ScoreComparison(
-            gymScore: rec.gym.score,
-            cafeScore: rec.cafe.score,
-            winner: rec.recommendation.bestCategory,
-          ),
-
-          const SizedBox(height: 16),
-
-          // Category cards
-          CategoryScoreCard(
-            category: 'Gym',
-            score: rec.gym,
-            isWinner: rec.recommendation.bestCategory == 'gym',
-          ),
-          const SizedBox(height: 12),
-          CategoryScoreCard(
-            category: 'Cafe',
-            score: rec.cafe,
-            isWinner: rec.recommendation.bestCategory == 'cafe',
-          ),
-
-          // LLM insights (if available)
-          if (rec.llmInsights != null) ...[
-            const SizedBox(height: 16),
-            LLMInsightsCard(insights: rec.llmInsights!),
-          ],
-
-          const SizedBox(height: 24),
         ],
+      ),
       ),
     );
   }
 
-  void _showInfoDialog() {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Row(
-          children: [
-            Icon(Icons.info, color: AppColors.primary),
-            SizedBox(width: 8),
-            Text('About'),
-          ],
-        ),
-        content: const Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'StartSmart Location Intelligence',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 12),
-            Text('🚀 Fast Mode: Rule-based analysis (~200ms)'),
-            SizedBox(height: 8),
-            Text('🧠 AI Mode: LLM-powered insights (2-3s)'),
-            SizedBox(height: 16),
-            Text(
-              'The AI mode uses Groq LLM to provide contextual reasoning '
-              'and detailed insights about the location.',
-              style: TextStyle(fontSize: 13, color: Colors.grey),
+  Widget _buildSearchBar() {
+    return GestureDetector(
+      onTap: () {
+        _searchFocusNode.requestFocus();
+        setState(() {
+          _showSuggestions = true;
+          _filteredBusinessTypes = _availableBusinessTypes;
+        });
+      },
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 8),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
             ),
           ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Got it'),
+        child: TextField(
+          controller: _searchController,
+          focusNode: _searchFocusNode,
+          onTap: () {
+            setState(() {
+              _showSuggestions = true;
+              _filteredBusinessTypes = _availableBusinessTypes;
+            });
+          },
+          decoration: InputDecoration(
+            hintText: _selectedBusinessType ?? 'Tap to select business type...',
+            hintStyle: TextStyle(
+              color: _selectedBusinessType != null ? Colors.black87 : Colors.grey[400],
+              fontWeight: _selectedBusinessType != null ? FontWeight.w500 : FontWeight.normal,
+            ),
+            prefixIcon: Icon(
+              _selectedBusinessType == 'Gym' 
+                  ? Icons.fitness_center 
+                  : _selectedBusinessType == 'Cafe' 
+                      ? Icons.coffee 
+                      : Icons.search,
+              color: const Color(0xFF1E40AF),
+            ),
+            suffixIcon: _selectedBusinessType != null
+                ? IconButton(
+                    icon: const Icon(Icons.clear, color: Colors.grey),
+                    onPressed: () {
+                      _searchController.clear();
+                      setState(() {
+                        _selectedBusinessType = null;
+                        _showSuggestions = false;
+                      });
+                    },
+                  )
+                : const Icon(Icons.arrow_drop_down, color: Color(0xFF1E40AF)),
+            border: InputBorder.none,
+            contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
           ),
-        ],
+          style: const TextStyle(fontSize: 16),
+          readOnly: true, // Make it read-only so it acts like a dropdown
+        ),
       ),
     );
   }

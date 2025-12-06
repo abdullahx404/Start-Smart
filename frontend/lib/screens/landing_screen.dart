@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../providers/selection_provider.dart';
 import '../utils/colors.dart';
-import '../utils/constants.dart';
-import 'map_screen.dart';
 import 'enhanced_recommendation_screen.dart';
 
 /// Landing screen - Entry point for the app
@@ -15,9 +12,6 @@ class LandingScreen extends ConsumerStatefulWidget {
 }
 
 class _LandingScreenState extends ConsumerState<LandingScreen> {
-  String? _selectedNeighborhood;
-  String _selectedCategory = Categories.gym;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,146 +110,76 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'What type of business?',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-            ),
-            const SizedBox(height: 12),
-
-            // Category selection
-            Row(
-              children: Categories.all.map((category) {
-                final isSelected = category == _selectedCategory;
-                return Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(
-                      right: category != Categories.all.last ? 12 : 0,
-                    ),
-                    child: _CategoryCard(
-                      category: category,
-                      isSelected: isSelected,
-                      onTap: () {
-                        setState(() {
-                          _selectedCategory = category;
-                        });
-                      },
-                    ),
-                  ),
-                );
-              }).toList(),
-            ),
-            const SizedBox(height: 24),
-
-            const Text(
-              'Which neighborhood?',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-            ),
-            const SizedBox(height: 12),
-
-            // Neighborhood dropdown
+            // Info about the AI-powered analysis
             Container(
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                border: Border.all(color: AppColors.surfaceVariant),
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton<String>(
-                  value: _selectedNeighborhood,
-                  hint: const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 16),
-                    child: Text('Select a neighborhood'),
-                  ),
-                  isExpanded: true,
-                  icon: const Padding(
-                    padding: EdgeInsets.only(right: 12),
-                    child: Icon(Icons.arrow_drop_down),
-                  ),
-                  items: Neighborhoods.all.entries.map((entry) {
-                    return DropdownMenuItem(
-                      value: entry.key,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Row(
-                          children: [
-                            const Text('📍', style: TextStyle(fontSize: 16)),
-                            const SizedBox(width: 8),
-                            Text(entry.value),
-                          ],
-                        ),
-                      ),
-                    );
-                  }).toList(),
-                  onChanged: (value) {
-                    setState(() {
-                      _selectedNeighborhood = value;
-                    });
-                  },
+                color: AppColors.primary.withValues(alpha: 0.08),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: AppColors.primary.withValues(alpha: 0.2),
                 ),
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.psychology, color: AppColors.primary, size: 28),
+                      const SizedBox(width: 12),
+                      const Text(
+                        'AI-Powered Location Analysis',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                  const Text(
+                    'Tap on any location in Clifton, Karachi to get intelligent business recommendations for Gym and Cafe.',
+                    style: TextStyle(fontSize: 14, color: Colors.black87),
+                  ),
+                ],
+              ),
             ),
+            const SizedBox(height: 20),
+
+            // Features list
+            _buildInfoRow(Icons.map, 'Select any location on the map'),
+            const SizedBox(height: 8),
+            _buildInfoRow(Icons.tune, 'Choose analysis radius (300-1000m)'),
+            const SizedBox(height: 8),
+            _buildInfoRow(Icons.bolt, 'Fast mode: Rule-based (~200ms)'),
+            const SizedBox(height: 8),
+            _buildInfoRow(Icons.psychology, 'AI mode: LLM insights (~2-3s)'),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildFindButton() {
-    final isEnabled = _selectedNeighborhood != null;
-
-    return Column(
+  Widget _buildInfoRow(IconData icon, String text) {
+    return Row(
       children: [
-        // Original Find Locations button
-        ElevatedButton(
-          onPressed: isEnabled
-              ? () {
-                  // Update providers
-                  ref.read(selectedCategoryProvider.notifier).state =
-                      _selectedCategory;
-                  ref.read(selectedNeighborhoodProvider.notifier).state =
-                      _selectedNeighborhood;
-
-                  // Navigate to map screen
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const MapScreen()),
-                  );
-                }
-              : null,
-          style: ElevatedButton.styleFrom(
-            backgroundColor: AppColors.surface,
-            foregroundColor: AppColors.primary,
-            disabledBackgroundColor: AppColors.surface.withValues(alpha: 0.5),
-            disabledForegroundColor: AppColors.textHint,
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            elevation: isEnabled ? 4 : 0,
-          ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.search,
-                color: isEnabled ? AppColors.primary : AppColors.textHint,
-              ),
-              const SizedBox(width: 8),
-              Text(
-                'Find Locations',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: isEnabled ? AppColors.primary : AppColors.textHint,
-                ),
-              ),
-            ],
+        Icon(icon, size: 20, color: AppColors.primary.withValues(alpha: 0.7)),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Text(
+            text,
+            style: const TextStyle(fontSize: 14),
           ),
         ),
+      ],
+    );
+  }
 
-        const SizedBox(height: 16),
-
-        // NEW: AI-Powered Analysis button
-        OutlinedButton(
+  Widget _buildFindButton() {
+    return Column(
+      children: [
+        // AI-Powered Analysis button (Primary feature)
+        ElevatedButton(
           onPressed: () {
             Navigator.push(
               context,
@@ -264,41 +188,26 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
               ),
             );
           },
-          style: OutlinedButton.styleFrom(
-            foregroundColor: AppColors.surface,
-            side: const BorderSide(color: AppColors.surface, width: 2),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.surface,
+            foregroundColor: AppColors.primary,
             padding: const EdgeInsets.symmetric(vertical: 16),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
             ),
+            elevation: 4,
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.psychology, color: AppColors.surface),
+              const Icon(Icons.psychology, color: AppColors.primary),
               const SizedBox(width: 8),
               const Text(
                 'AI-Powered Analysis',
                 style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: AppColors.surface,
-                ),
-              ),
-              const SizedBox(width: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                decoration: BoxDecoration(
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: const Text(
-                  'NEW',
-                  style: TextStyle(
-                    fontSize: 10,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
+                  color: AppColors.primary,
                 ),
               ),
             ],
@@ -378,56 +287,6 @@ class _LandingScreenState extends ConsumerState<LandingScreen> {
           ),
         ),
       ],
-    );
-  }
-}
-
-/// Category selection card
-class _CategoryCard extends StatelessWidget {
-  final String category;
-  final bool isSelected;
-  final VoidCallback onTap;
-
-  const _CategoryCard({
-    required this.category,
-    required this.isSelected,
-    required this.onTap,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 16),
-        decoration: BoxDecoration(
-          color: isSelected
-              ? AppColors.primary.withValues(alpha: 0.1)
-              : AppColors.surfaceVariant.withValues(alpha: 0.5),
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            color: isSelected ? AppColors.primary : Colors.transparent,
-            width: 2,
-          ),
-        ),
-        child: Column(
-          children: [
-            Text(
-              Categories.getIcon(category),
-              style: const TextStyle(fontSize: 32),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              category,
-              style: TextStyle(
-                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                color: isSelected ? AppColors.primary : AppColors.textPrimary,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

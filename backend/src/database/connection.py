@@ -21,7 +21,7 @@ import logging
 from contextlib import contextmanager
 from typing import Generator
 
-from sqlalchemy import create_engine, event, Engine
+from sqlalchemy import create_engine, event, Engine, text
 from sqlalchemy.orm import declarative_base, sessionmaker, Session
 from sqlalchemy.pool import NullPool, QueuePool
 from dotenv import load_dotenv
@@ -258,7 +258,7 @@ def check_connection() -> bool:
     try:
         with get_session() as session:
             # Execute simple query to verify connection
-            session.execute("SELECT 1")
+            session.execute(text("SELECT 1"))
         logger.info("Database connection test: SUCCESS")
         return True
     except Exception as e:
