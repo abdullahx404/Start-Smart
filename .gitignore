@@ -11,8 +11,16 @@ env/
 ENV/
 .venv/
 
-# Environment Variables
+# Environment Variables - NEVER COMMIT THESE
 .env
+*.env
+.env.*
+!.env.example
+backend/.env
+
+# Frontend environment config (contains API keys)
+frontend/web/env.js
+!frontend/web/env.example.js
 
 # Testing
 .pytest_cache/

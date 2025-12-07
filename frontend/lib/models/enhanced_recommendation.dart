@@ -145,14 +145,20 @@ class LLMInsights {
   }
 }
 
-/// Business Environment Vector summary (for debug/detail view)
+/// Business Environment Vector summary - shows nearby businesses in the area
 class BEVSummary {
   final int restaurantCount;
   final int cafeCount;
   final int gymCount;
   final int officeCount;
   final int schoolCount;
-  final double? distanceToMall;
+  final int bankCount;
+  final int transitCount;
+  final int mallCount;
+  final int parkCount;
+  final int healthcareCount;
+  final int totalBusinesses;
+  final double avgRating;
   final String? incomeProxy;
 
   BEVSummary({
@@ -161,7 +167,13 @@ class BEVSummary {
     this.gymCount = 0,
     this.officeCount = 0,
     this.schoolCount = 0,
-    this.distanceToMall,
+    this.bankCount = 0,
+    this.transitCount = 0,
+    this.mallCount = 0,
+    this.parkCount = 0,
+    this.healthcareCount = 0,
+    this.totalBusinesses = 0,
+    this.avgRating = 0.0,
     this.incomeProxy,
   });
 
@@ -172,9 +184,32 @@ class BEVSummary {
       gymCount: json['gym_count'] as int? ?? 0,
       officeCount: json['office_count'] as int? ?? 0,
       schoolCount: json['school_count'] as int? ?? 0,
-      distanceToMall: (json['distance_to_mall'] as num?)?.toDouble(),
+      bankCount: json['bank_count'] as int? ?? 0,
+      transitCount: json['transit_count'] as int? ?? 0,
+      mallCount: json['mall_count'] as int? ?? 0,
+      parkCount: json['park_count'] as int? ?? 0,
+      healthcareCount: json['healthcare_count'] as int? ?? 0,
+      totalBusinesses: json['total_businesses'] as int? ?? 0,
+      avgRating: (json['avg_rating'] as num?)?.toDouble() ?? 0.0,
       incomeProxy: json['income_proxy'] as String?,
     );
+  }
+
+  /// Check if there are any businesses in this area
+  bool get hasBusinesses => totalBusinesses > 0;
+
+  /// Get income level label
+  String get incomeLevel {
+    switch (incomeProxy) {
+      case 'high':
+        return 'High Income Area';
+      case 'mid':
+        return 'Middle Income Area';
+      case 'low':
+        return 'Developing Area';
+      default:
+        return 'Unknown';
+    }
   }
 }
 

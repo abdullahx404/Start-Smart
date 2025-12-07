@@ -32,8 +32,23 @@
   <title>StartSmart</title>
   <link rel="manifest" href="manifest.json">
 
-  <!-- Google Maps JavaScript API -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2UAY5Iq8J0jKFX4eCn5tYDy3-9Sj9FWE"></script>
+  <!-- Load environment config (contains API key) -->
+  <script src="env.js"></script>
+  
+  <!-- Google Maps JavaScript API - Key loaded from env.js -->
+  <script>
+    // Load Google Maps with API key from environment config
+    (function() {
+      var apiKey = (typeof ENV_CONFIG !== 'undefined' && ENV_CONFIG.GOOGLE_MAPS_API_KEY) 
+        ? ENV_CONFIG.GOOGLE_MAPS_API_KEY 
+        : 'YOUR_GOOGLE_MAPS_API_KEY';
+      
+      var script = document.createElement('script');
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=' + apiKey;
+      script.async = true;
+      document.head.appendChild(script);
+    })();
+  </script>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>

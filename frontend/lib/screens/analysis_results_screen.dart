@@ -41,6 +41,42 @@ class _AnalysisResultsScreenState extends State<AnalysisResultsScreen>
   static const Color _darkBlue = Color(0xFF1E3A8A);
   static const Color _accentBlue = Color(0xFF60A5FA);
 
+  /// Format suitability text to be user-friendly
+  String _formatSuitability(String suitability) {
+    switch (suitability.toLowerCase()) {
+      case 'excellent':
+        return '⭐ Excellent';
+      case 'good':
+        return '✓ Good';
+      case 'moderate':
+        return '○ Moderate';
+      case 'poor':
+        return '△ Poor';
+      case 'not_recommended':
+        return '✗ Low Potential';
+      default:
+        return suitability.replaceAll('_', ' ');
+    }
+  }
+
+  /// Get color for suitability level
+  Color _getSuitabilityColor(String suitability) {
+    switch (suitability.toLowerCase()) {
+      case 'excellent':
+        return const Color(0xFF10B981);
+      case 'good':
+        return const Color(0xFF3B82F6);
+      case 'moderate':
+        return const Color(0xFFF59E0B);
+      case 'poor':
+        return const Color(0xFFEF4444);
+      case 'not_recommended':
+        return const Color(0xFF6B7280);
+      default:
+        return Colors.grey[600]!;
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -438,35 +474,624 @@ class _AnalysisResultsScreenState extends State<AnalysisResultsScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              // Main recommendation card
-              _buildMainCard(rec, selectedScore, isGoodChoice),
-              const SizedBox(height: 20),
-
-              // Score breakdown card
-              _buildScoreBreakdownCard(selectedScore),
-              const SizedBox(height: 20),
-
-              // Comparison card (if showing alternate recommendation)
-              if (!isGoodChoice) ...[
-                _buildAlternativeCard(rec),
+              // 1. FIRST: Show nearby businesses in the area
+              if (rec.bev != null) ...[
+                _buildNearbyBusinessesCard(rec.bev!),
                 const SizedBox(height: 20),
               ],
 
-              // Factors card
-              _buildFactorsCard(selectedScore),
+              // 2. GYM vs CAFE Comparison Card - Shows BOTH with scores
+              _buildComparisonCard(rec),
               const SizedBox(height: 20),
 
-              // LLM insights (if available)
+              // 3. Why one is better than the other (detailed reasoning)
+              _buildWhyBetterCard(rec, isGoodChoice),
+              const SizedBox(height: 20),
+
+              // 4. LLM insights with full reasoning (if available)
               if (rec.llmInsights != null) ...[
                 _buildInsightsCard(rec.llmInsights!),
                 const SizedBox(height: 20),
               ],
 
-              // Processing info footer
+              // 5. Processing info footer
               _buildProcessingInfo(rec),
               const SizedBox(height: 32),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  /// Card comparing Gym vs Cafe with confidence scores for both
+  Widget _buildComparisonCard(EnhancedRecommendation rec) {
+    final gymScore = rec.gym;
+    final cafeScore = rec.cafe;
+    final gymPercent = (gymScore.score * 100).toInt();
+    final cafePercent = (cafeScore.score * 100).toInt();
+    final gymIsBetter = gymScore.score >= cafeScore.score;
+
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.compare_arrows, color: _primaryBlue),
+                const SizedBox(width: 8),
+                const Text(
+                  'Business Type Comparison',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+
+            // GYM Score
+            _buildBusinessTypeRow(
+              icon: Icons.fitness_center,
+              name: 'GYM',
+              score: gymPercent,
+              suitability: gymScore.suitability,
+              isSelected: widget.businessType.toLowerCase() == 'gym',
+              isBetter: gymIsBetter,
+              color: const Color(0xFF10B981),
+            ),
+            const SizedBox(height: 16),
+
+            // VS Divider
+            Row(
+              children: [
+                Expanded(child: Divider(color: Colors.grey[300])),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Text(
+                    'VS',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[500],
+                      fontSize: 14,
+                    ),
+                  ),
+                ),
+                Expanded(child: Divider(color: Colors.grey[300])),
+              ],
+            ),
+            const SizedBox(height: 16),
+
+            // CAFE Score
+            _buildBusinessTypeRow(
+              icon: Icons.coffee,
+              name: 'CAFE',
+              score: cafePercent,
+              suitability: cafeScore.suitability,
+              isSelected: widget.businessType.toLowerCase() == 'cafe',
+              isBetter: !gymIsBetter,
+              color: const Color(0xFF8B5CF6),
+            ),
+
+            const SizedBox(height: 20),
+
+            // Winner announcement
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: gymIsBetter 
+                      ? [const Color(0xFF10B981), const Color(0xFF059669)]
+                      : [const Color(0xFF8B5CF6), const Color(0xFF7C3AED)],
+                ),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    gymIsBetter ? Icons.fitness_center : Icons.coffee,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          '${gymIsBetter ? "GYM" : "CAFE"} is recommended for this location',
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          '${((gymIsBetter ? gymScore.score : cafeScore.score) * 100).toInt()}% confidence score',
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.9),
+                            fontSize: 13,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Icon(Icons.verified, color: Colors.white),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildBusinessTypeRow({
+    required IconData icon,
+    required String name,
+    required int score,
+    required String suitability,
+    required bool isSelected,
+    required bool isBetter,
+    required Color color,
+  }) {
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: isSelected 
+            ? _primaryBlue.withOpacity(0.1)
+            : Colors.grey[50],
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: isSelected ? _primaryBlue : Colors.grey[200]!,
+          width: isSelected ? 2 : 1,
+        ),
+      ),
+      child: Row(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: color.withOpacity(0.2),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(icon, color: color, size: 24),
+          ),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      name,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                    if (isSelected) ...[
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: _primaryBlue,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Text(
+                          'Your Choice',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ],
+                    if (isBetter) ...[
+                      const SizedBox(width: 8),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF10B981),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Text(
+                          'RECOMMENDED',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  _formatSuitability(suitability),
+                  style: TextStyle(
+                    color: _getSuitabilityColor(suitability),
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          // Score circle
+          Container(
+            width: 56,
+            height: 56,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: isBetter 
+                    ? [color, color.withOpacity(0.7)]
+                    : [Colors.grey[400]!, Colors.grey[300]!],
+              ),
+            ),
+            child: Center(
+              child: Text(
+                '$score%',
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// Card explaining why one option is better than the other
+  Widget _buildWhyBetterCard(EnhancedRecommendation rec, bool isGoodChoice) {
+    final gymScore = rec.gym;
+    final cafeScore = rec.cafe;
+    final gymIsBetter = gymScore.score >= cafeScore.score;
+    final userSelectedGym = widget.businessType.toLowerCase() == 'gym';
+
+    final betterOption = gymIsBetter ? 'Gym' : 'Cafe';
+    final betterScore = gymIsBetter ? gymScore : cafeScore;
+    final worseScore = gymIsBetter ? cafeScore : gymScore;
+    final worseOption = gymIsBetter ? 'Cafe' : 'Gym';
+
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.lightbulb, color: _primaryBlue),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    'Why $betterOption is Better Here',
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+
+            // Positive factors for the better option
+            if (betterScore.positiveFactors.isNotEmpty) ...[
+              const Text(
+                '✅ Reasons for Success:',
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xFF10B981)),
+              ),
+              const SizedBox(height: 8),
+              ...betterScore.positiveFactors.map((factor) => Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.check_circle, color: Color(0xFF10B981), size: 18),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        factor,
+                        style: TextStyle(color: Colors.grey[700], fontSize: 14),
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+              const SizedBox(height: 16),
+            ],
+
+            // Concerns about the worse option
+            if (worseScore.concerns.isNotEmpty) ...[
+              Text(
+                '⚠️ Why $worseOption Scores Lower:',
+                style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 14, color: Color(0xFFF59E0B)),
+              ),
+              const SizedBox(height: 8),
+              ...worseScore.concerns.map((concern) => Padding(
+                padding: const EdgeInsets.only(bottom: 6),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.warning_amber, color: Color(0xFFF59E0B), size: 18),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        concern,
+                        style: TextStyle(color: Colors.grey[700], fontSize: 14),
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+              const SizedBox(height: 16),
+            ],
+
+            // If user selected the worse option, show advice
+            if (!isGoodChoice) ...[
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFFEF3C7),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: const Color(0xFFF59E0B)),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Icon(Icons.info, color: Color(0xFFF59E0B)),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'You selected ${widget.businessType}',
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF92400E),
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            'While ${widget.businessType} is possible here, a $betterOption would have ${((betterScore.score - worseScore.score) * 100).toInt()}% higher success potential based on the area analysis.',
+                            style: const TextStyle(
+                              color: Color(0xFF92400E),
+                              fontSize: 13,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ] else ...[
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: const Color(0xFFD1FAE5),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: const Color(0xFF10B981)),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.thumb_up, color: Color(0xFF10B981)),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        'Great choice! ${widget.businessType} is the recommended business type for this location.',
+                        style: const TextStyle(
+                          color: Color(0xFF065F46),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Card showing existing businesses in the area
+  Widget _buildNearbyBusinessesCard(BEVSummary bev) {
+    // Build list of business types with their counts
+    final List<Map<String, dynamic>> businesses = [
+      {'icon': Icons.fitness_center, 'name': 'Gyms', 'count': bev.gymCount, 'color': const Color(0xFF10B981)},
+      {'icon': Icons.coffee, 'name': 'Cafes', 'count': bev.cafeCount, 'color': const Color(0xFF8B5CF6)},
+      {'icon': Icons.restaurant, 'name': 'Restaurants', 'count': bev.restaurantCount, 'color': const Color(0xFFF59E0B)},
+      {'icon': Icons.business, 'name': 'Offices', 'count': bev.officeCount, 'color': const Color(0xFF3B82F6)},
+      {'icon': Icons.school, 'name': 'Schools', 'count': bev.schoolCount, 'color': const Color(0xFFEC4899)},
+      {'icon': Icons.account_balance, 'name': 'Banks', 'count': bev.bankCount, 'color': const Color(0xFF6366F1)},
+      {'icon': Icons.local_hospital, 'name': 'Healthcare', 'count': bev.healthcareCount, 'color': const Color(0xFFEF4444)},
+      {'icon': Icons.directions_transit, 'name': 'Transit', 'count': bev.transitCount, 'color': const Color(0xFF14B8A6)},
+      {'icon': Icons.park, 'name': 'Parks', 'count': bev.parkCount, 'color': const Color(0xFF22C55E)},
+      {'icon': Icons.shopping_bag, 'name': 'Malls', 'count': bev.mallCount, 'color': const Color(0xFFF97316)},
+    ];
+
+    // Filter to only show businesses that exist in the area
+    final existingBusinesses = businesses.where((b) => (b['count'] as int) > 0).toList();
+
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.1),
+            blurRadius: 10,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Icon(Icons.location_city, color: _primaryBlue),
+                const SizedBox(width: 8),
+                const Text(
+                  'Available Businesses in This Area',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'Total: ${bev.totalBusinesses} businesses • ${bev.incomeLevel}',
+              style: TextStyle(
+                color: Colors.grey[600],
+                fontSize: 13,
+              ),
+            ),
+            const SizedBox(height: 16),
+            
+            if (existingBusinesses.isEmpty)
+              Container(
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF10B981).withOpacity(0.1),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.celebration, color: Color(0xFF10B981)),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Text(
+                        'No existing ${widget.businessType.toLowerCase()}s found! Great opportunity.',
+                        style: const TextStyle(
+                          color: Color(0xFF10B981),
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              )
+            else
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: existingBusinesses.map((business) {
+                  final isCompetitor = 
+                      (widget.businessType.toLowerCase() == 'gym' && business['name'] == 'Gyms') ||
+                      (widget.businessType.toLowerCase() == 'cafe' && business['name'] == 'Cafes');
+                  
+                  return Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                    decoration: BoxDecoration(
+                      color: isCompetitor 
+                          ? const Color(0xFFF59E0B).withOpacity(0.15)
+                          : (business['color'] as Color).withOpacity(0.1),
+                      borderRadius: BorderRadius.circular(20),
+                      border: isCompetitor 
+                          ? Border.all(color: const Color(0xFFF59E0B), width: 1.5)
+                          : null,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          business['icon'] as IconData,
+                          size: 18,
+                          color: isCompetitor 
+                              ? const Color(0xFFF59E0B)
+                              : business['color'] as Color,
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          '${business['count']} ${business['name']}',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            color: isCompetitor 
+                                ? const Color(0xFFF59E0B)
+                                : Colors.grey[800],
+                            fontSize: 13,
+                          ),
+                        ),
+                        if (isCompetitor) ...[
+                          const SizedBox(width: 4),
+                          const Icon(Icons.warning_rounded, size: 14, color: Color(0xFFF59E0B)),
+                        ],
+                      ],
+                    ),
+                  );
+                }).toList(),
+              ),
+
+            // Show average rating if available
+            if (bev.avgRating > 0) ...[
+              const SizedBox(height: 16),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Row(
+                  children: [
+                    const Icon(Icons.star, color: Color(0xFFFBBF24), size: 20),
+                    const SizedBox(width: 8),
+                    Text(
+                      'Average Area Rating: ${bev.avgRating.toStringAsFixed(1)}/5.0',
+                      style: TextStyle(
+                        color: Colors.grey[700],
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ],
         ),
       ),
     );

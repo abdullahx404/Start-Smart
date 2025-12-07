@@ -157,10 +157,30 @@ class CombinedRecommendation:
                 "positive_factors": self.cafe.factors_positive[:3],
                 "concerns": self.cafe.factors_negative[:2]
             },
+            "bev": {
+                "gym_count": self.bev_summary.get("competition_gym", 0),
+                "cafe_count": self.bev_summary.get("competition_cafe", 0),
+                "restaurant_count": self.bev_summary.get("restaurants", 0),
+                "office_count": self.bev_summary.get("offices", 0),
+                "school_count": self.bev_summary.get("schools", 0),
+                "bank_count": self.bev_summary.get("banks", 0),
+                "transit_count": self.bev_summary.get("transit_stations", 0),
+                "mall_count": self.bev_summary.get("malls", 0),
+                "park_count": self.bev_summary.get("parks", 0),
+                "healthcare_count": self.bev_summary.get("healthcare", 0),
+                "total_businesses": self.bev_summary.get("total_businesses", 0),
+                "avg_rating": self.bev_summary.get("avg_rating", 0),
+                "income_proxy": self.bev_summary.get("income_proxy", "unknown")
+            },
             "analysis": {
                 "model_used": self.llm_meta.get("model_used", "unknown"),
                 "total_businesses_nearby": self.bev_summary.get("total_businesses", 0),
                 "key_factors": self.llm_meta.get("key_factors", [])
+            },
+            "llm_insights": {
+                "key_factors": self.llm_meta.get("key_factors", []),
+                "risks": self.llm_meta.get("risks", []),
+                "recommendation": self.llm_meta.get("recommendation", "")
             }
         }
     
@@ -302,6 +322,14 @@ class ScoreCombiner:
                 "total_businesses": bev.economic.total_businesses,
                 "competition_gym": bev.density.gyms,
                 "competition_cafe": bev.density.cafes,
+                "restaurants": bev.density.restaurants,
+                "offices": bev.density.offices,
+                "schools": bev.density.schools,
+                "banks": bev.density.banks,
+                "transit_stations": bev.density.transit_stations,
+                "malls": bev.density.malls,
+                "parks": bev.density.parks,
+                "healthcare": bev.density.healthcare,
                 "avg_rating": bev.economic.avg_business_rating,
                 "income_proxy": bev.economic.income_proxy
             }
