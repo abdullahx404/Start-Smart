@@ -1,9 +1,9 @@
 {
   "version": 2,
   "name": "startsmart-frontend",
-  "buildCommand": "flutter build web --release",
+  "buildCommand": null,
   "outputDirectory": "build/web",
-  "installCommand": "echo 'Flutter SDK should be available'",
+  "installCommand": null,
   "framework": null,
   "routes": [
     {

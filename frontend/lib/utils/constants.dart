@@ -3,17 +3,17 @@ library;
 
 /// Environment configuration
 /// Set to true for production deployment, false for local development
-const bool kIsProduction = false;
+const bool kIsProduction = true; // Changed to true for Vercel deployment
 
 /// API Configuration
 class ApiConstants {
   // Local development URL
   static const String _localUrl = 'http://localhost:8000/api/v1';
 
-  // Production URL (Render deployment)
-  // Update this with your actual Render URL after deployment
+  // Production URL (Vercel deployment)
+  // UPDATE THIS after deploying backend to Vercel!
   static const String _productionUrl =
-      'https://startsmart-api.onrender.com/api/v1';
+      'https://startsmart-backend.vercel.app/api/v1';
 
   /// Get the active base URL based on environment
   static String get baseUrl => kIsProduction ? _productionUrl : _localUrl;
