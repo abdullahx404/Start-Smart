@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-06T15:35:08.646301",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_south": 24.82,
+      "lat_north": 25.5,
+      "lon_west": 67.05,
+      "lon_east": 68.5
+    },
+    "center": {
+      "lat": 25.16,
+      "lon": 67.775
+    },
+    "radius_meters": 82036,
+    "total_results": 1,
+    "statistics": {
+      "places_with_ratings": 1,
+      "places_without_ratings": 0,
+      "average_rating": 4.0,
+      "total_reviews": 10
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "name": "Far Away Gym",
+      "place_id": "ChIJ_test_far_gym",
+      "geometry": {
+        "location": {
+          "lat": 25.0,
+          "lng": 68.0
+        }
+      },
+      "rating": 4.0,
+      "user_ratings_total": 10,
+      "vicinity": "Far Location",
+      "types": [
+        "gym"
+      ],
+      "business_status": "OPERATIONAL"
+    }
+  ]
+}

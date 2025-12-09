@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T16:28:39.313012",
+    "category": "Cafe",
+    "google_type": "cafe",
+    "bounds": {
+      "lat_north": 24.818,
+      "lat_south": 24.8135,
+      "lon_east": 67.031,
+      "lon_west": 67.026
+    },
+    "center": {
+      "lat": 24.81575,
+      "lon": 67.02850000000001
+    },
+    "radius_meters": 500,
+    "total_results": 1,
+    "statistics": {
+      "places_with_ratings": 0,
+      "places_without_ratings": 1,
+      "average_rating": null,
+      "total_reviews": 0
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8198751,
+          "lng": 67.0270977
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8214857302915,
+            "lng": 67.0285472802915
+          },
+          "southwest": {
+            "lat": 24.8187877697085,
+            "lng": 67.0258493197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 334 3713696",
+      "name": "Bean & Beyond",
+      "opening_hours": {
+        "open_now": true
+      },
+      "place_id": "ChIJPWTYPLk9sz4RelhEuin28EA",
+      "plus_code": {
+        "compound_code": "R29G+XR Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R29G+XR"
+      },
+      "reference": "ChIJPWTYPLk9sz4RelhEuin28EA",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "vicinity": "Boat Basin, Block 5 Clifton, Karachi"
+    }
+  ]
+}

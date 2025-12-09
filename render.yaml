@@ -1,0 +1,40 @@
+# StartSmart Backend - Render Blueprint
+# https://render.com/docs/blueprint-spec
+#
+# DEPLOYMENT INSTRUCTIONS:
+# 1. Connect your GitHub repo to Render
+# 2. Set the following environment variables in Render Dashboard:
+#    - GOOGLE_PLACES_API_KEY: Your Google Places API key
+#    - GROQ_API_KEY: Your Groq API key for LLM recommendations
+# 3. The DATABASE_URL is automatically set by Render
+
+services:
+  - type: web
+    name: startsmart-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.6"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: startsmart-db
+          property: connectionString
+      - key: ENVIRONMENT
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      # These need to be set manually in Render Dashboard (Secret)
+      # - key: GOOGLE_PLACES_API_KEY
+      # - key: GROQ_API_KEY
+    healthCheckPath: /api/v1/health
+    autoDeploy: true
+
+databases:
+  - name: startsmart-db
+    plan: free
+    databaseName: startsmart
+    user: startsmart
+    postgresMajorVersion: 15

@@ -939,7 +939,7 @@ How to Run Integration (for Phase 2 testing):
   
   # Get all social posts for a grid
   python -c "from src.database.connection import get_session; from src.database.models import SocialPostModel; session = get_session(); print(session.query(SocialPostModel).filter_by(grid_id='DHA-Phase2-Cell-07').count())"
-  ```
+```
 
 Environment Variables Used:
   - GOOGLE_PLACES_API_KEY: <your-key>
@@ -973,7 +973,7 @@ Data Quality:
   - Business names cleaned (removed extra whitespace)
   - Ratings: 66/73 have ratings, 7 are None (new businesses)
   - All coordinates within expected bounds (verified)
-```
+
 
 **Critical Information:**
 - Database ORM models in `backend/src/database/models.py` — use these, not raw SQL

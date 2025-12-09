@@ -1,0 +1,242 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T16:28:38.571761",
+    "category": "Cafe",
+    "google_type": "cafe",
+    "bounds": {
+      "lat_north": 24.818,
+      "lat_south": 24.8135,
+      "lon_east": 67.026,
+      "lon_west": 67.021
+    },
+    "center": {
+      "lat": 24.81575,
+      "lon": 67.0235
+    },
+    "radius_meters": 500,
+    "total_results": 4,
+    "statistics": {
+      "places_with_ratings": 4,
+      "places_without_ratings": 0,
+      "average_rating": 4.22,
+      "total_reviews": 1523
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8147913,
+          "lng": 67.0213163
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8161780802915,
+            "lng": 67.02267748029149
+          },
+          "southwest": {
+            "lat": 24.8134801197085,
+            "lng": 67.01997951970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 21 35158465",
+      "name": "Agha Jeez Cafe",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/100900357181436155074\">Umar</a>"
+          ],
+          "photo_reference": "AWn5SU5-l_A1riec5BxvqoVX8CEx9_Izx_r6Dd1iXHS7CGfKWBkKr34EMrk9UcYCBX_bU124WS2Yu9HASJie-7pfYbvO79U0mtppN0seEVkHjjP-JvJ4nVYzoQNuXeMrc7ur4hu-X0o2cBQwtz8r-3FPwLGYBEe-ZJbxRUZJe8VGG44AcoEgXSk6iaa8_FUrMudKPOncGikLPlg375sESgshomlAii31obsjNvQVa205-aXFtNppkEgiKZxONNqyPSseJNc9lSNPRH_do154tPr4NbkvSXetwOeM6-6-BhTW1EBEtIUp64UyY5WG8dfXhi537oDF_Xk2lgmK_7nezmNfs4n2PRu2Qf7PBB9dO63C5Eb66eReBMU7Tes5TEYFV3cdn3bGbSCrwYoR5BnRKxrVHNMfShrr9DwU_3xqNUYf3c51SABN4Qlar1aVzJVIbDtibfpGzYawDMbD7-8TJzak6uVPKCjp_FxV1O9NbpnDRFI4vu7Vpos2iXtPqLjNSwLCeFsU0foh3rovWAEkznuYCRnDLgSx9CePtP9B7ATRp64XNWtOU0HLUDbbwLqyzNkHzWTZG0YFxSE-R1T-_ppN5fUPD_61J7uFVNEeQ0usBAN-NqF0ET53Fhd6FksZ4TnF",
+          "width": 4000
+        }
+      ],
+      "place_id": "ChIJ8T6blu89sz4RNBXC64gyDHU",
+      "plus_code": {
+        "compound_code": "R27C+WG Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R27C+WG"
+      },
+      "rating": 4.9,
+      "reference": "ChIJ8T6blu89sz4RNBXC64gyDHU",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 20,
+      "vicinity": "Block 3 South City, Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8168495,
+          "lng": 67.0207483
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8182076302915,
+            "lng": 67.02221843029149
+          },
+          "southwest": {
+            "lat": 24.8155096697085,
+            "lng": 67.01952046970848
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 21 38944129",
+      "name": "Gloria Jeans Coffees Com 3 Clifton",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4032,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/117034180099188570338\">S B</a>"
+          ],
+          "photo_reference": "AWn5SU5wOvNtmFL8UAlrsDsVbliOZqVo2UCquGFmnKlhDZOiIukqSJXW7UWBWmz5oRdm74i4TrQ1Tgd4ptM2wSYPSn4cR3eOF8mtwjxOAxBmWjddxcyvtW_Adn4LhZQ9aipZy7CRCQo5B4pIXeCbe_obqZOzgkYZpHo572hsg9KL-7aWYdUlIJuBwQLU3U529EfBXxzdslnLUoVx5Nr9X8CDt2Pmg86vY_jQLKJzA52xrDRVkPIAQSPfct15RTBk4Yvk3KUOYl-G93ylV5tmXFg-fUlN-ogsDhfSg_TQMQg7iJUBhs7ttV3m4eTVelm3mlS3mybIauyZGF9DOfn706zfxrbJrum_JN_Nunbt81VUrcwu9-fkouu1P2Izd1lguSPuWowfLn_8E4SJ6x_zfWyrd0rEInY1MEithjLVupNzH3384kvCDX2ds7yqprTT-QoJamD1IQTb4oSEbIk123Dxnh1LTRhh_gnikwuH9lNonvtbpuikH4S--ENHcg_7EKLJO5nukIwBg7y8oSY4ssgPYwMwfhITlO3CtbZmokmkjxUFYI0NUiCoyh2vKa5yMvGe3VvJp4BFrC82dRk6L9SFySi4PzANKpiNK9bhfh97yHnXiHrnmJ8GLxgM37nYtI39zZYQHA",
+          "width": 3024
+        }
+      ],
+      "place_id": "ChIJ16n8IsI9sz4RRBkmSg5hjZo",
+      "plus_code": {
+        "compound_code": "R28C+P7 Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R28C+P7"
+      },
+      "rating": 4.1,
+      "reference": "ChIJ16n8IsI9sz4RRBkmSg5hjZo",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 622,
+      "vicinity": "Shop no# 13, Com, 3 Bilawal Chowrangi, Block 6 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8164275,
+          "lng": 67.01983729999999
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8176208302915,
+            "lng": 67.0212232802915
+          },
+          "southwest": {
+            "lat": 24.8149228697085,
+            "lng": 67.01852531970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 327 3119295",
+      "name": "O21 Coffee",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4032,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/114035058717215181115\">Neha Salim Mirza</a>"
+          ],
+          "photo_reference": "AWn5SU57unopjt5nbaR1aEnRFU4jKGDPs48MVm2s1M47AGwOXybZnIoxi358ReynwJ7FzKJdMQHB5hXDq1Bv03gjM7Fntiz61RsKUvmD6LcWdJYtjXsfrQANhfsPaUHxAKpb3XKBK3hAJic24FCbLKrca4HYCOTZph7qfPCQLenJhPqp-9jDt1DXOxSrN0CbYI90zi6grG7i_GCIKPvu52FByd-DhPOzSHE1eI3YcrSb5g2bor7aNxPXPIJL9wGpNk6a5-1WSr1bU4Y_KFFOxBwJ6P336HLr7y_hkKF1iN13WMqb1xmGAIuLS47erxFsjn6H85MPfyTE7v8tSJxXqOMmz12gGgYXoKNHFwqsV8GxvrhCxtKE4AmEIANKukswYjRZeLjbG5ggxWuP0tXJZwdZYpTdQiMhUBp10smLpgaE71vh3E4GCLEOX-pUvBf_gXNtNKR1oDDwbl4_0q7df7Pw0fgmClxG4G26ROW0gn9D2cpm32Qy-zoQZ4q6U2dc3b8_liGh46UX5gHTcm5lsI5aLRjWL6BVZG12RsnMaKI330m-BHMtZyJ0k3tLr0i-lbecI3yYt4dL-pQVzAHAp_1ICJC-2dwbxiGHdBG_HkR5Jb1-sj8bXcj5GU2XhQ6eCfl6s-IZ3O3XSuR96RooT9gH9RtTvAQ",
+          "width": 3024
+        }
+      ],
+      "place_id": "ChIJUbbKvPo9sz4RYZiqg_FOz00",
+      "plus_code": {
+        "compound_code": "R289+HW Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R289+HW"
+      },
+      "rating": 3.7,
+      "reference": "ChIJUbbKvPo9sz4RYZiqg_FOz00",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 6,
+      "vicinity": "Com3 Tower, Block 6 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8138599,
+          "lng": 67.01921399999999
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8152476802915,
+            "lng": 67.0205793302915
+          },
+          "southwest": {
+            "lat": 24.8125497197085,
+            "lng": 67.01788136970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 331 8025186",
+      "name": "Cafe Quetta",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1080,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/111138969432260964001\">Haroon Danish</a>"
+          ],
+          "photo_reference": "AWn5SU4m6Jhklr167DUtcDGAGzjp-CdU4-uqCy0muCjTmsmv69XAvYjki9xRIYnLI2O07gDtrz5jH8o74DsSDYpZNdjrOINVIPMGFwmczqnfxCSQngEA9noBz9CXTFvRj2Wi81n0UiLJEgmRIgSQKtdEUafVo0cmo0tUIibKIfHtdXXTzDDwALanzFgvELksMAf3fJm46_ltM9ywcbb_aPC_mJwenVMli95YKGikgsLn6dj6EeXgyllHp-egHtMedvw7WlgHSjTF8b3z5jm8zEldV6e6KJWhe2vjQv6OPRKWE3FNLr-hvN5ZsWw_gNfJq3f1HbtdjUD47uiFKUK6ZdO3khavSSWzJrAf6PZNuzhkiZUYFscyYzNuOtA_1IjYxXPob6P3spWZjnB319J7fF_DeYJ7DpS4PS-hrsNFDbRjOVBrwy4F3yTCKCOjhnKYOd5q5TMW_ynz9hyzgBRIPnyO5OEgTBwMiNDGKC2wrIEJTHG6ghYdvHRVaPBnEIilHrWP4eNJVzgpNTa04aUbl_SIO86KNT-PJUddP3zKjzX-ERUa8EYw5srWCxd-Sq5lRPUzj0lp_O6Y-lyHxGOES-kfMoQDT1rrpp2O9I_HmRVg13k0pwKmpoYzcgAVLy00X5FG",
+          "width": 1920
+        }
+      ],
+      "place_id": "ChIJVxSc0Zk9sz4RHMQ0oyYetUU",
+      "price_level": 1,
+      "rating": 4.2,
+      "reference": "ChIJVxSc0Zk9sz4RHMQ0oyYetUU",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 875,
+      "vicinity": "R279+GMW, Block 2 Clifton, Karachi"
+    }
+  ]
+}

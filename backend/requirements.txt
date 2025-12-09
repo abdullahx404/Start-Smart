@@ -1,0 +1,30 @@
+# StartSmart Backend - API Dependencies
+# For Vercel Serverless Deployment (NO DATABASE CONNECTION)
+
+# Core Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+
+# SQLAlchemy for model definitions (no actual DB connection)
+sqlalchemy==2.0.23
+# psycopg2-binary REMOVED - no PostgreSQL connection needed
+
+# Environment & Configuration
+python-dotenv==1.0.0
+
+# Geospatial Operations
+shapely==2.0.2
+
+# Google Maps API
+googlemaps>=4.10.0
+
+# LLM (Groq)
+groq>=0.4.0
+
+# HTTP Client (for testing)
+httpx>=0.24.0
+
+# Testing (dev only - can be removed for production)
+pytest>=7.4.0
+pytest-cov>=4.1.0

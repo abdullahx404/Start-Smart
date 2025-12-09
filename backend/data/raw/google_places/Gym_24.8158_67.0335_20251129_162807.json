@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T16:28:07.784346",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.818,
+      "lat_south": 24.8135,
+      "lon_east": 67.036,
+      "lon_west": 67.031
+    },
+    "center": {
+      "lat": 24.81575,
+      "lon": 67.0335
+    },
+    "radius_meters": 500,
+    "total_results": 2,
+    "statistics": {
+      "places_with_ratings": 2,
+      "places_without_ratings": 0,
+      "average_rating": 4.25,
+      "total_reviews": 34
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8140539,
+          "lng": 67.0329385
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8154479302915,
+            "lng": 67.0342724802915
+          },
+          "southwest": {
+            "lat": 24.8127499697085,
+            "lng": 67.0315745197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Al Naadil Burhani Community Centre",
+      "place_id": "ChIJY6ru_aI9sz4R8iHIDw-IO4Q",
+      "rating": 3.7,
+      "reference": "ChIJY6ru_aI9sz4R8iHIDw-IO4Q",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 3,
+      "vicinity": "R27M+J5G, Old Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8145738,
+          "lng": 67.0376871
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8159628302915,
+            "lng": 67.03875908029151
+          },
+          "southwest": {
+            "lat": 24.8132648697085,
+            "lng": 67.03606111970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 331 2189417",
+      "name": "ABR Fitness",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 363,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109898701764974168260\">ABR Fitness</a>"
+          ],
+          "photo_reference": "AWn5SU7cWmgHKZDRg3T43Mn4OqI3aT-wEJQOD3Zcb1QwSgZEJbcw4vyyUnWswAWMQB4hdRsv4P2QltxfWW4gR7CHrWrUUX7Ul6Ojbq8EVXAKBRhKXJGnyOfe2s4Um3fM6PA8vZtOTc9-Z6Q2H-q9J899dhMjJWnBUHX-uPsXVzGmbN0VMLsl_j6rVRjneOFoCnX40_Dlgfr5rdPkeA6vuceYo0W8C-kwW8upgD3K4m0_i8y4UA5218KltfJ6Le-yZ7-DNKCg6a0Z3m5NGmvO_Z8O6MTGVS03Jpt3p-MEMrnqrDnBY8XDb-4aqFqnTrhAkSE6Qy7iU9chGso",
+          "width": 563
+        }
+      ],
+      "place_id": "ChIJ3x1-R1o5sz4R7FAy8d7KcGk",
+      "plus_code": {
+        "compound_code": "R27Q+R3 Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R27Q+R3"
+      },
+      "rating": 4.8,
+      "reference": "ChIJ3x1-R1o5sz4R7FAy8d7KcGk",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 31,
+      "vicinity": "Khayaban-e-Shujaat, DHA Phase 5 Defence V Defence Housing Authority, Karachi"
+    }
+  ]
+}

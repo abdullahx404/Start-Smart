@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T09:53:40.668937",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.8255,
+      "lat_south": 24.821,
+      "lon_east": 67.062,
+      "lon_west": 67.057
+    },
+    "center": {
+      "lat": 24.82325,
+      "lon": 67.0595
+    },
+    "radius_meters": 500,
+    "total_results": 1,
+    "statistics": {
+      "places_with_ratings": 1,
+      "places_without_ratings": 0,
+      "average_rating": 1.7,
+      "total_reviews": 3
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8270166,
+          "lng": 67.06079
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8284078802915,
+            "lng": 67.0617569802915
+          },
+          "southwest": {
+            "lat": 24.8257099197085,
+            "lng": 67.0590590197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Nisar Shaheed Park open air gym",
+      "opening_hours": {
+        "open_now": false
+      },
+      "photos": [
+        {
+          "height": 4000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/106022698164379124121\">Amir Rafiq</a>"
+          ],
+          "photo_reference": "AWn5SU7fBmoVCcgPkl5srEyj4SxipUHnsPBciKldf1NpDzp6TNQdmLLBfnttYzhcom1AueY9QA_U2QhHINird_mUVkyXhOmDH1bsPfghVQKjgbRI4ZsET3j8NUcxF3kvNYRXqtPdIUDaUrLgaBQAWO6GijQd2TToE5Wds3WC489GGG-Ilb1_60PgXuTlK0B2YjAFcMs08oVSSmuhBnEBli0WK8E3uBC0X3X1xd4miYoQ6Pkp_j4Ix8XwWYNZINX3RBD52Ke8cdWWKqSugjZAUaJwRTb6SoO_2e7BWg0npiWlirKxeugjUiOwxdN45LLddYJVYei_I9sHszoRIvhJktNIFgL7W3JZtrVDFze0XWjlSFvp5TqMj8xXKsd-JIX5J_haSyf_UhJJUVIY_fL1gYjoHfepFkXDhPJvQRfEvNJIJTcfXblXs0VoRm00ADsj0xDtT8ErWJNcDxgvW75oFJk2hTCQPhx1k2RFUytiNR-6FBo-GX3LrYXAmMp0UeIUPcVN2SezxcbDndhXQAhDY3lsOSh9W1FZGvOIZN2MtELBEFNTwhaXGbRnz10TkOqql62Q72ZCxA-vq60E21FW_A5fOEuHg7pAvbeLTMDX7rItIBya0J_C-Pn1HmJvLRlfdEmq13nDPFj8",
+          "width": 3000
+        }
+      ],
+      "place_id": "ChIJZcicsrw9sz4RQzV5Re4pBKI",
+      "rating": 1.7,
+      "reference": "ChIJZcicsrw9sz4RQzV5Re4pBKI",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "health",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 3,
+      "vicinity": "R3G6+R83, Nisar Shaheed Park Road, D.H.A. Phase 4 Phase 4 Defence Housing Authority, Karachi"
+    }
+  ]
+}

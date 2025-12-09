@@ -1,0 +1,114 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T16:28:05.607228",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.8135,
+      "lat_south": 24.809,
+      "lon_east": 67.031,
+      "lon_west": 67.026
+    },
+    "center": {
+      "lat": 24.81125,
+      "lon": 67.02850000000001
+    },
+    "radius_meters": 500,
+    "total_results": 2,
+    "statistics": {
+      "places_with_ratings": 2,
+      "places_without_ratings": 0,
+      "average_rating": 4.8,
+      "total_reviews": 35
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8095166,
+          "lng": 67.0287834
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8108937802915,
+            "lng": 67.03007668029151
+          },
+          "southwest": {
+            "lat": 24.8081958197085,
+            "lng": 67.0273787197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 303 2724471",
+      "name": "Bodylab",
+      "opening_hours": {
+        "open_now": false
+      },
+      "photos": [
+        {
+          "height": 4591,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/106423091914956630585\">Anam Shafaat</a>"
+          ],
+          "photo_reference": "AWn5SU4uOqEa2RaEvhFsscaxjyGvAa3y_2hHBnZScjio4bIOUx1SVW1l0AhXlLZQhDLgkClPpfh6L3E9niAW74zYL7rQr2uBXpuvuNd3egBCJzBsNF1bm0Q-MdIzu2ZuUnV9NMvfRRbKfSp9Hu5nRDuer3I-d5EovTrwEQ9AKIho-tloqi_7d1OD3vbNGFzKdJ5mrYnUVNil__vU4XYhbb4WtqGUSDt-p9C76dXa7lpdO0K0Ef82IMu22I4-Y00yd6gk8OWYUKNUUJxooD_GkBIyrVu2-0p_WlUn0kgUD5Tm0St53ceWwSNePYQ3JAuxJA_GRuzcJH77wpeDEdCBGJ5SDkQPXm81se7OxWxZUvjowZOThaO2pTizaMDNefNlAyyIOX2BqCbwdamzm1NA25vRI4A4Li1l4MyctO_ucj4S-x2Gc1LwXcyN_GAeGRzY4XTTKY5SMqRpL1GVNR7v_zqwDV6jd2y5QmtYF0jgx00gQoEIpAvNbGTsSCGA9qpYVszTa9Fqx_XRFkIhA3xISiRRG1jC1F-OpyQoMZFX97HgnH-jY9RxScNmASoR8ZPtwzs8t32u7mG6CX7PVRYDpnS_lBHvRu3eYPAGS0Sx7jmm_q1NaKiyXHURueKsb_Fz_E_MurDXVg",
+          "width": 3510
+        }
+      ],
+      "place_id": "ChIJTdraKl09sz4R6K2MnUOrpSs",
+      "rating": 4.6,
+      "reference": "ChIJTdraKl09sz4R6K2MnUOrpSs",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 34,
+      "vicinity": "D18, 4 بلاک block 4 scheme 5 کلفٹن، کراچی, کراچی"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8092287,
+          "lng": 67.0287724
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8106378302915,
+            "lng": 67.0300024302915
+          },
+          "southwest": {
+            "lat": 24.80793986970849,
+            "lng": 67.0273044697085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Park fitness @rayyananananaa",
+      "place_id": "ChIJHzh9TwA9sz4R-EUDEPs_msE",
+      "rating": 5,
+      "reference": "ChIJHzh9TwA9sz4R-EUDEPs_msE",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 1,
+      "vicinity": "R25H+MGR, Block 4 Clifton, Karachi"
+    }
+  ]
+}

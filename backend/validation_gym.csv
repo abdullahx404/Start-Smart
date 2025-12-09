@@ -1,0 +1,19 @@
+grid_id,neighborhood,gos,confidence,business_count,instagram_volume,reddit_mentions,demand_total
+Clifton-Block2-Cell-02,Clifton Block 2,0.946,1.000,0,54,96,150
+Clifton-Block2-Cell-01,Clifton Block 2,0.945,1.000,0,63,87,150
+Clifton-Block2-Cell-03,Clifton Block 2,0.763,1.000,0,58,42,100
+Clifton-Block2-Cell-04,Clifton Block 2,0.763,1.000,0,57,43,100
+Clifton-Block2-Cell-05,Clifton Block 2,0.683,1.000,2,64,36,100
+Clifton-Block2-Cell-06,Clifton Block 2,0.683,1.000,2,69,31,100
+Clifton-Block2-Cell-07,Clifton Block 2,0.683,1.000,2,53,47,100
+DHA-Phase2-Cell-02,DHA Phase 2,0.673,1.000,0,25,50,75
+DHA-Phase2-Cell-01,DHA Phase 2,0.673,1.000,0,28,47,75
+Clifton-Block2-Cell-08,Clifton Block 2,0.618,1.000,0,35,25,60
+DHA-Phase2-Cell-04,DHA Phase 2,0.582,1.000,0,26,24,50
+DHA-Phase2-Cell-06,DHA Phase 2,0.582,1.000,0,34,16,50
+DHA-Phase2-Cell-07,DHA Phase 2,0.581,1.000,0,38,12,50
+Clifton-Block2-Cell-09,Clifton Block 2,0.578,1.000,1,34,26,60
+DHA-Phase2-Cell-05,DHA Phase 2,0.541,1.000,1,35,15,50
+DHA-Phase2-Cell-08,DHA Phase 2,0.469,1.000,1,22,8,30
+DHA-Phase2-Cell-03,DHA Phase 2,0.422,1.000,4,26,24,50
+DHA-Phase2-Cell-09,DHA Phase 2,0.349,1.000,4,19,11,30

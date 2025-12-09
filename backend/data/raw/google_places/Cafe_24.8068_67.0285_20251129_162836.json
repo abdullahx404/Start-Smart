@@ -1,0 +1,548 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T16:28:36.263870",
+    "category": "Cafe",
+    "google_type": "cafe",
+    "bounds": {
+      "lat_north": 24.809,
+      "lat_south": 24.8045,
+      "lon_east": 67.031,
+      "lon_west": 67.026
+    },
+    "center": {
+      "lat": 24.80675,
+      "lon": 67.02850000000001
+    },
+    "radius_meters": 500,
+    "total_results": 10,
+    "statistics": {
+      "places_with_ratings": 10,
+      "places_without_ratings": 0,
+      "average_rating": 4.24,
+      "total_reviews": 7363
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8085386,
+          "lng": 67.0288144
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8099600802915,
+            "lng": 67.0302061802915
+          },
+          "southwest": {
+            "lat": 24.80726211970849,
+            "lng": 67.0275082197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+      "international_phone_number": "+92 321 8251133",
+      "name": "Retro House (MTR)",
+      "photos": [
+        {
+          "height": 493,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109071178445297543377\">Retro House (MTR)</a>"
+          ],
+          "photo_reference": "AWn5SU630xP_hk5BAGCWImz88_kuXSDay8zPdbPjucOIj9i52z3XkhlAVmSpQTpMVpgV6inL7MyuSwFVDchGuQtmxJkKrkm_K6BfjsMh9JpXA5R4avIRsDli9FDky0GDq7AbAWqUlV_XU7QNf5fHrY7j6knXRK7XKWDC1tYU5Tui_hsfYaDyrgz6l6CmSKrz0Q3g9ncujFoN00ybMjhRQF6j8P3s0eScnL0kUhpgL2lasnizCmb3dsqlEwUGExX9dsFuNbaMyrkim66sq7wtiV1HnmS3eYdT698YyRR0uuJPvL1_JP_xbPHEd_Eq1s0nnbCK0i2TMtnA",
+          "width": 1290
+        }
+      ],
+      "place_id": "ChIJO_bF5II9sz4RtUwJlOwMmKw",
+      "plus_code": {
+        "compound_code": "R25H+CG Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R25H+CG"
+      },
+      "rating": 4.8,
+      "reference": "ChIJO_bF5II9sz4RtUwJlOwMmKw",
+      "scope": "GOOGLE",
+      "types": [
+        "restaurant",
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 5,
+      "vicinity": "D95, Block 4 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8060353,
+          "lng": 67.0257076
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8072102302915,
+            "lng": 67.02692048029151
+          },
+          "southwest": {
+            "lat": 24.8045122697085,
+            "lng": 67.02422251970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "name": "Trifuel Com-1",
+      "opening_hours": {
+        "open_now": true
+      },
+      "place_id": "ChIJ_96YuxE9sz4RO8oNY4myCv0",
+      "plus_code": {
+        "compound_code": "R24G+C7 Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R24G+C7"
+      },
+      "rating": 5,
+      "reference": "ChIJ_96YuxE9sz4RO8oNY4myCv0",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 3,
+      "vicinity": "Block, COM 1, 3, Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8039374,
+          "lng": 67.0302865
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8053140802915,
+            "lng": 67.0316526302915
+          },
+          "southwest": {
+            "lat": 24.8026161197085,
+            "lng": 67.0289546697085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "name": "Cafe Marine",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 2100,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/108373254045287218847\">Junaid Ali</a>"
+          ],
+          "photo_reference": "AWn5SU6Hbyu_Yu-H3qpZDoYh48kS6u8orc1RyfS5O0QCqVlyOMxVf7oWYp31_USJteArK4j9rKJtFZoz4oCKaD43B1ZjuHBzcXcKHIflmkFJK6L1tmq7dr5-YN49Lp7StkyYmcZLLeLFcPRLjqwQcHvgoXM1UUKVuOJHEE3rvCAP91e4e104MfIWlk8fc8wPw_TiIgdaf69tj7vU-60UIVyHqwYlQ-h-6WEeVt-gsmK7RaMFd2pXoAxMrQ-2M7YQXrJ7Bph0snJzxM8cAUQ5lIFIonzJz7H037U28D-zpDOecQom1y1-xlOVnYYTx3yTEQ8r7FhlTR6fG8fXmv2lShvsdDoqMnIKTupTZLwGYJltzqHt2SawIbTkrZCmbCOTXXFaB4oHtpH7owjNsapPasvS3-L2Ic4EaRMNs4J39TYeSfw7E52eMFDfqhOiGpL3Zce9Z5IMiIVKZgZaD3B7YUY8MXhrwk5oc2Fe2-uFOf1DH7AbCuFZ50i5gFsY5kzkC6hiygp12yT7n73GflrTulFiFH7zc-RrTSsWtoREgUUZ8hHTLQnKzvnY6pxCjMNYgtaR5jwiYsjBf9lhCiY9JX4CpfShZuMQCM2uOnqHbjYEWll0Tv2fgpUenNDynVg1w1NCIXp0PQ",
+          "width": 2800
+        }
+      ],
+      "place_id": "ChIJJ0xAdgA9sz4RcMtAZciBV4E",
+      "plus_code": {
+        "compound_code": "R23J+H4 Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R23J+H4"
+      },
+      "rating": 5,
+      "reference": "ChIJJ0xAdgA9sz4RcMtAZciBV4E",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 1,
+      "vicinity": "Marine Tower, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8038825,
+          "lng": 67.03031179999999
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8052760802915,
+            "lng": 67.0316859802915
+          },
+          "southwest": {
+            "lat": 24.8025781197085,
+            "lng": 67.02898801970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 21 33393383",
+      "name": "The Coffee Bean & Tea Leaf",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/116050801459857058988\">Nida Naseer</a>"
+          ],
+          "photo_reference": "AWn5SU6U_Gt0XzQ6B_x3jlUj9c1trXBZbqWFdNaH3FtLwsRFuRVwpolmNf7G0EZgw6eNrNmhSNwmssfy7DLSoO4J32fmGfJgiuBaU3wBDGYFwhZphc4RZuo69LUhxK67LXE-U011aWNQGWdwvTDW9KPiSxJtNUzWFMrlkAhTH_C15l1Uk-3QKcIMipOVcP-BPqhMRhRsjK5pid0bTJqNf_-Ob-V8dYz1jbW4dpWffzSaUT8x6qGyGqwKyOrZgAQHYYOjmUY2Y_2wb9T8UcXqe_tIMbAboQghoHvHFAE1IOSPO2G_dxUt94xuRFHvygsBz9BO4R5Tq12UwxDB3ychjmg7HGeFd9C9vZ0VqIntPCVJOE-vTXcjvrEs6LztPRyq0TxRpdzJ2EhFMYvS89EvXQZr2jtKpYBqXCSKRkKpy0l-4c0RmXlDoDdG7S28nB_OqKaVJzhKdXMSsYlXNup6T_gk7F81yYFd02poY-tFYBoBC8_dTaVD2V8mXSPalPS01nxT76972iveT0MEwdNcJDup0-lLr3yq3AVPuyAdkxWG-q3IOntw7tivZ7hcyoVzeMq3JSdqo-wVFAtAmIxiqfOzew1uMm2twHGsa2Lym2Oukhe95Z__y6D-VUzbrHzynazXh5_Xpw",
+          "width": 3008
+        }
+      ],
+      "place_id": "ChIJ7T125VE9sz4Rvqmxt-97VkE",
+      "plus_code": {
+        "compound_code": "R23J+H4 Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R23J+H4"
+      },
+      "price_level": 3,
+      "rating": 4.5,
+      "reference": "ChIJ7T125VE9sz4Rvqmxt-97VkE",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 396,
+      "vicinity": "Ground floor, Plot com#9, Marine Tower, Block 4 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8087593,
+          "lng": 67.031438
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8101599802915,
+            "lng": 67.0326856802915
+          },
+          "southwest": {
+            "lat": 24.80746201970849,
+            "lng": 67.02998771970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+      "international_phone_number": "+92 311 0044441",
+      "name": "Alaska Restaurant",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 958,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/117560182367699933311\">Alaska Restaurant</a>"
+          ],
+          "photo_reference": "AWn5SU6MHdhIBQs1IRmdTrqTX91Dex59kO1M9K11tA_L3J2x7GZvGJ6asKAWBDDC_JOXsOwUnlG90APS5wnFXXHdALYKQKWX00Z9Yuo5BIHH4j__YOcWWvFwomHNps035TS25idVE599s9dqJNN41swE_WiTKT0EswB1iXo0-KWJb-mRBdlZhy_Nun3tUkdEwd17csBDwMSTjZNrSioW-lMxkMtvO--sfeyGA4lsJsPLbrp1Bpl8SLMgVbJIUlH0aBzDlzd_yjhza6sV7uPIwXtfvwBtOaZkNXiQ0-qVoXqLbgh_OzNccMZWpBS_FMcpSX_ucyp95qbFg2Y",
+          "width": 1280
+        }
+      ],
+      "place_id": "ChIJ9--PQAc9sz4RoYG1Rliamd8",
+      "plus_code": {
+        "compound_code": "R25J+GH Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R25J+GH"
+      },
+      "rating": 3.8,
+      "reference": "ChIJ9--PQAc9sz4RoYG1Rliamd8",
+      "scope": "GOOGLE",
+      "types": [
+        "restaurant",
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 1030,
+      "vicinity": "Bungalow No. F-65, K.D.A. Scheme, 5, Clifton, Block 4 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.80416360000001,
+          "lng": 67.0312806
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.80543578029151,
+            "lng": 67.0325836302915
+          },
+          "southwest": {
+            "lat": 24.8027378197085,
+            "lng": 67.02988566970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/restaurant-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/restaurant_pinlet",
+      "international_phone_number": "+92 307 2952686",
+      "name": "Cafe Aylanto",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 812,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/109139611884683420741\">Queen Kainat</a>"
+          ],
+          "photo_reference": "AWn5SU4dHSBRjgEaohob1go6Z2NJ-IDaRh3_pG4VMTK459RGoaVbSvDMKA3toVzvRzIGSqTdOCucgwnAbTJpPP-_gockJ6IASRqF2bRxSoPtrThva3aO0eKhiVo0g1PSjfdPlu12O46OhiBwFVkmR2xVIJ4WcfhFFAgp_nrdEUdBvKXkYwA1TpfeRGlZzj4U_osPiWLAP8mMB2o1gCS5pYnT72waz1CDdkvM-EydBuK34fytNFuDi-KpezTUUF5Vkyb8WycXpgNkWHToBzQzM7VUw9_T-T1UujwRTnY2oTSBIvf_0hRTuiEh_6avd-twandDWA_PngPiIbMzEjiGIAFWH2Q5X1rZa2AsoU8pJ2cvAbjn-qR9WZHk0zf6xEq2NZO0XE_NQMhRugthzgz42LUTxUBdc9ToA6CD5osmVNFFOdP2CxR2Jkq1C4ba50Z2vBvLadwFYMzS7x6kkDH0vnQRC4Onzdmzu_7rHBOkbv4GMBzA_Q85A5dTAjlLcB8WXdVc_nwwJf0hb_bp7y4BjsHhzIQ-0mpizg5t6J_KmYncAtSCXAx6SMzeBvFr9uKUlcD8fBuVU6_lILrxIeISTZItAzaQzCMDkv6lFhmz3oilosCxKC1bv6Bi1ji3BewSGN1WOGZlL5Tp",
+          "width": 1080
+        }
+      ],
+      "place_id": "ChIJ1QJhxQk9sz4Rur5qu8epPH0",
+      "plus_code": {
+        "compound_code": "R23J+MG Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R23J+MG"
+      },
+      "price_level": 4,
+      "rating": 4.2,
+      "reference": "ChIJ1QJhxQk9sz4Rur5qu8epPH0",
+      "scope": "GOOGLE",
+      "types": [
+        "restaurant",
+        "cafe",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 4398,
+      "vicinity": "D 141, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.80328849999999,
+          "lng": 67.02999419999999
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8046802302915,
+            "lng": 67.03138693029149
+          },
+          "southwest": {
+            "lat": 24.80198226970849,
+            "lng": 67.02868896970848
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "name": "AGHA TEA TIME",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4624,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/101097831781324634959\">Aamir Karim</a>"
+          ],
+          "photo_reference": "AWn5SU7g6p5k1VBaGYbnTIKoQnOE7zYIi9gm-XL2wQO9TqPQt_uRJOqdDDyOmvluIFQ5vHFFfe-AWV6du5V2ltT9fdSlu3EGooatC6OYz0p1Xx_bqhrhO8hOayvzKCUzAy9NaZnCmhT2SxBmemeTp2pQSrwu0H7Lj3EbdIyJVB7eRINkESNhih7q0G_JpAEe5Ao0ljLe5DE96uwR5QM_y_ur6K_1Id9hrXg2FiZfyfgW8gmJSgXnE6R26Wy87-1Q9IwAN4bLsqX8u-hE8FRi1j5aKr42mDBP9NVIM5M5y6utE5ayKBXmVo1hViduPeAvCdV22mPJinQC0at0UfLoiy_mcoOgwYRiMiN6qZxrAvGYbnx6HRQwUNERLXUpLHlOjV9IE5nZIWBktAhhd9YcG-r8s9YSVIZRdZ4F_azUn-yZfgR5bxO5dV8q1-HdJsYYArC4b7FfOXCpX2udXi8TsbPkq1DliWuyFPckC_wpEl5x06LSw15CwVH9sXefr098hBZdzIZnNxiD7P2WbGWwxp_y14rC335BuULg-zC1utahqSy_mNLV_TdGoL6VKXzszwEGgzXciCNSJW2ou9ApK2RBYM5wYxiv5KHnx8qEgLXUhNJsFCHMRRFxy0kNGpAyzPQhQM87OjuL",
+          "width": 2604
+        }
+      ],
+      "place_id": "ChIJ24ZFFAA9sz4Rlu674sxr1IA",
+      "rating": 3,
+      "reference": "ChIJ24ZFFAA9sz4Rlu674sxr1IA",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 1,
+      "vicinity": "R23H+8X9, Block 4 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8027625,
+          "lng": 67.0294531
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8041970802915,
+            "lng": 67.0308919302915
+          },
+          "southwest": {
+            "lat": 24.8014991197085,
+            "lng": 67.0281939697085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 345 1143821",
+      "name": "Dunkin' - Dolmen Mall Clifton",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3024,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/101091778635897459300\">Fahad Qureshi</a>"
+          ],
+          "photo_reference": "AWn5SU6uIRVGF_OvrrHmnklaHwVdcvSoJl4rtHf-N8YBbbubLxnr1rVB_pg9CZpJIbjdubs70pe1vftAleq7dQEKNGMFkUqlcOBHqwhqKV-7HRcCmppf5rwaDm5DT-b333oOuPIDurS89CuScblc7xe4ijexo2QVoY5PQyykWZQfNxU_IVfOEyGzB6u1aW_5ybiOMhCCLj4Adni4L2yARrKpFMH9Wt0kmDg3lLc_3OVuXEBX9iZZsQgx0HcOcbY7mKKai8EaVqVZbmwVhxud2THEHcfgWSGZIZG9eoChniNAusYqruWfgEqQeBBPSwHfXSZTuTY6q5yIGnvk7f8eWNFitaRV294-ye2wFoxBAgB5Pzxks6ZOL61vVOpDuH4FZ6gov7gJ8P8oMsGuWiANvhFCfqAJg73B0izVgLQ40g_wFaYstlH76lDqMcA-Nvp7-ulmHyr8T5ev8kei72Je26Y7HuRuHN3ezWGH6RdO09w2ZwzGRjFbz5rHhAc4rfIEW3cGas5SWaJi5UTtwxF9uVXQL0cwxab05vIrr4USkY-4NCEAK3XRQARezl3qr8ANoSnkT9RJNM4AZnZj7RRcRiXB37d8ezEneU6tqOozlvUy0da3SHxKwtINkYMspWE7jbHicdHHao-g",
+          "width": 4032
+        }
+      ],
+      "place_id": "ChIJ_XF0kAk9sz4RDDXRcLaIvU8",
+      "plus_code": {
+        "compound_code": "R23H+4Q Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R23H+4Q"
+      },
+      "price_level": 2,
+      "rating": 3.8,
+      "reference": "ChIJ_XF0kAk9sz4RDDXRcLaIvU8",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 111,
+      "vicinity": "1st Foor, Dolmen Mall, Block 4 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8027792,
+          "lng": 67.0296085
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.80418108029151,
+            "lng": 67.03100198029149
+          },
+          "southwest": {
+            "lat": 24.8014831197085,
+            "lng": 67.02830401970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 21 35294258",
+      "name": "Butlers Chocolate Cafe",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3024,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/113457394077900392759\">BeAvEriNg</a>"
+          ],
+          "photo_reference": "AWn5SU5kM_X7C9T6kdrafS7c1Q4mSSRwTGlEqbc5lyvEK8NShAJ7Zz-eZZcS7xU8-sin7to9Jmw4bPwmtsDCvG2TxQS-xw_fVtwzxCHXclwR4JFes-7n-MGeCbovApeMI2aBN9Tz0qCRznGK7ItCgnRTYd4CVmrcecSH6RTS-f4SV-UhAXEsrv4JOr-koII16gQri7zTCBqfjNCjHNGWaWgo_02GMDaQBi7kmu6CvPZpUGhZT_l5kJAe5usEZyS4y8PWHJQiBgceLHPV4wWRHNfMoeh9ERflqJaUCPl7GQTUWKEVrirdqyPXw4tA-SkLxXnhnyWc66Pdl5xXjv3rcvCFi45dAq77lvUrDv_HxsvVzQoNGMmHEaoIShQtv3Z3ik_hMjmd3dah26qAfuYffStggN-UjVAElARwRAecLX0Nl49X-h5Tx_TCWlWlrzeo3i769whnPzZIlnXXk_Gm3DxXb7WTEOCC6WGDD5qv2Tt2vo4ghZ6R96uEEcNJpBNNSDw8KZixTWi7nF9GaXu_vNubMdksFaQC3Vm_uSygurboPc_rBnmWfimatrwCVy7I_hA83K3V4mjL1wuI1zO_gd6Z2mhXe7STVt3dD1V24TCZXGfXR00nXOQelDsvo9Z6oWjAEpQzyg",
+          "width": 4032
+        }
+      ],
+      "place_id": "ChIJUUOhkAk9sz4RLsifY8qoHWY",
+      "rating": 4.2,
+      "reference": "ChIJUUOhkAk9sz4RLsifY8qoHWY",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 210,
+      "vicinity": "R23H+4R9, Block 4 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8023509,
+          "lng": 67.0288709
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8037392802915,
+            "lng": 67.0301608302915
+          },
+          "southwest": {
+            "lat": 24.80104131970849,
+            "lng": 67.0274628697085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 21 35293912",
+      "name": "Gloria Jean's Coffees Dolmen",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/114334787938854617156\">Faysal Ishrat</a>"
+          ],
+          "photo_reference": "AWn5SU5UI9EcHrShvlH1kvVdw-QV0F3fnaEyPBkiZaSCmLfBcLn8x2QHWvsA3wM7w0T6FqcSkVwAj1Jp_9ARrw-JU4KRBLZ4gtF86_4g0pBbSfkXTQ-MdCUim9yvNVuE78gZwzbWpWVXMzCkhQWmZx_YRypEHa4RZwEY6zS7_ugG91Senazn1VIg1RE97C4V_JEJYTiZcItLxOtAcUeFeYEjUCclzU0yBt-Im5EysM05VmjO_-6A3Bl8b-nGWsiWQxtrTOo5YWYjsam2R3T5RLadKgxQ0I7I33QfT2QhikIR2hljsBEB7q6tFFFgY-ndZ24k6Oh9UwNQvuDJIhLuuiN_YeIQJGTj-y_Zl_3Ro9WdU9nfsiNyPVEdItB1zRRzv95QZ0OGLQNg0u4pllFbopquNUPD1dIgt5sshbIZ7-M6Ge2MdmhKJBAJGeJj66005XYMpXG1KPu_PgOVmZ9LTxclRgc8nIP0YP9VJ8J2MSJkNq8bMU_MtpqVKaE9q3xOKilNjMjbYTAmZUW6XJdc-OU3GyhCqS2QKrkIuS9tkQrnMMhZE8L520kHt8_a722HPDkNuI-xpdSAbBn1oqH4NPJzc0pLCjDqCBN886Og92zXl3W5zGWMBoXuR_dE7hmoglHhLJv3bw",
+          "width": 4000
+        }
+      ],
+      "place_id": "ChIJ7UBtKAo9sz4R15lxcBFx8bs",
+      "plus_code": {
+        "compound_code": "R22H+WG Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R22H+WG"
+      },
+      "price_level": 3,
+      "rating": 4.1,
+      "reference": "ChIJ7UBtKAo9sz4R15lxcBFx8bs",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "point_of_interest",
+        "food",
+        "establishment"
+      ],
+      "user_ratings_total": 1208,
+      "vicinity": "Dolmen Mall, Marine Promenade, Block 4 Clifton, Karachi"
+    }
+  ]
+}

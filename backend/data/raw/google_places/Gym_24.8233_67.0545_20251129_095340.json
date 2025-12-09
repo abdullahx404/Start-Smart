@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T09:53:40.416118",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.8255,
+      "lat_south": 24.821,
+      "lon_east": 67.057,
+      "lon_west": 67.052
+    },
+    "center": {
+      "lat": 24.82325,
+      "lon": 67.0545
+    },
+    "radius_meters": 500,
+    "total_results": 0,
+    "statistics": {
+      "places_with_ratings": 0,
+      "places_without_ratings": 0,
+      "average_rating": null,
+      "total_reviews": 0
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": []
+}

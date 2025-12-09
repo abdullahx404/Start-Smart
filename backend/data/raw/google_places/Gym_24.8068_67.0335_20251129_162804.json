@@ -1,0 +1,181 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T16:28:04.505211",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.809,
+      "lat_south": 24.8045,
+      "lon_east": 67.036,
+      "lon_west": 67.031
+    },
+    "center": {
+      "lat": 24.80675,
+      "lon": 67.0335
+    },
+    "radius_meters": 500,
+    "total_results": 3,
+    "statistics": {
+      "places_with_ratings": 3,
+      "places_without_ratings": 0,
+      "average_rating": 4.4,
+      "total_reviews": 76
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8091733,
+          "lng": 67.0359546
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8105362302915,
+            "lng": 67.03731663029151
+          },
+          "southwest": {
+            "lat": 24.8078382697085,
+            "lng": 67.03461866970851
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "name": "Wieder Gym",
+      "photos": [
+        {
+          "height": 3456,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/115579936257721991558\">Faisal Faves</a>"
+          ],
+          "photo_reference": "AWn5SU4x1zAJVWaxZbLSpzD4xQ5ktAUdMeYgkXGOwX00iv4TVG82wUEICbD4EdMcq6rZLpczXjONezLldmMxd15cE6bzcPti7vG1IhAh9QQ2OeU17C-252XqS7gitrwxtkx6PbzrrpoIyFNOUYsqci2XgNhpY8NYn-iJ3ncDdvzKytBP2SJC_1D9bPZBpXEcmZ4zGcOfD_X_MPnkYWQC-vhrq7ID-sx9gAiPRBwqaonzr-nIiSZE2imiQfRwu_XuiXwj9JaWt2yLnEJVUdcT0sQhrWaFV2mproBdxT7L-cKhypREAUtwrcBTYFpWSYABp9cW_VH4GRuxnucBT3bHwadQgWWaB8uJQQ68AnjiUOPUCvX93K_dkU0slxaU8t9NY8l7yU_CP9Byk8r3n-1EdgwBumLFsNJoghnhk5d0NcSOy70qx2pyrDed2OSaTyoFwAKLVQ0NXpI4ZLQOoiPAvdnDWvegCnzOsOMdWMrBvcmKxswagKcR_knhlR2U0MBetv42oaLjqT2zvKuP8a0Idgvx-tI2UoMFk5MscPhpVWRAYfLQiatbCTrz3s5rzdd8pOQsfQUjKyG7pBBMX4u02RAv6fgkQ-8Yk1-J_VcenRLDIDu9-SiWXBjWIOQiDOKWmkow",
+          "width": 4608
+        }
+      ],
+      "place_id": "ChIJLyLCjKg9sz4Ro7dQbQ9Hmvc",
+      "rating": 3.8,
+      "reference": "ChIJLyLCjKg9sz4Ro7dQbQ9Hmvc",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 34,
+      "vicinity": "R25P+M98, Tauheed Commercial Area Defence V Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.808073,
+          "lng": 67.03713979999999
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8094625802915,
+            "lng": 67.0385259302915
+          },
+          "southwest": {
+            "lat": 24.8067646197085,
+            "lng": 67.03582796970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 301 2349929",
+      "name": "Mazhar Fitness Den",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 538,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/116131822688316949761\">Mazhar Fitness Den</a>"
+          ],
+          "photo_reference": "AWn5SU7ml5zv4D8YNp2_fmqV9mXX0rHdB8Er98fmXNfjiLg5ECnBcKrAQCCZrtPuEFFFYDBY0fA5OXMpAQgKB6VE6aMXj9SHGqj-uul9Ll7x2itEibD5txt8dsiM4M2n72SdKCqau46UlUh2-9HNcrwCRnuJp9EugnqkKhGY8oNgzwXt7prVjUXivtAC33eHJSODZ225GHt-nplnM2FCuJoUJtqHJ2PLzA8B4fnRGBTufBbEPjAXlYXGbyjb0uk8Kc-ul33d8v8CEV3hQRPLr6tIxG7P1eUB5tWz9nEJ7tLkRIyjMIxcJIwUzQDgkcRisVX7SjmKiIvsLL4",
+          "width": 956
+        }
+      ],
+      "place_id": "ChIJtxRGmcE9sz4R2DHm2-CxhG4",
+      "plus_code": {
+        "compound_code": "R25P+6V Defence Housing Authority, Karachi, Pakistan",
+        "global_code": "7JP9R25P+6V"
+      },
+      "rating": 4.4,
+      "reference": "ChIJtxRGmcE9sz4R2DHm2-CxhG4",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 37,
+      "vicinity": "37th Street, Tauheed Commercial Area Defence V Defence Housing Authority, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8106875,
+          "lng": 67.0353125
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8120531802915,
+            "lng": 67.03665388029151
+          },
+          "southwest": {
+            "lat": 24.8093552197085,
+            "lng": 67.0339559197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 345 3232059",
+      "name": "Mama Noushad Snooker Club",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 1280,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/116340640206241816264\">dawood shah</a>"
+          ],
+          "photo_reference": "AWn5SU6dERbID8WxagRgyvLepM65absy8_bqgcvsrEIRTR9joxcApr6wleU3H4KdmL_8UzsAeGp5-n4wCQpViWWcYXweYBHD7Hzi453jZPWCucry9hG-4hUJjSspBmIrcpO9AJiWvmLA_KSJc6imjel6lXs0aw_cGsi9i1JNmLQ7Xam5vhtyLvQcdgOts3IK5MYA89tAtxQR4_IEtoHfiazlBE7YtsIhCKnHrnbsb4cb03qBE-M1lYCyZiN0EOPH8qMf_j1gVpFg8wnqFtaAY8kf0VxDA3zPWFINa6mAJcNb_uNFf-SNCadt4tSQg5VF3xOthxcggLKG9S5f_4xrz2i6_25d4EfRE1yd8dwadgALQ98Oxa7rS3Ai1gn7cfjNiCQ5ZSr5_fDH9HsFAqJINUf0FobBsNN4P0c5N1xZ2aErvIZSS8plKepT0uqOHPTsY_z9H28eCIcuFaNrpSPnIL-8TMQyEsbASRjlB79YhfqJ2AYIEp6kWYClYxuUO0G56m2ctoKq70oWeJIwYznN1WjksB1-z0qwFIyWSLwh-NTpG_DS90Wfe2qsx3EspV18zF9VvDs2fWfLeNWxW3QcFO1T5nlnga8bck-jYbTJRo9_Ymv56CKzNm4pgSZx9ESrGTA-SPif9A",
+          "width": 960
+        }
+      ],
+      "place_id": "ChIJqfjrHSo9sz4R83tg3azOs54",
+      "plus_code": {
+        "compound_code": "R26P+74 Shah Rasool Colony, Karachi, Pakistan",
+        "global_code": "7JP9R26P+74"
+      },
+      "rating": 5,
+      "reference": "ChIJqfjrHSo9sz4R83tg3azOs54",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 5,
+      "vicinity": "Karachi"
+    }
+  ]
+}

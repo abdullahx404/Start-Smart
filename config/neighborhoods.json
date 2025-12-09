@@ -1,0 +1,139 @@
+{
+  "neighborhoods": [
+    {
+      "id": "Clifton",
+      "name": "Clifton, Karachi",
+      "description": "Clifton - Premium residential and commercial area in Karachi. Primary focus area for MVP.",
+      "sectors": [
+        {
+          "id": "Clifton-Block1",
+          "name": "Block 1",
+          "bounds": {
+            "lat_north": 24.8260,
+            "lat_south": 24.8180,
+            "lon_east": 67.0280,
+            "lon_west": 67.0160
+          }
+        },
+        {
+          "id": "Clifton-Block2",
+          "name": "Block 2",
+          "bounds": {
+            "lat_north": 24.8220,
+            "lat_south": 24.8100,
+            "lon_east": 67.0360,
+            "lon_west": 67.0200
+          }
+        },
+        {
+          "id": "Clifton-Block3",
+          "name": "Block 3",
+          "bounds": {
+            "lat_north": 24.8200,
+            "lat_south": 24.8080,
+            "lon_east": 67.0440,
+            "lon_west": 67.0320
+          }
+        },
+        {
+          "id": "Clifton-Block4",
+          "name": "Block 4",
+          "bounds": {
+            "lat_north": 24.8170,
+            "lat_south": 24.8050,
+            "lon_east": 67.0380,
+            "lon_west": 67.0260
+          }
+        },
+        {
+          "id": "Clifton-Block5",
+          "name": "Block 5",
+          "bounds": {
+            "lat_north": 24.8130,
+            "lat_south": 24.8010,
+            "lon_east": 67.0440,
+            "lon_west": 67.0320
+          }
+        },
+        {
+          "id": "Clifton-Block7",
+          "name": "Block 7",
+          "bounds": {
+            "lat_north": 24.8140,
+            "lat_south": 24.8020,
+            "lon_east": 67.0540,
+            "lon_west": 67.0420
+          }
+        },
+        {
+          "id": "Clifton-Block8",
+          "name": "Block 8",
+          "bounds": {
+            "lat_north": 24.8120,
+            "lat_south": 24.8000,
+            "lon_east": 67.0620,
+            "lon_west": 67.0500
+          }
+        },
+        {
+          "id": "Clifton-Block9",
+          "name": "Block 9",
+          "bounds": {
+            "lat_north": 24.8100,
+            "lat_south": 24.7980,
+            "lon_east": 67.0700,
+            "lon_west": 67.0580
+          }
+        },
+        {
+          "id": "Clifton-SeaView",
+          "name": "Sea View",
+          "bounds": {
+            "lat_north": 24.8050,
+            "lat_south": 24.7920,
+            "lon_east": 67.0500,
+            "lon_west": 67.0350
+          }
+        }
+      ],
+      "bounds": {
+        "lat_north": 24.8260,
+        "lat_south": 24.7920,
+        "lon_east": 67.0700,
+        "lon_west": 67.0160
+      }
+    }
+  ],
+  "categories": [
+    "Gym",
+    "Cafe"
+  ],
+  "grid_config": {
+    "cell_size_meters": 100,
+    "min_cell_size_meters": 50,
+    "max_cell_size_meters": 150,
+    "overlap_percent": 0
+  },
+  "scoring_config": {
+    "phase": 1,
+    "mode": "real_data_only",
+    "use_synthetic": false,
+    "weights": {
+      "business_density": 0.6,
+      "competition_strength": 0.4
+    }
+  },
+  "metadata": {
+    "version": "2.0.0",
+    "created_at": "2025-11-05",
+    "updated_at": "2025-12-01",
+    "mvp_scope": "Clifton only with 9 sectors, 2 categories, micro-grids (100m)",
+    "phase": "Phase 1 - Real Data Only",
+    "notes": [
+      "Removed DHA-Phase2 to focus on Clifton",
+      "Added all Clifton sectors (Blocks 1-9, Sea View)",
+      "Reduced grid size from 500m to 100m",
+      "Disabled synthetic data scoring"
+    ]
+  }
+}

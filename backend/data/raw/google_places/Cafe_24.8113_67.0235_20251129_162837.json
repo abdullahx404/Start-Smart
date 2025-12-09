@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T16:28:37.431107",
+    "category": "Cafe",
+    "google_type": "cafe",
+    "bounds": {
+      "lat_north": 24.8135,
+      "lat_south": 24.809,
+      "lon_east": 67.026,
+      "lon_west": 67.021
+    },
+    "center": {
+      "lat": 24.81125,
+      "lon": 67.0235
+    },
+    "radius_meters": 500,
+    "total_results": 1,
+    "statistics": {
+      "places_with_ratings": 1,
+      "places_without_ratings": 0,
+      "average_rating": 4.9,
+      "total_reviews": 20
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8147913,
+          "lng": 67.0213163
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8161780802915,
+            "lng": 67.02267748029149
+          },
+          "southwest": {
+            "lat": 24.8134801197085,
+            "lng": 67.01997951970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/cafe-71.png",
+      "icon_background_color": "#FF9E67",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/cafe_pinlet",
+      "international_phone_number": "+92 21 35158465",
+      "name": "Agha Jeez Cafe",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 3000,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/100900357181436155074\">Umar</a>"
+          ],
+          "photo_reference": "AWn5SU7AlEnEjF2Bc2E4xylNuGb9HvihiGKh46YqX1L1GKOZlwAsvDlkZ2_uT7ZB4en6LL8rVNXeimlExHF6sOgszzRAJYLrmNH4qR9SIL2qh2s5mhcYO-ZTYkLsgU4XW5_-qxZr8HLnipHfmfRCSstRll0TMfim35-kc9atP36fYSQ5hp0X0uGQ7tVBiIN5vKwY2F3QYxmtc4aTfr-k9HCTV-9XZUxq8SxRZGbt5RNh9nr34Zn8w3fPTYoZrfvvt3NqqRWC6Ni0j2xk7GVKQRLwZOrAj6duusmNmDTAAtF0jWu1aZ3RybzcPYaj8H4W4mpFotW-nNXp7kVlVLCSU0spB5SlEczgrsY7cHSMz-6TrbPda9FWF7enl4-RN99XqriDPBrQ58oD-quh20HX23F8AWzMSiOci4XpTJCy0DJUgriK8_rqkdI4Cb0XiSRl2rD2evCdGqKI9CxX1lwjnbbNuCFxQJDO2U-EF6JAJYA9SnqTOfAevlv9y2zj4C_V-hyqfwkHWVfr1x5bGcy0ZiIC6wRojBCQ0S1gZfAeOds2qOmn4fFCfAp2z2X88DbNWtz9gYPp8KNDJZ5ooXTgatoTE253tRkclBWoPCEoTBzCd5ybRrIxnbNK4cBKJYEnI9-y",
+          "width": 4000
+        }
+      ],
+      "place_id": "ChIJ8T6blu89sz4RNBXC64gyDHU",
+      "plus_code": {
+        "compound_code": "R27C+WG Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R27C+WG"
+      },
+      "rating": 4.9,
+      "reference": "ChIJ8T6blu89sz4RNBXC64gyDHU",
+      "scope": "GOOGLE",
+      "types": [
+        "cafe",
+        "store",
+        "food",
+        "point_of_interest",
+        "establishment"
+      ],
+      "user_ratings_total": 20,
+      "vicinity": "Block 3 South City, Clifton, Karachi"
+    }
+  ]
+}

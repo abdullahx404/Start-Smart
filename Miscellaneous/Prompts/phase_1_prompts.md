@@ -395,7 +395,7 @@ Coverage target: ≥95%
 ```
 Create an integration test and run the full Phase 1 pipeline.
 
-Please create `backend/tests/test_integration_phase1.py`:
+Please create `backend/tests/test_integration_phase1.py:
 
 1. Test the full data flow:
    - Use test database (SQLite in-memory or test PostgreSQL)
@@ -416,7 +416,8 @@ Please create `backend/tests/test_integration_phase1.py`:
 
 After creating this test, run the following commands:
 
-```powershell
+```
+powershell
 # Run all unit tests
 pytest backend/tests/ -v --cov=backend/src --cov-report=term
 

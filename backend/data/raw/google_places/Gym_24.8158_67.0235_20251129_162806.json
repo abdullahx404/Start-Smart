@@ -1,0 +1,238 @@
+{
+  "metadata": {
+    "timestamp": "2025-11-29T16:28:06.594559",
+    "category": "Gym",
+    "google_type": "gym",
+    "bounds": {
+      "lat_north": 24.818,
+      "lat_south": 24.8135,
+      "lon_east": 67.026,
+      "lon_west": 67.021
+    },
+    "center": {
+      "lat": 24.81575,
+      "lon": 67.0235
+    },
+    "radius_meters": 500,
+    "total_results": 4,
+    "statistics": {
+      "places_with_ratings": 4,
+      "places_without_ratings": 0,
+      "average_rating": 4.67,
+      "total_reviews": 1993
+    },
+    "source": "google_places_api",
+    "adapter_version": "1.1.0",
+    "cache_expiry_hours": 24
+  },
+  "places": [
+    {
+      "business_status": "CLOSED_TEMPORARILY",
+      "geometry": {
+        "location": {
+          "lat": 24.816044,
+          "lng": 67.0246344
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8173489802915,
+            "lng": 67.02609328029149
+          },
+          "southwest": {
+            "lat": 24.8146510197085,
+            "lng": 67.02339531970848
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 21 37248446",
+      "name": "Karachi Ladies Club",
+      "permanently_closed": true,
+      "photos": [
+        {
+          "height": 1264,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/117916542302128578764\">Karachi Ladies Club</a>"
+          ],
+          "photo_reference": "AWn5SU5eklikr-WZR9hpNvSmBglWeEUcO6AfWosnmPgV4q9c-xjO006Ye_y2AiibmpqTSiaea4kE6bPYDHawEMe939rsilqKEObZzRuBQl5qD8ERMI0_FyBSvvznxdoTJvz5Wn9QN4ZfU8WK04ky63kgxuJK12lzJ-wQP_M2zpVGS80pvZMZx2GGUCJIJa7gEd0u87g_NckWN5s8KThdcaTIiHc5n-QY0RpDHN6k2iR98ZrX0oI0XWBhi7uG8IV8GuSjVH8y6aIY-QfiuGKtEMez1mYUAaNpS05U0M47076VsqFixj35uscGUDT56rFp6KIN4F_SjipamoQ",
+          "width": 1264
+        }
+      ],
+      "place_id": "ChIJCZFPnr09sz4Rr45KBG-n6_Y",
+      "plus_code": {
+        "compound_code": "R28F+CV Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R28F+CV"
+      },
+      "rating": 4.2,
+      "reference": "ChIJCZFPnr09sz4Rr45KBG-n6_Y",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "spa",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 74,
+      "vicinity": "Plot D, 134 Jalbani Street, Block 5 Block 5 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8154357,
+          "lng": 67.022775
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8169032302915,
+            "lng": 67.0241751802915
+          },
+          "southwest": {
+            "lat": 24.8142052697085,
+            "lng": 67.02147721970849
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 300 8954134",
+      "name": "Voltupwithsumera",
+      "photos": [
+        {
+          "height": 1462,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/112508760664332920584\">Voltupwithsumera</a>"
+          ],
+          "photo_reference": "AWn5SU63ti9795Yjd9HrF1m7wvkNNTsbmHFplOZ_ZsvuOzvhr_YEhZT-hnAzsbqlR70OIFHkToQq0OiK1Cumg5IkhAi_MDpDN8LqijA2yslkbk4JvSAWcLlV5m8Fj-7LLr_EQ5jwx-agPMwBz-EwLcAGHpGUIFk48lEJSWyozGczzpZ2vcAr8zVKSU7Nn92NcpfWM1YLfwIsVxYJvOVFWuZ-rnYo-MnYKxjhHaSRojUN64TXiM-w91Od2ttnALwQEvfZ5XrWHcLczcYkDc9ZNqvrsTOLmOgt07sNIcUZg1CfQyuiSk-TEEaaLMVMRunZ6NrsAi_B0Lhhd38",
+          "width": 1077
+        }
+      ],
+      "place_id": "ChIJWyZpuIc9sz4RgP9WHcagFQ0",
+      "plus_code": {
+        "compound_code": "R28F+54 Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R28F+54"
+      },
+      "rating": 5,
+      "reference": "ChIJWyZpuIc9sz4RgP9WHcagFQ0",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 4,
+      "vicinity": "D 148 Astrik Street, Block 5 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8146329,
+          "lng": 67.0206383
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8162447802915,
+            "lng": 67.0221049302915
+          },
+          "southwest": {
+            "lat": 24.8135468197085,
+            "lng": 67.0194069697085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 335 8743481",
+      "name": "TRIFIT FITNESS CLUB (COM 1)",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4284,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/106496673245163765195\">Powertusk Gamer</a>"
+          ],
+          "photo_reference": "AWn5SU5X-7gWFEwrd36ulFwPF1P6nNrkV1bBc6stbv4KGl4OGyX-vros8dyhUvgcwJtM3pP7hjVCIOq4Graepiewjimz-RfT17Kb1xuRgszbJnGNs1t98idS5XSDCMdli62Y42zrXOsjQFKk10juE4Wh6cJD9G5wVTRVoQkGnvA7zeHW_4ecgc3oYyKDKytGP7zQownMIr-khWzzE6NjvcdFzm83sgf0-lqiaT5KXd_ZlBHQSh52MbVbeVgTL6Ba-6qHu7ehFxDQRoD2AEygW8uCg-kWYxU6kYSAVT7jiC7NJEaY1Fu-wcNsu6eVOiiZwj6fbwb92sie0x-HKoDwM72GLVTA-daebR987t1LdjIz7ME5M5hM439gjvWna7J_t3ELe4N1imIaoqH9H0dNF7FYDhsBTLC1kYAfNne16g7pyaxAe55x_v2Z-9sml2Vap3DwxeuMDPIBZeDqFu1DlceuIey51RCCkivrJU2wD8xdvzZ8KNfrEDR_rTe4HtfXOF3H2De5FS9D3gu7PFO48JDEnPy7Sdqvi7TgW1srFkuY8vjUe6oMOw4xPVWNk0KXnyB0dnLL63cdArFX1vKCojN7_77MAAde1-v-kyK_Pp0emokCTt3GzWuEFOqepWYhBHpx",
+          "width": 5712
+        }
+      ],
+      "place_id": "ChIJqUhLRCE9sz4RxWlgOL-XZsY",
+      "plus_code": {
+        "compound_code": "R27C+V7 Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R27C+V7"
+      },
+      "rating": 4.9,
+      "reference": "ChIJqUhLRCE9sz4RxWlgOL-XZsY",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 1829,
+      "vicinity": "COM 1, Block 3 Clifton, Karachi"
+    },
+    {
+      "business_status": "OPERATIONAL",
+      "geometry": {
+        "location": {
+          "lat": 24.8144657,
+          "lng": 67.0196113
+        },
+        "viewport": {
+          "northeast": {
+            "lat": 24.8157867802915,
+            "lng": 67.0210382802915
+          },
+          "southwest": {
+            "lat": 24.8130888197085,
+            "lng": 67.0183403197085
+          }
+        }
+      },
+      "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+      "icon_background_color": "#7B9EB0",
+      "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+      "international_phone_number": "+92 311 9678635",
+      "name": "C3 FITNESS",
+      "opening_hours": {
+        "open_now": true
+      },
+      "photos": [
+        {
+          "height": 4160,
+          "html_attributions": [
+            "<a href=\"https://maps.google.com/maps/contrib/110385062247243668159\">Kissa Abbas</a>"
+          ],
+          "photo_reference": "AWn5SU4jdIGoZEteQqxKbQDEP4j8WNdIUeOjIr4GQwYNzDiem9n4jpT_n4TdnFumTzyI320cXdDAPlomhj99881AwYMyWuEqd-6xcP8iVUh4kaXuvkEARJ5PjnpGBWLevEfunkaa7S3xeDD-LEQcG1UBiVJ_6S7xlZYlhPIam4XcG4qfJPuHIUfx9eJ3Qkbkn-uaV5kVGJR92fR5up2B9yJkIlWV65PeWg3xrpoEMecHhKLjXhWOFvbW9mK9IGjNqmU6Iwm_HqL879X-oXYSmG4Fd1hMdqMP_LFIwKQ_VQDlsOXSMQbjRg9ifHBTwPE7xt4LLSiM9XOobRUQGhBPEyA0hL59KFU20qxKgEPLQMw6WEhIINzGtEHrjqRcCQYFRkNzScNnhcW_Z_AMFElNiFEbtObGEQjqxVMae6gyhZX8IQ6lQ3UtS1y-awl2OhW6CI171fUw1ionhGOimTjeLDncdR6fDpJbbM_89EYRO4wOHf16RVMVsIpbjMdD5y3XRPKU7U-0Msu92DQXYcHNm17BJdAm9TupcetwsphJQCchB5J1hBsI75oDFC7axn5JbWfRo63eVDvl195fjmcAQDeD6wLoE7qXfPj6BcgagzYICIgpu2DpZEm-DOVgrpZb0tjtOYTJ9A",
+          "width": 3120
+        }
+      ],
+      "place_id": "ChIJo2p9SKA9sz4R-_R7n62XWEo",
+      "plus_code": {
+        "compound_code": "R279+QR Clifton, Karachi, Pakistan",
+        "global_code": "7JP9R279+QR"
+      },
+      "rating": 4.6,
+      "reference": "ChIJo2p9SKA9sz4R-_R7n62XWEo",
+      "scope": "GOOGLE",
+      "types": [
+        "gym",
+        "point_of_interest",
+        "health",
+        "establishment"
+      ],
+      "user_ratings_total": 86,
+      "vicinity": "Address BS, Gw tower building, 3, Block 2 Clifton, Karachi"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+*$py.class
+*.so
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Environment Variables - NEVER COMMIT THESE
+.env
+*.env
+.env.*
+!.env.example
+backend/.env
+
+# Frontend environment config (contains API keys)
+frontend/web/env.js
+!frontend/web/env.example.js
+
+# Testing
+.pytest_cache/
+.coverage
+
+# Generated Data
+data/raw/
+data/synthetic/
