@@ -12,8 +12,8 @@ class ApiConstants {
 
   // Production URL (Vercel deployment)
   // UPDATE THIS after deploying backend to Vercel!
-  static const String _productionUrl =
-      'https://startsmart-backend.vercel.app/api/v1';
+static const String _productionUrl =
+    'https://startsmart-backend.vercel.app/api/v1';
 
   /// Get the active base URL based on environment
   static String get baseUrl => kIsProduction ? _productionUrl : _localUrl;
