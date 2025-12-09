@@ -1,19 +1,21 @@
 """
-Feedback Router
+Feedback Router (DATABASE DISABLED)
 
-POST /api/v1/feedback - Submit user feedback on recommendations
+POST /api/v1/feedback - Submit user feedback (logged only, not stored)
 """
 
 import logging
 from typing import Optional
 from enum import Enum
 from datetime import datetime
+import random
 
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel, Field, EmailStr, field_validator
 
-from src.database.connection import get_session
-from src.database.models import GridCellModel, UserFeedbackModel
+# Database disabled for serverless deployment
+# from src.database.connection import get_session
+# from src.database.models import GridCellModel, UserFeedbackModel
 
 logger = logging.getLogger("startsmart.api.feedback")
 
@@ -88,12 +90,11 @@ Allows users to provide feedback on recommendation quality.
 - `1`: Thumbs up (good recommendation)
 - `-1`: Thumbs down (poor recommendation)
 
-Feedback is used to refine the scoring algorithm in future phases.
+NOTE: Database disabled - feedback is logged but not stored.
     """,
     responses={
-        201: {"description": "Feedback successfully saved"},
+        201: {"description": "Feedback successfully received"},
         400: {"description": "Invalid feedback data"},
-        404: {"description": "Grid not found"},
         422: {"description": "Validation error"}
     }
 )
@@ -101,75 +102,21 @@ async def submit_feedback(feedback: FeedbackRequest) -> FeedbackResponse:
     """
     Submit feedback for a grid recommendation.
     
-    Args:
-        feedback: Feedback data including grid_id, rating, and optional comment
-        
-    Returns:
-        Confirmation with feedback ID
+    NOTE: Database disabled - feedback is logged but not stored.
     """
-    try:
-        with get_session() as session:
-            # Verify grid exists
-            grid_exists = (
-                session.query(GridCellModel)
-                .filter(GridCellModel.grid_id == feedback.grid_id)
-                .first()
-            )
-            
-            if not grid_exists:
-                raise HTTPException(
-                    status_code=404,
-                    detail=f"Grid '{feedback.grid_id}' not found"
-                )
-            
-            # Create feedback record
-            feedback_record = UserFeedbackModel(
-                grid_id=feedback.grid_id,
-                category=feedback.category,
-                rating=feedback.rating,
-                comment=feedback.comment,
-                user_email=feedback.user_email,
-                created_at=datetime.utcnow()
-            )
-            
-            session.add(feedback_record)
-            session.commit()
-            session.refresh(feedback_record)
-            
-            logger.info(
-                f"Feedback submitted: grid={feedback.grid_id}, "
-                f"rating={feedback.rating}, id={feedback_record.id}"
-            )
-            
-            # Track rating distribution for analytics
-            positive_count = (
-                session.query(UserFeedbackModel)
-                .filter(UserFeedbackModel.rating == 1)
-                .count()
-            )
-            negative_count = (
-                session.query(UserFeedbackModel)
-                .filter(UserFeedbackModel.rating == -1)
-                .count()
-            )
-            total = positive_count + negative_count
-            if total > 0:
-                logger.info(
-                    f"Feedback distribution: "
-                    f"positive={positive_count} ({positive_count/total*100:.1f}%), "
-                    f"negative={negative_count} ({negative_count/total*100:.1f}%)"
-                )
-            
-            return FeedbackResponse(
-                message="Feedback received. Thank you!",
-                feedback_id=feedback_record.id
-            )
-            
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error submitting feedback: {e}", exc_info=True)
-        raise HTTPException(
-            status_code=500,
-            detail="Failed to submit feedback"
-        )
+    # Log the feedback (since database is disabled)
+    logger.info(
+        f"📝 Feedback received (not stored - DB disabled): "
+        f"grid={feedback.grid_id}, "
+        f"category={feedback.category}, "
+        f"rating={feedback.rating}, "
+        f"comment={feedback.comment or 'None'}"
+    )
+    
+    # Generate a mock feedback ID
+    mock_feedback_id = random.randint(1000, 9999)
+    
+    return FeedbackResponse(
+        message="Feedback received. Thank you! (Note: Database disabled for serverless deployment)",
+        feedback_id=mock_feedback_id
+    )

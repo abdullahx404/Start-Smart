@@ -1,7 +1,7 @@
 """
-Grids Router
+Grids Router (DATABASE DISABLED)
 
-GET /api/v1/grids - Get all grids for neighborhood + category
+GET /api/v1/grids - Returns empty grid list (database disabled for serverless)
 """
 
 import logging
@@ -12,8 +12,9 @@ from fastapi import APIRouter, HTTPException, Query
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 
-from src.database.connection import get_session
-from src.database.models import GridCellModel, GridMetricsModel
+# Database disabled for serverless deployment
+# from src.database.connection import get_session
+# from src.database.models import GridCellModel, GridMetricsModel
 
 logger = logging.getLogger("startsmart.api.grids")
 
@@ -98,77 +99,13 @@ async def get_grids(
     """
     Get all grids for a neighborhood and category.
     
-    Args:
-        neighborhood: Neighborhood ID to filter by
-        category: Business category (Gym or Cafe)
-        
-    Returns:
-        List of grid cells with GOS and metrics
+    NOTE: Database disabled for serverless deployment.
+    Returns empty list - use /recommendation_llm endpoint for live data.
     """
-    try:
-        with get_session() as session:
-            # First check if neighborhood exists
-            neighborhood_exists = (
-                session.query(GridCellModel)
-                .filter(GridCellModel.neighborhood == neighborhood)
-                .first()
-            )
-            
-            if not neighborhood_exists:
-                raise HTTPException(
-                    status_code=404,
-                    detail=f"Neighborhood '{neighborhood}' not found"
-                )
-            
-            # Join grid_cells with grid_metrics
-            results = (
-                session.query(GridCellModel, GridMetricsModel)
-                .outerjoin(
-                    GridMetricsModel,
-                    (GridCellModel.grid_id == GridMetricsModel.grid_id) &
-                    (GridMetricsModel.category == category.value)
-                )
-                .filter(GridCellModel.neighborhood == neighborhood)
-                .order_by(GridCellModel.grid_id)
-                .all()
-            )
-            
-            grids = []
-            for grid_cell, metrics in results:
-                grids.append(
-                    GridSummaryResponse(
-                        grid_id=grid_cell.grid_id,
-                        neighborhood=grid_cell.neighborhood,
-                        lat_center=float(grid_cell.lat_center),
-                        lon_center=float(grid_cell.lon_center),
-                        lat_north=float(grid_cell.lat_north),
-                        lat_south=float(grid_cell.lat_south),
-                        lon_east=float(grid_cell.lon_east),
-                        lon_west=float(grid_cell.lon_west),
-                        gos=float(metrics.gos) if metrics else 0.5,
-                        confidence=float(metrics.confidence) if metrics else 0.5,
-                        business_count=metrics.business_count if metrics else 0,
-                        instagram_volume=metrics.instagram_volume if metrics else 0,
-                        reddit_mentions=metrics.reddit_mentions if metrics else 0
-                    )
-                )
-            
-            logger.info(
-                f"Returning {len(grids)} grids for {neighborhood}/{category.value}"
-            )
-            
-            # Add cache headers
-            response = JSONResponse(
-                content=[g.model_dump() for g in grids],
-                headers={"Cache-Control": "max-age=3600"}  # 1 hour cache
-            )
-            return grids
-            
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error fetching grids: {e}", exc_info=True)
-        raise HTTPException(
-            status_code=500,
-            detail="Failed to retrieve grids"
-        )
+    logger.info(f"Grids endpoint called for {neighborhood}/{category.value}")
+    logger.info("🚫 Database disabled - returning empty grid list")
+    logger.info("💡 Use /recommendation_llm endpoint for live location analysis")
+    
+    # Return empty list - database is disabled
+    # The frontend should use /recommendation_llm for live analysis
+    return []

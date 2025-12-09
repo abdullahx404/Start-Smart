@@ -36,7 +36,7 @@ load_dotenv(env_path)
 from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-from sqlalchemy import text
+# Database disabled: from sqlalchemy import text
 
 # Import routers
 from api.routers import (
@@ -48,8 +48,8 @@ from api.routers import (
 )
 from api.routers.recommendation_llm import router as recommendation_llm_router
 
-# Import database connection for startup check
-from src.database.connection import get_session, engine
+# Database disabled for serverless deployment
+# from src.database.connection import get_session, engine
 
 # Configure logging
 logging.basicConfig(
@@ -65,27 +65,17 @@ logger = logging.getLogger("startsmart.api")
 async def lifespan(app: FastAPI):
     """
     Handle startup and shutdown events.
+    Database disabled for serverless deployment.
     """
     # Startup
     logger.info("🚀 StartSmart API starting...")
-    
-    # Verify database connection
-    try:
-        with get_session() as session:
-            session.execute(text("SELECT 1"))
-        logger.info("✅ Database connection verified")
-    except Exception as e:
-        logger.error(f"❌ Database connection failed: {e}")
-        # Continue anyway - API can still serve cached/mock data
-    
+    logger.info("🚫 Database DISABLED - Running in serverless mode")
     logger.info("✅ StartSmart API ready!")
     
     yield
     
     # Shutdown
     logger.info("👋 StartSmart API shutting down...")
-    engine.dispose()
-    logger.info("✅ Database connections closed")
 
 
 # ========== FastAPI Application ==========
